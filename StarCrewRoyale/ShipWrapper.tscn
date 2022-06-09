@@ -1,0 +1,338 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://Ship.gd" type="Script" id=1]
+[ext_resource path="res://Ship.tscn" type="PackedScene" id=2]
+[ext_resource path="res://assets/ship.png" type="Texture" id=3]
+[ext_resource path="res://assets/unnamed-8.png" type="Texture" id=4]
+[ext_resource path="res://assets/unnamed-4.png" type="Texture" id=5]
+[ext_resource path="res://assets/explosion-2.png" type="Texture" id=6]
+[ext_resource path="res://assets/unnamed-6.png" type="Texture" id=7]
+[ext_resource path="res://Player1.tscn" type="PackedScene" id=8]
+
+[sub_resource type="Animation" id=20]
+resource_name = "Pulse"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.486275 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=21]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.486275 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "Pulse"
+
+[sub_resource type="AnimationNodeStateMachine" id=22]
+states/Pulse/node = SubResource( 3 )
+states/Pulse/position = Vector2( 323, 134 )
+start_node = "Pulse"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=23]
+
+[sub_resource type="Animation" id=24]
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.00041949, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "pulse"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "Pulse"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.2, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.8, 0.8 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.281071, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.858824, 0.858824, 0.858824, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.2, 0.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -271, 1 ), Vector2( -354, 4.00001 ) ]
+}
+
+[sub_resource type="Animation" id=27]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0.99, 0.99 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.858824, 0.858824, 0.858824, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -271, 1 ) ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "StopStart"
+length = 5.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.8 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.3, 4.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( -186, 1 ), Vector2( -359, 6 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath(".:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.3, 4.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=16]
+animation = "Pulse"
+
+[sub_resource type="AnimationNodeAnimation" id=17]
+animation = "StopStart"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=19]
+
+[sub_resource type="AnimationNodeStateMachine" id=29]
+states/Pulse/node = SubResource( 16 )
+states/Pulse/position = Vector2( 318, 62 )
+states/StopStart/node = SubResource( 17 )
+states/StopStart/position = Vector2( 324, 176 )
+transitions = [ "Pulse", "StopStart", SubResource( 18 ), "StopStart", "Pulse", SubResource( 19 ) ]
+start_node = "StopStart"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=30]
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 1 )
+
+[node name="Ship" parent="." instance=ExtResource( 2 )]
+z_index = 1
+
+[node name="Base" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="GunRight" type="Sprite" parent="."]
+position = Vector2( 260, -1 )
+texture = ExtResource( 5 )
+
+[node name="GunLeft" type="Sprite" parent="."]
+position = Vector2( -260, 0 )
+texture = ExtResource( 5 )
+flip_h = true
+
+[node name="GunUp" type="Sprite" parent="."]
+position = Vector2( -1, -260 )
+rotation = -1.5708
+texture = ExtResource( 5 )
+
+[node name="GunDown" type="Sprite" parent="."]
+position = Vector2( 1, 259 )
+rotation = 1.5708
+texture = ExtResource( 5 )
+
+[node name="Shield" type="Area2D" parent="."]
+rotation = 4.46638e-06
+
+[node name="Sprite" type="Sprite" parent="Shield"]
+modulate = Color( 1, 1, 1, 0.486275 )
+position = Vector2( 376, 0 )
+rotation = 1.5708
+scale = Vector2( 13.1896, 5.25614 )
+texture = ExtResource( 6 )
+hframes = 8
+frame = 2
+
+[node name="ShieldPlayer" type="AnimationPlayer" parent="Shield/Sprite"]
+autoplay = "Pulse"
+anims/Pulse = SubResource( 20 )
+anims/RESET = SubResource( 21 )
+
+[node name="AnimationTree" type="AnimationTree" parent="Shield/Sprite"]
+tree_root = SubResource( 22 )
+anim_player = NodePath("../ShieldPlayer")
+parameters/playback = SubResource( 23 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shield"]
+visible = false
+polygon = PoolVector2Array( 228, -234, 308, -335, 349, -331, 402, -204, 418, 0, 400, 210, 346, 332, 299, 332, 229, 227 )
+
+[node name="Lights" type="Sprite" parent="."]
+modulate = Color( 1, 0.999162, 0.999162, 1 )
+scale = Vector2( 13, 13 )
+z_index = -1
+texture = ExtResource( 7 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Lights"]
+autoplay = "RESET"
+anims/RESET = SubResource( 24 )
+anims/pulse = SubResource( 25 )
+
+[node name="Engine" type="Area2D" parent="."]
+z_index = -1
+
+[node name="Visible" type="Sprite" parent="Engine"]
+visible = false
+modulate = Color( 0.858824, 0.858824, 0.858824, 1 )
+position = Vector2( -271, 1 )
+rotation = -2.38761
+scale = Vector2( 0.99, 0.99 )
+z_index = -1
+texture = ExtResource( 4 )
+flip_h = true
+flip_v = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Engine/Visible"]
+autoplay = "StopStart"
+anims/Pulse = SubResource( 26 )
+anims/RESET = SubResource( 27 )
+anims/StopStart = SubResource( 28 )
+
+[node name="AnimationTree" type="AnimationTree" parent="Engine/Visible"]
+tree_root = SubResource( 29 )
+anim_player = NodePath("../AnimationPlayer")
+parameters/playback = SubResource( 30 )
+
+[node name="Node2D" parent="." instance=ExtResource( 8 )]
