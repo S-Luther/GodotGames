@@ -18,7 +18,6 @@ region_filter_clip = true
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
 position = Vector2( 426, 272 )
-z_index = 0
 
 [node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
 position = Vector2( -1, 1 )

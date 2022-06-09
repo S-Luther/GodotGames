@@ -1,13 +1,15 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://Ship.gd" type="Script" id=1]
 [ext_resource path="res://Ship.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/ship.png" type="Texture" id=3]
-[ext_resource path="res://assets/unnamed-8.png" type="Texture" id=4]
+[ext_resource path="res://assets/pulse1.png" type="Texture" id=4]
 [ext_resource path="res://assets/unnamed-4.png" type="Texture" id=5]
 [ext_resource path="res://assets/explosion-2.png" type="Texture" id=6]
 [ext_resource path="res://assets/unnamed-6.png" type="Texture" id=7]
 [ext_resource path="res://Player1.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/waveform1.png" type="Texture" id=9]
+[ext_resource path="res://assets/CosmicLilac_Tiles.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=20]
 resource_name = "Pulse"
@@ -22,7 +24,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.486275 ), Color( 1, 1, 1, 1 ) ]
+"values": [ Color( 0, 0.929412, 1, 1 ), Color( 0, 0.929412, 1, 0.505882 ), Color( 0, 0.929412, 1, 1 ) ]
 }
 
 [sub_resource type="Animation" id=21]
@@ -83,33 +85,35 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id=26]
 resource_name = "Pulse"
+length = 0.16
 loop = true
+step = 0.05
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:scale")
+tracks/0/path = NodePath(".:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.2, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.8, 0.8 ), Vector2( 1, 1 ) ]
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
 }
 tracks/1/type = "value"
-tracks/1/path = NodePath(".:modulate")
+tracks/1/path = NodePath(".:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.281071, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Color( 0.858824, 0.858824, 0.858824, 1 ), Color( 1, 1, 1, 1 ) ]
+"times": PoolRealArray( 0, 0.05, 0.1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2 ]
 }
 tracks/2/type = "value"
-tracks/2/path = NodePath(".:visible")
+tracks/2/path = NodePath(".:scale")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/imported = false
@@ -117,8 +121,8 @@ tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
-"update": 1,
-"values": [ true ]
+"update": 0,
+"values": [ Vector2( 7, 5 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath(".:position")
@@ -127,10 +131,10 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0.2, 0.8 ),
-"transitions": PoolRealArray( 1, 1 ),
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -271, 1 ), Vector2( -354, 4.00001 ) ]
+"values": [ Vector2( -391, 5.99994 ) ]
 }
 
 [sub_resource type="Animation" id=27]
@@ -183,6 +187,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [ Vector2( -271, 1 ) ]
 }
+tracks/4/type = "value"
+tracks/4/path = NodePath(".:frame")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
 
 [sub_resource type="Animation" id=28]
 resource_name = "StopStart"
@@ -195,55 +211,92 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.8 ),
+"times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 1,
 "values": [ false ]
 }
-tracks/1/type = "value"
-tracks/1/path = NodePath(".:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/keys = {
-"times": PoolRealArray( 0.3, 4.7 ),
-"transitions": PoolRealArray( 1, 1 ),
+
+[sub_resource type="Animation" id=29]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -186, 1 ), Vector2( -359, 6 ) ]
-}
-tracks/2/type = "value"
-tracks/2/path = NodePath(".:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/keys = {
-"times": PoolRealArray( 0.3, 4.7 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 0,
-"values": [ Vector2( 0.5, 0.5 ), Vector2( 1, 1 ) ]
+"values": [ 0 ]
 }
 
-[sub_resource type="AnimationNodeAnimation" id=16]
-animation = "Pulse"
+[sub_resource type="Animation" id=30]
+resource_name = "pulse"
+length = 0.38
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
 
-[sub_resource type="AnimationNodeAnimation" id=17]
-animation = "StopStart"
+[sub_resource type="Animation" id=31]
+length = 0.38
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=18]
+[sub_resource type="Animation" id=32]
+resource_name = "pulse"
+length = 0.38
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
 
-[sub_resource type="AnimationNodeStateMachineTransition" id=19]
-
-[sub_resource type="AnimationNodeStateMachine" id=29]
-states/Pulse/node = SubResource( 16 )
-states/Pulse/position = Vector2( 318, 62 )
-states/StopStart/node = SubResource( 17 )
-states/StopStart/position = Vector2( 324, 176 )
-transitions = [ "Pulse", "StopStart", SubResource( 18 ), "StopStart", "Pulse", SubResource( 19 ) ]
-start_node = "StopStart"
-
-[sub_resource type="AnimationNodeStateMachinePlayback" id=30]
+[sub_resource type="TileSet" id=33]
+0/name = "CosmicLilac_Tiles.png 0"
+0/texture = ExtResource( 10 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 160, 0, 32, 32 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape_one_way = false
+0/shape_one_way_margin = 0.0
+0/shapes = [  ]
+0/z_index = 0
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 script = ExtResource( 1 )
@@ -274,6 +327,7 @@ rotation = 1.5708
 texture = ExtResource( 5 )
 
 [node name="Shield" type="Area2D" parent="."]
+visible = false
 rotation = 4.46638e-06
 
 [node name="Sprite" type="Sprite" parent="Shield"]
@@ -301,6 +355,7 @@ polygon = PoolVector2Array( 228, -234, 308, -335, 349, -331, 402, -204, 418, 0, 
 
 [node name="Lights" type="Sprite" parent="."]
 modulate = Color( 1, 0.999162, 0.999162, 1 )
+position = Vector2( 1, -1 )
 scale = Vector2( 13, 13 )
 z_index = -1
 texture = ExtResource( 7 )
@@ -311,18 +366,18 @@ anims/RESET = SubResource( 24 )
 anims/pulse = SubResource( 25 )
 
 [node name="Engine" type="Area2D" parent="."]
+rotation = -6.28319
 z_index = -1
 
 [node name="Visible" type="Sprite" parent="Engine"]
 visible = false
 modulate = Color( 0.858824, 0.858824, 0.858824, 1 )
 position = Vector2( -271, 1 )
-rotation = -2.38761
 scale = Vector2( 0.99, 0.99 )
 z_index = -1
 texture = ExtResource( 4 )
-flip_h = true
 flip_v = true
+vframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Engine/Visible"]
 autoplay = "StopStart"
@@ -330,9 +385,37 @@ anims/Pulse = SubResource( 26 )
 anims/RESET = SubResource( 27 )
 anims/StopStart = SubResource( 28 )
 
-[node name="AnimationTree" type="AnimationTree" parent="Engine/Visible"]
-tree_root = SubResource( 29 )
-anim_player = NodePath("../AnimationPlayer")
-parameters/playback = SubResource( 30 )
-
 [node name="Node2D" parent="." instance=ExtResource( 8 )]
+z_index = 1
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 177, 178 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = ExtResource( 9 )
+vframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
+autoplay = "pulse"
+anims/RESET = SubResource( 29 )
+anims/pulse = SubResource( 30 )
+
+[node name="Sprite2" type="Sprite" parent="."]
+position = Vector2( 123, 178 )
+scale = Vector2( 0.5, 0.5 )
+z_index = 1
+texture = ExtResource( 9 )
+flip_h = true
+vframes = 4
+frame = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2"]
+autoplay = "RESET"
+anims/RESET = SubResource( 31 )
+anims/pulse = SubResource( 32 )
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource( 33 )
+cell_size = Vector2( 1, 1 )
+format = 1
+tile_data = PoolIntArray( 10944645, 0, 0 )

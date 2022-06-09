@@ -24,8 +24,6 @@ var roll_vector = Vector2.DOWN
 
 onready var engine = $Engine
 onready var animationPlayer = $Engine/Visible/AnimationPlayer
-onready var animationTree = $Engine/Visible/AnimationTree
-onready var animationState = animationTree.get("parameters/playback")
 
 
 
