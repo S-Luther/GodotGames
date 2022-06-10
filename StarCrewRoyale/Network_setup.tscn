@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/Base_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://assets/Strip And GIF/space6_4-frames.png" type="Texture" id=2]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "pulse"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4 ]
+}
+
+[node name="Network Setup" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Multiplayer_configure" type="Control" parent="."]
+margin_right = 1620.0
+margin_bottom = 1080.0
+
+[node name="Create_Server" type="Button" parent="Multiplayer_configure"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -284.0
+margin_top = 138.0
+margin_right = 299.0
+margin_bottom = 310.0
+custom_fonts/font = ExtResource( 1 )
+text = "Host a Ship"
+
+[node name="Join_Server" type="Button" parent="Multiplayer_configure"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 525.0
+margin_top = 476.0
+margin_right = -13713.5
+margin_bottom = -433.0
+custom_fonts/font = ExtResource( 1 )
+text = "Join a ship"
+
+[node name="Username_text_edit" type="LineEdit" parent="Multiplayer_configure"]
+margin_left = 553.0
+margin_top = 239.0
+margin_right = 1082.0
+margin_bottom = 381.0
+custom_fonts/font = ExtResource( 1 )
+align = 1
+placeholder_text = "Enter Username"
+
+[node name="Sprite" type="Sprite" parent="Multiplayer_configure"]
+position = Vector2( 803, 541.534 )
+rotation = 1.5708
+scale = Vector2( 18.2673, 26.6253 )
+z_index = -1
+texture = ExtResource( 2 )
+hframes = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Multiplayer_configure/Sprite"]
+autoplay = "pulse"
+anims/RESET = SubResource( 1 )
+anims/pulse = SubResource( 2 )
