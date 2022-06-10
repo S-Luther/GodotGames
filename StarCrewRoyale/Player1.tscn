@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://assets/Astronaut-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Player1.gd" type="Script" id=2]
@@ -123,6 +123,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 42, 43, 44, 45, 46, 47, 48 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "attack_animation_finished"
+} ]
+}
 
 [sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Idle"
@@ -186,7 +200,12 @@ start_node = "Idle"
 radius = 9.00001
 height = 0.0
 
+[sub_resource type="CapsuleShape2D" id=29]
+radius = 17.0
+height = 18.0
+
 [node name="Node2D" type="KinematicBody2D"]
+modulate = Color( 0.988235, 0.992157, 0.992157, 1 )
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -210,7 +229,18 @@ parameters/playback = SubResource( 14 )
 parameters/Run/blend_position = Vector2( -0.501408, -0.0751445 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
 position = Vector2( 2, 16 )
 rotation = 1.5708
 shape = SubResource( 22 )
 one_way_collision_margin = 0.0
+
+[node name="Player1" type="Area2D" parent="."]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
+position = Vector2( 1, 10 )
+shape = SubResource( 29 )
+
+[connection signal="area_entered" from="Player1" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Player1" to="." method="_on_Player1_area_exited"]

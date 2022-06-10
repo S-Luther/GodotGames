@@ -1,0 +1,208 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://assets/explosion-2.png" type="Texture" id=1]
+[ext_resource path="res://SheildTerminal.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=5]
+resource_name = "Pulse"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0.929412, 1, 1 ), Color( 0, 0.929412, 1, 0.505882 ), Color( 0, 0.929412, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../CollisionPolygon2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionPolygon2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.486275 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ false ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionPolygon2D:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("../CollisionPolygon2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "Stop"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ false, false, false, false, false ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../CollisionPolygon2D:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.0506937 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1e-05 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("../CollisionPolygon2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.0506937 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+
+[sub_resource type="AnimationNodeAnimation" id=3]
+animation = "Pulse"
+
+[sub_resource type="AnimationNodeStateMachine" id=7]
+states/Pulse/node = SubResource( 3 )
+states/Pulse/position = Vector2( 323, 134 )
+start_node = "Pulse"
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=8]
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 24.0
+height = 50.0
+
+[node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 2 )
+
+[node name="Shield" type="Area2D" parent="."]
+rotation = 1.5708
+
+[node name="Sprite" type="Sprite" parent="Shield"]
+visible = false
+modulate = Color( 1, 1, 1, 0.486275 )
+position = Vector2( 380, 0 )
+rotation = 1.5708
+scale = Vector2( 13.1896, 5.25614 )
+texture = ExtResource( 1 )
+hframes = 8
+frame = 2
+
+[node name="ShieldPlayer" type="AnimationPlayer" parent="Shield/Sprite"]
+autoplay = "Pulse"
+anims/Pulse = SubResource( 5 )
+anims/RESET = SubResource( 6 )
+anims/Stop = SubResource( 9 )
+
+[node name="AnimationTree" type="AnimationTree" parent="Shield/Sprite"]
+tree_root = SubResource( 7 )
+anim_player = NodePath("../ShieldPlayer")
+parameters/playback = SubResource( 8 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Shield"]
+scale = Vector2( 1e-05, 1e-05 )
+polygon = PoolVector2Array( 252, -233, 308, -335, 349, -331, 402, -204, 418, 0, 400, 210, 346, 332, 299, 332, 250, 208, 342, 131, 341, -130 )
+disabled = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( -152, 174 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="SheildTerminal" type="Area2D" parent="."]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="SheildTerminal"]
+position = Vector2( -152, 174 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[connection signal="area_entered" from="SheildTerminal" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="SheildTerminal" to="." method="_on_SheildTerminal_area_exited"]
