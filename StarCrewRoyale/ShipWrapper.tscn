@@ -357,13 +357,11 @@ tile_data = PoolIntArray( 10944645, 0, 0 )
 [node name="SheildTerminal" parent="." instance=ExtResource( 5 )]
 
 [node name="Transporter" parent="." instance=ExtResource( 6 )]
-visible = false
 
 [node name="PropoTerminal" parent="." instance=ExtResource( 13 )]
 visible = false
 
 [node name="NavTerminal" parent="." instance=ExtResource( 14 )]
-visible = false
 
 [node name="Repairs" parent="." instance=ExtResource( 15 )]
 visible = false

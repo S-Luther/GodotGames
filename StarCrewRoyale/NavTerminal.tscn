@@ -1,4 +1,7 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://assets/New Piskel.png" type="Texture" id=1]
+[ext_resource path="res://Minimap.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 76.0
@@ -8,6 +11,53 @@ height = 2.0
 
 [sub_resource type="CapsuleShape2D" id=3]
 height = 0.0
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ true ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "off"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ false ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "on"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
@@ -36,3 +86,17 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="NavTerm"]
 position = Vector2( 162, -87 )
 shape = SubResource( 3 )
+
+[node name="Minimap" type="Sprite" parent="."]
+position = Vector2( 568, -303 )
+scale = Vector2( 10.9687, 11.1562 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Minimap"]
+anims/RESET = SubResource( 4 )
+anims/off = SubResource( 5 )
+anims/on = SubResource( 6 )
+
+[connection signal="area_entered" from="NavTerm" to="Minimap" method="_on_NavTerm_area_entered"]
+[connection signal="area_exited" from="NavTerm" to="Minimap" method="_on_NavTerm_area_exited"]

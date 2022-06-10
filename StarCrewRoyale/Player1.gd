@@ -2,7 +2,7 @@ extends KinematicBody2D
 
 
 export var ACCELERATION = 500
-export var MAX_SPEED = 80
+export var MAX_SPEED = 120
 export var ROLL_SPEED = 100
 export var FRICTION = 500
 
@@ -17,6 +17,7 @@ enum {
 var hearts = 4
 
 var i = 0
+var colors = ["White","Red", "Blue", "Green", "Yellow", "Pink"]
 
 var state = MOVE
 var velocity = Vector2.ZERO
@@ -25,6 +26,7 @@ var roll_vector = Vector2.DOWN
 var station = ""
 var workable = false
 var working = false
+var outfit = false
 
 onready var animationPlayer = $AnimationPlayer
 onready var animationTree = $AnimationTree
@@ -49,7 +51,19 @@ func _physics_process(delta):
 func move_state(delta):
 	var input_vector = Vector2.ZERO
 	if !working:
-		input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+		if !outfit:
+			input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
+		else:
+			if Input.is_action_just_pressed("ui_right"):
+				i = i + 1
+				if i == 6:
+					i = 0
+				animationPlayer.play(colors[i])
+			if Input.is_action_just_pressed("ui_left"):
+				i = i - 1
+				if i == -1:
+					i = 5
+				animationPlayer.play(colors[i])
 		input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 		input_vector = input_vector.normalized()
 
@@ -99,10 +113,15 @@ func attack_animation_finished():
 
 
 func _on_Area2D_area_entered(area):
+	if area.name == "Transporter":
+		outfit = true
 	station = area.name
 	print(area.name)
 	workable = true
 
 
 func _on_Player1_area_exited(area):
+	if area.name == "Transporter":
+		outfit = false
+		
 	workable = false
