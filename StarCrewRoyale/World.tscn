@@ -1,11 +1,9 @@
-[gd_scene load_steps=95 format=2]
+[gd_scene load_steps=93 format=2]
 
 [ext_resource path="res://ShipWrapper.tscn" type="PackedScene" id=1]
 [ext_resource path="res://New Piskel.png" type="Texture" id=2]
 [ext_resource path="res://assets/Strip And GIF/space7_4-frames.png" type="Texture" id=3]
-[ext_resource path="res://assets/Strip And GIF/space3_4-frames.png" type="Texture" id=4]
 [ext_resource path="res://assets/Strip And GIF/space6_4-frames.png" type="Texture" id=5]
-[ext_resource path="res://assets/Strip And GIF/space8_4-frames.png" type="Texture" id=6]
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -1418,15 +1416,7 @@ tracks/0/keys = {
 [node name="World" type="Node2D"]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 426, 272 )
-
-[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
-position = Vector2( -1, 1 )
-current = true
-smoothing_enabled = true
-__meta__ = {
-"_edit_group_": true
-}
+position = Vector2( 1726, 772 )
 
 [node name="LeftBounds" type="Area2D" parent="."]
 position = Vector2( 0, -241 )
@@ -1464,9 +1454,9 @@ anims/RESET = SubResource( 1 )
 anims/pulse = SubResource( 2 )
 
 [node name="Sprite3" type="Sprite" parent="LeftBounds"]
-position = Vector2( -1094, 29359 )
-scale = Vector2( 30, 30 )
-z_index = -3
+position = Vector2( -1094, 29315.5 )
+scale = Vector2( 30, 31.0295 )
+z_index = -1
 texture = ExtResource( 3 )
 hframes = 4
 region_enabled = true
@@ -1478,6 +1468,9 @@ autoplay = "flikr"
 playback_speed = 0.1
 anims/RESET = SubResource( 5 )
 anims/flikr = SubResource( 6 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftBounds"]
+polygon = PoolVector2Array( -93, -263, -93, 59314, -271, 59397, -275, -333 )
 
 [node name="RightBounds" type="Area2D" parent="."]
 position = Vector2( 59124, 58781 )
@@ -1519,9 +1512,9 @@ anims/RESET = SubResource( 17 )
 anims/pulse = SubResource( 18 )
 
 [node name="Sprite3" type="Sprite" parent="RightBounds"]
-position = Vector2( -1094, 29359 )
-scale = Vector2( 30, 30 )
-z_index = -3
+position = Vector2( -1094, 29336.9 )
+scale = Vector2( 30, 30.915 )
+z_index = -1
 texture = ExtResource( 3 )
 hframes = 4
 region_enabled = true
@@ -1533,6 +1526,9 @@ autoplay = "flikr"
 playback_speed = 0.1
 anims/RESET = SubResource( 19 )
 anims/flikr = SubResource( 20 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightBounds"]
+polygon = PoolVector2Array( -90.1484, 59272, -271.148, 59386, -250, -421.004, -88, -297 )
 
 [node name="TopBounds" type="Area2D" parent="."]
 position = Vector2( 58975, -409 )
@@ -1558,7 +1554,7 @@ anims/flikr = SubResource( 22 )
 position = Vector2( -129, 29374.4 )
 rotation = -3.14159
 scale = Vector2( 2, 2.00116 )
-z_index = -1
+z_index = -2
 texture = ExtResource( 2 )
 hframes = 2
 vframes = 2
@@ -1572,8 +1568,8 @@ anims/pulse = SubResource( 24 )
 
 [node name="Sprite3" type="Sprite" parent="TopBounds"]
 position = Vector2( -1094, 29359 )
-scale = Vector2( 30, 30 )
-z_index = -3
+scale = Vector2( 30, 31.0848 )
+z_index = -1
 texture = ExtResource( 3 )
 hframes = 4
 region_enabled = true
@@ -1585,6 +1581,9 @@ autoplay = "flikr"
 playback_speed = 0.1
 anims/RESET = SubResource( 25 )
 anims/flikr = SubResource( 26 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopBounds"]
+polygon = PoolVector2Array( -96.7861, 59072, -205.786, 59141, -279.001, -400.996, -90.0009, -238 )
 
 [node name="BottomBounds" type="Area2D" parent="."]
 position = Vector2( 75, 58988 )
@@ -1613,7 +1612,7 @@ anims/flikr = SubResource( 28 )
 position = Vector2( -129, 29374.4 )
 rotation = -3.14159
 scale = Vector2( 2, 2.00116 )
-z_index = -1
+z_index = -3
 texture = ExtResource( 2 )
 hframes = 2
 vframes = 2
@@ -1626,9 +1625,9 @@ anims/RESET = SubResource( 29 )
 anims/pulse = SubResource( 30 )
 
 [node name="Sprite3" type="Sprite" parent="BottomBounds"]
-position = Vector2( -1094, 29359 )
-scale = Vector2( 30, 30 )
-z_index = -3
+position = Vector2( -1094, 29445.8 )
+scale = Vector2( 30, 30.7028 )
+z_index = -1
 texture = ExtResource( 3 )
 hframes = 4
 region_enabled = true
@@ -1641,7 +1640,11 @@ playback_speed = 0.1
 anims/RESET = SubResource( 31 )
 anims/flikr = SubResource( 32 )
 
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BottomBounds"]
+polygon = PoolVector2Array( -97.9414, 59129, -237.941, 59224, -249, -309, -88, -159, -78.9414, 59119 )
+
 [node name="PlayArea" type="Area2D" parent="."]
+position = Vector2( 0, -96 )
 z_index = -1
 __meta__ = {
 "_edit_group_": true
@@ -1651,7 +1654,7 @@ __meta__ = {
 position = Vector2( 847, 29426 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1667,7 +1670,7 @@ anims/flikr = SubResource( 8 )
 position = Vector2( 2758, 29428 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1683,7 +1686,7 @@ anims/flikr = SubResource( 10 )
 position = Vector2( 4676, 29428 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 6 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1763,7 +1766,7 @@ anims/flikr = SubResource( 38 )
 position = Vector2( 14261, 29478 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1779,7 +1782,7 @@ anims/flikr = SubResource( 40 )
 position = Vector2( 16182, 29475 )
 scale = Vector2( 30.1563, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1795,7 +1798,7 @@ anims/flikr = SubResource( 42 )
 position = Vector2( 18098, 29477 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1808,10 +1811,10 @@ anims/RESET = SubResource( 43 )
 anims/flikr = SubResource( 44 )
 
 [node name="Sprite14" type="Sprite" parent="PlayArea"]
-position = Vector2( 20010, 29441 )
-scale = Vector2( 30, 30 )
+position = Vector2( 20013.5, 29441 )
+scale = Vector2( 30.1094, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1827,7 +1830,7 @@ anims/flikr = SubResource( 46 )
 position = Vector2( 21932, 29424 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1843,7 +1846,7 @@ anims/flikr = SubResource( 48 )
 position = Vector2( 23848, 29472 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1859,7 +1862,7 @@ anims/flikr = SubResource( 50 )
 position = Vector2( 25759, 29474 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1875,7 +1878,7 @@ anims/flikr = SubResource( 52 )
 position = Vector2( 27677, 29474 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1891,7 +1894,7 @@ anims/flikr = SubResource( 54 )
 position = Vector2( 29601, 29527 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1907,7 +1910,7 @@ anims/flikr = SubResource( 56 )
 position = Vector2( 29556, 29474 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1923,7 +1926,7 @@ anims/flikr = SubResource( 58 )
 position = Vector2( 31467, 29476 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1939,7 +1942,7 @@ anims/flikr = SubResource( 60 )
 position = Vector2( 33385, 29476 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1955,7 +1958,7 @@ anims/flikr = SubResource( 62 )
 position = Vector2( 35305, 29476 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1971,7 +1974,7 @@ anims/flikr = SubResource( 64 )
 position = Vector2( 37221, 29524 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -1987,7 +1990,7 @@ anims/flikr = SubResource( 66 )
 position = Vector2( 39132, 29526 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -2003,7 +2006,7 @@ anims/flikr = SubResource( 68 )
 position = Vector2( 41050, 29526 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -2016,10 +2019,10 @@ anims/RESET = SubResource( 69 )
 anims/flikr = SubResource( 70 )
 
 [node name="Sprite27" type="Sprite" parent="PlayArea"]
-position = Vector2( 42970, 29526 )
-scale = Vector2( 30, 30 )
+position = Vector2( 42976.5, 29526 )
+scale = Vector2( 30.2031, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -2035,7 +2038,7 @@ anims/flikr = SubResource( 72 )
 position = Vector2( 44896, 29523 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -2051,7 +2054,7 @@ anims/flikr = SubResource( 74 )
 position = Vector2( 46807, 29525 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -2067,7 +2070,7 @@ anims/flikr = SubResource( 76 )
 position = Vector2( 48725, 29525 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -2083,7 +2086,7 @@ anims/flikr = SubResource( 78 )
 position = Vector2( 50645, 29525 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -2099,7 +2102,7 @@ anims/flikr = SubResource( 80 )
 position = Vector2( 52561, 29573 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -2115,7 +2118,7 @@ anims/flikr = SubResource( 82 )
 position = Vector2( 54472, 29575 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -2131,7 +2134,7 @@ anims/flikr = SubResource( 84 )
 position = Vector2( 56390, 29575 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -2147,7 +2150,7 @@ anims/flikr = SubResource( 86 )
 position = Vector2( 58310, 29575 )
 scale = Vector2( 30, 30 )
 z_index = -3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 hframes = 4
 region_enabled = true
 region_rect = Rect2( 0, 0, 256, 2000 )
@@ -2158,3 +2161,8 @@ autoplay = "flikr"
 playback_speed = 0.1
 anims/RESET = SubResource( 87 )
 anims/flikr = SubResource( 88 )
+
+[connection signal="area_entered" from="LeftBounds" to="KinematicBody2D" method="_on_LeftBounds_area_entered"]
+[connection signal="area_entered" from="RightBounds" to="KinematicBody2D" method="_on_RightBounds_area_entered"]
+[connection signal="area_entered" from="TopBounds" to="KinematicBody2D" method="_on_TopBounds_area_entered"]
+[connection signal="area_entered" from="BottomBounds" to="KinematicBody2D" method="_on_BottomBounds_area_entered"]

@@ -53,7 +53,7 @@ func move_state():
 	input_vector = input_vector.normalized()
 
 
-	#print(rad2deg(input_vector.angle()))
+	##print(rad2deg(input_vector.angle()))
 	if input_vector == Vector2.ZERO:
 		pass
 	elif input_vector.x != 0 && input_vector.x != -1 && input_vector.x != 1:
@@ -62,10 +62,10 @@ func move_state():
 	elif rad2deg(sheild.transform.get_rotation()) >= rad2deg(input_vector.angle()) - 2 && rad2deg(sheild.transform.get_rotation()) <= rad2deg(input_vector.angle())+ 2:
 
 		animationPlayer.play("Pulse")
-		#print(rad2deg(input_vector.angle()))
+		##print(rad2deg(input_vector.angle()))
 	else:
 		animationPlayer.play("Stop")
-		#print(rad2deg(engine.transform.get_rotation()))
+		##print(rad2deg(engine.transform.get_rotation()))
 		if rad2deg(input_vector.angle()) > rad2deg(sheild.transform.get_rotation()):
 			sheild.rotate(.07)
 		elif rad2deg(sheild.transform.get_rotation()) > 170 && rad2deg(input_vector.angle()) < -80:

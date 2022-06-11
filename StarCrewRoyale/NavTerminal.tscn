@@ -88,7 +88,7 @@ position = Vector2( 162, -87 )
 shape = SubResource( 3 )
 
 [node name="Minimap" type="Sprite" parent="."]
-position = Vector2( 568, -303 )
+position = Vector2( 479, -240 )
 scale = Vector2( 10.9687, 11.1562 )
 texture = ExtResource( 1 )
 script = ExtResource( 2 )
@@ -97,6 +97,12 @@ script = ExtResource( 2 )
 anims/RESET = SubResource( 4 )
 anims/off = SubResource( 5 )
 anims/on = SubResource( 6 )
+
+[node name="Camera2D" type="Camera2D" parent="Minimap"]
+position = Vector2( -43.5785, 21.2438 )
+current = true
+zoom = Vector2( 0.5, 0.5 )
+smoothing_enabled = true
 
 [connection signal="area_entered" from="NavTerm" to="Minimap" method="_on_NavTerm_area_entered"]
 [connection signal="area_exited" from="NavTerm" to="Minimap" method="_on_NavTerm_area_exited"]

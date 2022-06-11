@@ -286,8 +286,8 @@ height = 52.0
 script = ExtResource( 1 )
 
 [node name="Ship" parent="." instance=ExtResource( 2 )]
-visible = false
 z_index = 1
+collision/safe_margin = 0.001
 
 [node name="Base" type="Sprite" parent="."]
 texture = ExtResource( 3 )
@@ -343,8 +343,7 @@ format = 1
 tile_data = PoolIntArray( 65537, 1, 0, 10944645, 0, 0 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-visible = false
-polygon = PoolVector2Array( -264, 222, -280, 0, -256, -290, 2, -278, 266, -293, 278, 3, 272, 262, 0, 275, -258, 258, -260, 266, 2, 280, 279, 268, 283, 0, 271, -302, 1, -283, -260, -294, -285, -1, -269, 223 )
+polygon = PoolVector2Array( -279, 255, -280, 0, -268, -269, 2, -278, 266, -278, 278, 3, 272, 262, 0, 275, -279, 264, -277, 270, 2, 280, 279, 268, 283, 0, 274, -286, 1, -283, -274, -278, -294, 0, -289, 256 )
 
 [node name="TileMap2" type="TileMap" parent="."]
 tile_set = SubResource( 34 )
@@ -359,12 +358,10 @@ tile_data = PoolIntArray( 10944645, 0, 0 )
 [node name="Transporter" parent="." instance=ExtResource( 6 )]
 
 [node name="PropoTerminal" parent="." instance=ExtResource( 13 )]
-visible = false
 
 [node name="NavTerminal" parent="." instance=ExtResource( 14 )]
 
 [node name="Repairs" parent="." instance=ExtResource( 15 )]
-visible = false
 
 [node name="Engine" type="Area2D" parent="."]
 rotation = -6.28319
