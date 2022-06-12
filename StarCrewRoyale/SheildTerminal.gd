@@ -19,8 +19,8 @@ onready var sheild = $Shield
 
 onready var animationPlayer = $Shield/Sprite/ShieldPlayer
 
-var workable = false
-var working = false
+var sheildWorkable = false
+var sheildWorking = false
 
 
 func _ready():
@@ -30,14 +30,14 @@ func _ready():
 
 func _physics_process(delta):
 
-	if workable:
-		if !working && Input.is_action_just_pressed("ui_swing"):
-			working = true
+	if sheildWorkable:
+		if !sheildWorking && Input.is_action_just_pressed("ui_swing"):
+			sheildWorking = true
 			state = MOVE
 			
-		elif working && Input.is_action_just_pressed("ui_swing"):
+		elif sheildWorking && Input.is_action_just_pressed("ui_swing"):
 			state = ATTACK
-			working = false
+			sheildWorking = false
 	match state:
 		MOVE:
 			move_state()
@@ -77,11 +77,16 @@ func move_state():
 func attack_state():
 	animationPlayer.play("Stop")
 
+func crash():
+	sheildWorkable = false
+	sheildWorking = false
+	state=ATTACK
 
-
-func _on_Area2D_area_entered(area):
-	workable = true
+func _on_SheildTerminal_area_entered(area):
+	sheildWorkable = true
+	print("shield on")
 
 
 func _on_SheildTerminal_area_exited(area):
-	workable = false
+	print("turn off shield")
+	sheildWorkable = false

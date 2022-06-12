@@ -66,6 +66,10 @@ func move_state():
 func attack_state():
 	pass
 
+func crash():
+	workable = false
+	working = false
+	state=ATTACK
 
 
 func _on_GunRightTerm_area_exited(area):

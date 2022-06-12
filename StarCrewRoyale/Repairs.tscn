@@ -1,4 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Repairs.gd" type="Script" id=1]
+[ext_resource path="res://assets/ship (1).png" type="Texture" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
 height = 32.0
@@ -6,7 +9,83 @@ height = 32.0
 [sub_resource type="CapsuleShape2D" id=2]
 height = 4.0
 
+[sub_resource type="Animation" id=3]
+resource_name = "Dark"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0.0117647, 0.780392, 1 ) ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "Gold"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=5]
+resource_name = "Green"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0.486275, 0.780392, 1 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.690196, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "Red"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.690196, 0, 0, 1 ) ]
+}
+
 [node name="KinematicBody2D" type="KinematicBody2D"]
+script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( -138, -100 )
@@ -14,17 +93,22 @@ shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( -113, -87 )
+rotation = 0.546288
 shape = SubResource( 2 )
+one_way_collision = true
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
 position = Vector2( -162, -87 )
+rotation = -0.546288
 shape = SubResource( 2 )
+one_way_collision = true
 
 [node name="Repairs" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Repairs"]
 position = Vector2( -138, -100 )
 shape = SubResource( 1 )
+one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Repairs"]
 position = Vector2( -113, -87 )
@@ -33,3 +117,19 @@ shape = SubResource( 2 )
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Repairs"]
 position = Vector2( -162, -87 )
 shape = SubResource( 2 )
+
+[node name="Hull" type="Sprite" parent="."]
+modulate = Color( 0.690196, 0, 0, 1 )
+position = Vector2( 2.00001, -3 )
+scale = Vector2( 1, 0.992727 )
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Hull"]
+anims/Dark = SubResource( 3 )
+anims/Gold = SubResource( 4 )
+anims/Green = SubResource( 5 )
+anims/RESET = SubResource( 6 )
+anims/Red = SubResource( 7 )
+
+[connection signal="area_entered" from="Repairs" to="." method="_on_Repairs_area_entered"]
+[connection signal="area_exited" from="Repairs" to="." method="_on_Repairs_area_exited"]

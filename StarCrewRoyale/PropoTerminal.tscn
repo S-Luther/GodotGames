@@ -9,17 +9,20 @@ height = 0.0
 [node name="KinematicBody2D" type="KinematicBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 12, -102 )
+position = Vector2( 10, -100 )
+rotation = 0.436332
 shape = SubResource( 1 )
+one_way_collision = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( 39, -89 )
 shape = SubResource( 2 )
+one_way_collision = true
 
 [node name="PropoTerminal" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PropoTerminal"]
-position = Vector2( 12, -102 )
+position = Vector2( 13, -101 )
 shape = SubResource( 1 )
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="PropoTerminal"]

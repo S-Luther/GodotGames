@@ -9,7 +9,7 @@ export var FRICTION = 500
 
 enum {
 	MOVE,
-	ROLL,
+	FALL,
 	ATTACK,
 	HIT
 }
@@ -47,7 +47,8 @@ func _physics_process(delta):
 			move_state(delta)
 		ATTACK:
 			attack_state()
-		
+		FALL:
+			fall_state()
 	
 func move_state(delta):
 	var input_vector = Vector2.ZERO
@@ -94,7 +95,8 @@ func move_state(delta):
 		if !working && workable:
 			working = true
 	
-
+func crash():
+	state = FALL
 
 
 func move():
@@ -103,14 +105,24 @@ func move():
 func attack_state():
 	##print("swing")
 	velocity = Vector2.ZERO
-	animationState.travel("Work")
-	if Input.is_action_just_pressed("ui_swing") && working:
-		working = false
+	if workable:
+		animationState.travel("Work")
+		if Input.is_action_just_pressed("ui_swing") && working:
+			working = false
+			state = MOVE
+	else:
 		state = MOVE
 func attack_animation_finished():
 	if !working:
 		state = MOVE
-
+		
+func fall_state():
+	animationState.travel("fall")
+	working = false
+	print("fall")
+	
+func fall_animation_finished():
+	state = MOVE
 
 
 func _on_Area2D_area_entered(area):

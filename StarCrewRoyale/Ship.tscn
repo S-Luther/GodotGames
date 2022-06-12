@@ -4,33 +4,44 @@
 
 [node name="CollisionPolygon2D6" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -202, -75, -63.8272, -75, -54, -73, -50, -68, -50.2849, -57.8367, -54, -53, -60.7455, -51, -102, -51, -102, -34.6594, -107, -30, -112.023, -27, -120, -30, -126, -35.8798, -126, -51, -201, -51 )
+one_way_collision_margin = 0.0
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -76, 197, -76, 125, 10.4951, 124.126, 17, 132, 23.5613, 138.032, 16, 144, 10, 149, -53, 148, -52, 198 )
+one_way_collision_margin = 0.0
 
 [node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 156, 71, 151, 63, 152, 37, 156, 30, 162.586, 24, 199, 24, 199, 49, 173, 49, 173, 73, 160, 73 )
+one_way_collision_margin = 0.0
 
 [node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -15, 51, -25, 62, -16, 74, 105, 73, 117, 69, 122.489, 62.4863, 123, 30, 111.326, 23, 99, 29, 98, 50 )
+polygon = PoolVector2Array( -22, 46, -25, 62, -16, 74, 105, 73, 117, 69, 122.489, 62.4863, 123, 30, 111.326, 23, 99, 29, 98, 50 )
+one_way_collision_margin = 0.0
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -101, 25, -114.057, 25, -125, 37, -125, 59, -116, 74, -58, 76, -49, 63, -61, 49, -102, 48 )
+one_way_collision_margin = 0.0
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -152, 64, -151.294, 35.747, -157, 29, -162.472, 24.2294, -201, 25, -201, 46, -177, 49, -176, 74, -157, 74 )
+one_way_collision_margin = 0.0
 
 [node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 74, 198, 74, 124, 61.3076, 124, 54, 134, 47.2262, 140.738, 48, 198 )
+one_way_collision_margin = 0.0
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 129, -70, 127, -63, 130, -57, 134.787, -51.8428, 198, -51, 198, -75, 135.917, -75 )
+one_way_collision_margin = 0.0
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( -73, -197, -74, -137, -70, -131, -63, -126, -56, -128, -51, -138, -51, -197 )
+one_way_collision_margin = 0.0
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
 polygon = PoolVector2Array( 53, -198, 50, -150, -13.9178, -150.852, -23, -144, -25.2502, -138.492, -26, -84, -26.712, -65.3981, -23, -54, -12.9784, -51, 73, -51, 75, -32, 87, -24, 98, -34, 101, -52, 99, -70, 82.5872, -74.7555, -4, -79, -6, -128, 74, -123, 76, -197 )
+one_way_collision_margin = 0.0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -199, -198, 199, -198, 199, 199, -202, 198, -202, -187, -226, -224, -247, -27, -248, 21, -227, 221, -30, 248, 20, 250, 224, 226, 247, 25, 247, -25, 221, -224, 27, -250, -25, -252, -218, -227 )
+polygon = PoolVector2Array( -199, -198, 199, -198, 199, 199, -202, 198, -202, -187, -207, -197, -211, -26, -208, 23, -208, 206, -32, 207, 25, 207, 204, 206, 207, 26, 205, -32, 203, -202, 27, -206, -25, -207, -206, -202 )
+one_way_collision_margin = 0.0

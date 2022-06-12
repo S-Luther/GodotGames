@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://assets/Astronaut-Sheet.png" type="Texture" id=1]
 [ext_resource path="res://Player1.gd" type="Script" id=2]
@@ -105,6 +105,30 @@ tracks/2/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Color( 0, 0.345098, 1, 1 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Player1/CollisionShape2D:shape:radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 18.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Player1/CollisionShape2D:shape:height")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 22.0 ]
 }
 
 [sub_resource type="Animation" id=32]
@@ -246,6 +270,61 @@ tracks/0/keys = {
 "values": [ Color( 1, 0.890196, 0, 1 ) ]
 }
 
+[sub_resource type="Animation" id=36]
+resource_name = "fall"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 3 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 2.7 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "fall_animation_finished"
+} ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Player1/CollisionShape2D:shape:radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 2.5, 2.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 18.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Player1/CollisionShape2D:shape:height")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 2.5, 2.7 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 22.0 ]
+}
+
 [sub_resource type="AnimationNodeAnimation" id=6]
 animation = "Idle"
 
@@ -284,6 +363,9 @@ blend_point_5/pos = Vector2( 1, 0.9 )
 [sub_resource type="AnimationNodeAnimation" id=8]
 animation = "Work"
 
+[sub_resource type="AnimationNodeAnimation" id=37]
+animation = "fall"
+
 [sub_resource type="AnimationNodeStateMachineTransition" id=9]
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=10]
@@ -292,6 +374,14 @@ animation = "Work"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=21]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=38]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=39]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=40]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=41]
+
 [sub_resource type="AnimationNodeStateMachine" id=13]
 states/Idle/node = SubResource( 6 )
 states/Idle/position = Vector2( 461, 167 )
@@ -299,21 +389,25 @@ states/Run/node = SubResource( 19 )
 states/Run/position = Vector2( 548, 62 )
 states/Work/node = SubResource( 8 )
 states/Work/position = Vector2( 601, 254 )
-transitions = [ "Work", "Idle", SubResource( 9 ), "Idle", "Work", SubResource( 10 ), "Idle", "Run", SubResource( 20 ), "Run", "Idle", SubResource( 21 ) ]
+states/fall/node = SubResource( 37 )
+states/fall/position = Vector2( 726, 156.822 )
+transitions = [ "Work", "Idle", SubResource( 9 ), "Idle", "Work", SubResource( 10 ), "Idle", "Run", SubResource( 20 ), "Run", "Idle", SubResource( 21 ), "Work", "fall", SubResource( 38 ), "fall", "Idle", SubResource( 39 ), "Run", "fall", SubResource( 40 ), "Idle", "fall", SubResource( 41 ) ]
 start_node = "Idle"
+graph_offset = Vector2( 0, 14.3037 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=14]
 
 [sub_resource type="CapsuleShape2D" id=22]
-radius = 9.00001
-height = 0.0
+radius = 8.0
+height = 10.0
 
 [sub_resource type="CapsuleShape2D" id=29]
-radius = 17.0
-height = 18.0
+radius = 18.0
+height = 22.0
 
 [node name="Node2D" type="KinematicBody2D"]
 modulate = Color( 0.988235, 0.992157, 0.992157, 1 )
+collision/safe_margin = 0.1
 script = ExtResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -336,6 +430,7 @@ anims/RunRight = SubResource( 4 )
 anims/White = SubResource( 34 )
 anims/Work = SubResource( 5 )
 anims/Yellow = SubResource( 35 )
+anims/fall = SubResource( 36 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = SubResource( 13 )
@@ -344,17 +439,14 @@ parameters/playback = SubResource( 14 )
 parameters/Run/blend_position = Vector2( -0.501408, -0.0751445 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2( 2, 16 )
-rotation = 1.5708
+position = Vector2( 0, 11 )
 shape = SubResource( 22 )
 one_way_collision_margin = 0.0
 
 [node name="Player1" type="Area2D" parent="."]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player1"]
-position = Vector2( 1, 10 )
+position = Vector2( 0, 11 )
 shape = SubResource( 29 )
 
 [connection signal="area_entered" from="Player1" to="." method="_on_Area2D_area_entered"]

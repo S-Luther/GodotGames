@@ -1,8 +1,9 @@
-[gd_scene load_steps=93 format=2]
+[gd_scene load_steps=120 format=2]
 
 [ext_resource path="res://ShipWrapper.tscn" type="PackedScene" id=1]
 [ext_resource path="res://New Piskel.png" type="Texture" id=2]
 [ext_resource path="res://assets/Strip And GIF/space7_4-frames.png" type="Texture" id=3]
+[ext_resource path="res://assets/1.png" type="Texture" id=4]
 [ext_resource path="res://assets/Strip And GIF/space6_4-frames.png" type="Texture" id=5]
 
 [sub_resource type="Animation" id=3]
@@ -1413,6 +1414,396 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
+[sub_resource type="Animation" id=91]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=92]
+resource_name = "spin"
+length = 5.95
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ]
+}
+
+[sub_resource type="CircleShape2D" id=89]
+radius = 22.5014
+
+[sub_resource type="CircleShape2D" id=90]
+radius = 24.5005
+
+[sub_resource type="Animation" id=93]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=94]
+resource_name = "spin"
+length = 5.95
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ]
+}
+
+[sub_resource type="Animation" id=95]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=96]
+resource_name = "spin"
+length = 5.95
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ]
+}
+
+[sub_resource type="Animation" id=97]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=98]
+resource_name = "spin"
+length = 5.95
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ]
+}
+
+[sub_resource type="Animation" id=99]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=100]
+resource_name = "spin"
+length = 5.95
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ]
+}
+
+[sub_resource type="Animation" id=101]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=102]
+resource_name = "spin"
+length = 5.95
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ]
+}
+
+[sub_resource type="Animation" id=103]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=104]
+resource_name = "spin"
+length = 5.95
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ]
+}
+
+[sub_resource type="Animation" id=105]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=106]
+resource_name = "spin"
+length = 5.95
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ]
+}
+
+[sub_resource type="Animation" id=107]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=108]
+resource_name = "spin"
+length = 5.95
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ]
+}
+
+[sub_resource type="Animation" id=109]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=110]
+resource_name = "spin"
+length = 5.95
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ]
+}
+
+[sub_resource type="Animation" id=111]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=112]
+resource_name = "spin"
+length = 5.95
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ]
+}
+
+[sub_resource type="Animation" id=113]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=114]
+resource_name = "spin"
+length = 5.95
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3, 3.1, 3.2, 3.3, 3.4, 3.5, 3.6, 3.7, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 5.1, 5.2, 5.3, 5.4, 5.5, 5.6, 5.7, 5.8, 5.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ]
+}
+
 [node name="World" type="Node2D"]
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
@@ -2162,7 +2553,411 @@ playback_speed = 0.1
 anims/RESET = SubResource( 87 )
 anims/flikr = SubResource( 88 )
 
+[node name="Planet" type="KinematicBody2D" parent="."]
+z_index = -2
+
+[node name="Sprite" type="Sprite" parent="Planet"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 4 )
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Planet/Sprite"]
+autoplay = "spin"
+playback_speed = 0.75
+anims/RESET = SubResource( 91 )
+anims/spin = SubResource( 92 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+shape = SubResource( 89 )
+
+[node name="Gravity" type="Area2D" parent="Planet"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+gravity = 2092.57
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet/Gravity"]
+shape = SubResource( 90 )
+
+[node name="Planet2" type="KinematicBody2D" parent="."]
+position = Vector2( 34346, 7577 )
+z_index = -2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Planet2"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 4 )
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Planet2/Sprite"]
+autoplay = "spin"
+playback_speed = 0.75
+anims/RESET = SubResource( 93 )
+anims/spin = SubResource( 94 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet2"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+shape = SubResource( 89 )
+
+[node name="Gravity" type="Area2D" parent="Planet2"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+gravity = 2092.57
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet2/Gravity"]
+shape = SubResource( 90 )
+
+[node name="Planet3" type="KinematicBody2D" parent="."]
+position = Vector2( 12350, 18740 )
+z_index = -2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Planet3"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 4 )
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Planet3/Sprite"]
+autoplay = "spin"
+playback_speed = 0.75
+anims/RESET = SubResource( 95 )
+anims/spin = SubResource( 96 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet3"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+shape = SubResource( 89 )
+
+[node name="Gravity" type="Area2D" parent="Planet3"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+gravity = 2092.57
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet3/Gravity"]
+shape = SubResource( 90 )
+
+[node name="Planet4" type="KinematicBody2D" parent="."]
+position = Vector2( 34263, 29407 )
+z_index = -2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Planet4"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 4 )
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Planet4/Sprite"]
+autoplay = "spin"
+playback_speed = 0.75
+anims/RESET = SubResource( 97 )
+anims/spin = SubResource( 98 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet4"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+shape = SubResource( 89 )
+
+[node name="Gravity" type="Area2D" parent="Planet4"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+gravity = 2092.57
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet4/Gravity"]
+shape = SubResource( 90 )
+
+[node name="Planet5" type="KinematicBody2D" parent="."]
+position = Vector2( 37901, 19401 )
+z_index = -2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Planet5"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 4 )
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Planet5/Sprite"]
+autoplay = "spin"
+playback_speed = 0.75
+anims/RESET = SubResource( 99 )
+anims/spin = SubResource( 100 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet5"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+shape = SubResource( 89 )
+
+[node name="Gravity" type="Area2D" parent="Planet5"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+gravity = 2092.57
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet5/Gravity"]
+shape = SubResource( 90 )
+
+[node name="Planet6" type="KinematicBody2D" parent="."]
+position = Vector2( 19295, 10718 )
+z_index = -2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Planet6"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 4 )
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Planet6/Sprite"]
+autoplay = "spin"
+playback_speed = 0.75
+anims/RESET = SubResource( 101 )
+anims/spin = SubResource( 102 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet6"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+shape = SubResource( 89 )
+
+[node name="Gravity" type="Area2D" parent="Planet6"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+gravity = 2092.57
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet6/Gravity"]
+shape = SubResource( 90 )
+
+[node name="Planet7" type="KinematicBody2D" parent="."]
+position = Vector2( 14766, 35584 )
+z_index = -2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Planet7"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 4 )
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Planet7/Sprite"]
+autoplay = "spin"
+playback_speed = 0.75
+anims/RESET = SubResource( 103 )
+anims/spin = SubResource( 104 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet7"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+shape = SubResource( 89 )
+
+[node name="Gravity" type="Area2D" parent="Planet7"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+gravity = 2092.57
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet7/Gravity"]
+shape = SubResource( 90 )
+
+[node name="Planet8" type="KinematicBody2D" parent="."]
+position = Vector2( 22581, 19598 )
+z_index = -2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Planet8"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 4 )
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Planet8/Sprite"]
+autoplay = "spin"
+playback_speed = 0.75
+anims/RESET = SubResource( 105 )
+anims/spin = SubResource( 106 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet8"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+shape = SubResource( 89 )
+
+[node name="Gravity" type="Area2D" parent="Planet8"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+gravity = 2092.57
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet8/Gravity"]
+shape = SubResource( 90 )
+
+[node name="Planet9" type="KinematicBody2D" parent="."]
+position = Vector2( 18407, 29367 )
+z_index = -2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Planet9"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 4 )
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Planet9/Sprite"]
+autoplay = "spin"
+playback_speed = 0.75
+anims/RESET = SubResource( 107 )
+anims/spin = SubResource( 108 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet9"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+shape = SubResource( 89 )
+
+[node name="Gravity" type="Area2D" parent="Planet9"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+gravity = 2092.57
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet9/Gravity"]
+shape = SubResource( 90 )
+
+[node name="Planet10" type="KinematicBody2D" parent="."]
+position = Vector2( 36346, 44109 )
+z_index = -2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Planet10"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 4 )
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Planet10/Sprite"]
+autoplay = "spin"
+playback_speed = 0.75
+anims/RESET = SubResource( 109 )
+anims/spin = SubResource( 110 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet10"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+shape = SubResource( 89 )
+
+[node name="Gravity" type="Area2D" parent="Planet10"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+gravity = 2092.57
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet10/Gravity"]
+shape = SubResource( 90 )
+
+[node name="Planet11" type="KinematicBody2D" parent="."]
+position = Vector2( 4197, 45885 )
+z_index = -2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Planet11"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 4 )
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Planet11/Sprite"]
+autoplay = "spin"
+playback_speed = 0.75
+anims/RESET = SubResource( 111 )
+anims/spin = SubResource( 112 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet11"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+shape = SubResource( 89 )
+
+[node name="Gravity" type="Area2D" parent="Planet11"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+gravity = 2092.57
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet11/Gravity"]
+shape = SubResource( 90 )
+
+[node name="Planet12" type="KinematicBody2D" parent="."]
+position = Vector2( 45404, 4323 )
+z_index = -2
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Planet12"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+texture = ExtResource( 4 )
+hframes = 8
+vframes = 8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Planet12/Sprite"]
+autoplay = "spin"
+playback_speed = 0.75
+anims/RESET = SubResource( 113 )
+anims/spin = SubResource( 114 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet12"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+shape = SubResource( 89 )
+
+[node name="Gravity" type="Area2D" parent="Planet12"]
+position = Vector2( 7743, 4057 )
+scale = Vector2( 20, 20 )
+gravity = 2092.57
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Planet12/Gravity"]
+shape = SubResource( 90 )
+
 [connection signal="area_entered" from="LeftBounds" to="KinematicBody2D" method="_on_LeftBounds_area_entered"]
 [connection signal="area_entered" from="RightBounds" to="KinematicBody2D" method="_on_RightBounds_area_entered"]
 [connection signal="area_entered" from="TopBounds" to="KinematicBody2D" method="_on_TopBounds_area_entered"]
 [connection signal="area_entered" from="BottomBounds" to="KinematicBody2D" method="_on_BottomBounds_area_entered"]
+[connection signal="area_entered" from="Planet/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
+[connection signal="area_entered" from="Planet2/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
+[connection signal="area_entered" from="Planet3/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
+[connection signal="area_entered" from="Planet4/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
+[connection signal="area_entered" from="Planet5/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
+[connection signal="area_entered" from="Planet6/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
+[connection signal="area_entered" from="Planet7/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
+[connection signal="area_entered" from="Planet8/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
+[connection signal="area_entered" from="Planet9/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
+[connection signal="area_entered" from="Planet10/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
+[connection signal="area_entered" from="Planet11/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
+[connection signal="area_entered" from="Planet12/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
