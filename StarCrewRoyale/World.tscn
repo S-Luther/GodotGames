@@ -1,6 +1,6 @@
 [gd_scene load_steps=120 format=2]
 
-[ext_resource path="res://ShipWrapper.tscn" type="PackedScene" id=1]
+[ext_resource path="res://1PShipWrapper.tscn" type="PackedScene" id=1]
 [ext_resource path="res://New Piskel.png" type="Texture" id=2]
 [ext_resource path="res://assets/Strip And GIF/space7_4-frames.png" type="Texture" id=3]
 [ext_resource path="res://assets/1.png" type="Texture" id=4]
@@ -1806,9 +1806,6 @@ tracks/0/keys = {
 
 [node name="World" type="Node2D"]
 
-[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
-position = Vector2( 1726, 772 )
-
 [node name="LeftBounds" type="Area2D" parent="."]
 position = Vector2( 0, -241 )
 
@@ -2945,19 +2942,5 @@ gravity = 2092.57
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Planet12/Gravity"]
 shape = SubResource( 90 )
 
-[connection signal="area_entered" from="LeftBounds" to="KinematicBody2D" method="_on_LeftBounds_area_entered"]
-[connection signal="area_entered" from="RightBounds" to="KinematicBody2D" method="_on_RightBounds_area_entered"]
-[connection signal="area_entered" from="TopBounds" to="KinematicBody2D" method="_on_TopBounds_area_entered"]
-[connection signal="area_entered" from="BottomBounds" to="KinematicBody2D" method="_on_BottomBounds_area_entered"]
-[connection signal="area_entered" from="Planet/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
-[connection signal="area_entered" from="Planet2/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
-[connection signal="area_entered" from="Planet3/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
-[connection signal="area_entered" from="Planet4/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
-[connection signal="area_entered" from="Planet5/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
-[connection signal="area_entered" from="Planet6/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
-[connection signal="area_entered" from="Planet7/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
-[connection signal="area_entered" from="Planet8/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
-[connection signal="area_entered" from="Planet9/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
-[connection signal="area_entered" from="Planet10/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
-[connection signal="area_entered" from="Planet11/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
-[connection signal="area_entered" from="Planet12/Gravity" to="KinematicBody2D" method="_on_Gravity_area_entered"]
+[node name="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 1396, 422 )
