@@ -19,10 +19,10 @@ func _ready():
 	
 	
 func _physics_process(delta):
-	RightB.position.x = RightB.position.x - 1
-	LeftB.position.x = LeftB.position.x + 1
-	TopB.position.y = TopB.position.y + 1
-	BottomB.position.y = BottomB.position.y - 1
+	RightB.position.x = RightB.position.x - .55
+	LeftB.position.x = LeftB.position.x + .55
+	TopB.position.y = TopB.position.y + .55
+	BottomB.position.y = BottomB.position.y - .55
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
