@@ -4,10 +4,11 @@ var working = false
 var colors = ["Dark","Red", "Green", "Gold"]
 var i = 0
 onready var animationPlayer = $Hull/AnimationPlayer
+onready var animationPlayer2 = $Hull2/AnimationPlayer
 
 func _physics_process(delta):
 	animationPlayer.play(colors[i])
-
+	animationPlayer2.play(colors[i])
 	if workable:
 		if working:
 			if Input.is_action_just_pressed("ui_swing"):
@@ -23,6 +24,7 @@ func _physics_process(delta):
 				if i == -1:
 					i=3
 				animationPlayer.play(colors[i])
+				animationPlayer2.play(colors[i])
 				
 		elif Input.is_action_just_pressed("ui_swing"):
 			working = true

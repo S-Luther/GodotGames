@@ -196,14 +196,14 @@ polygon = PoolVector2Array( 252, -233, 308, -335, 349, -331, 402, -204, 418, 0, 
 disabled = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( -140, 174 )
+position = Vector2( -115, 171 )
 shape = SubResource( 10 )
 one_way_collision = true
 
 [node name="SheildTerminal" type="Area2D" parent="."]
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="SheildTerminal"]
-position = Vector2( -154, 171 )
+position = Vector2( -135, 171 )
 rotation = 1.5708
 shape = SubResource( 4 )
 

@@ -7,8 +7,8 @@
 [ext_resource path="res://Down.gd" type="Script" id=5]
 [ext_resource path="res://Gunners.gd" type="Script" id=6]
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 30, 12.5 )
+[sub_resource type="CapsuleShape2D" id=3]
+radius = 18.0
 
 [sub_resource type="CapsuleShape2D" id=2]
 radius = 12.0
@@ -22,10 +22,9 @@ height = 22.0
 script = ExtResource( 6 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( -186.5, -4 )
-rotation = 1.5708
+position = Vector2( -190, -1 )
 shape = SubResource( 3 )
-one_way_collision = true
+disabled = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
 position = Vector2( -162, 11 )

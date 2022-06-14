@@ -119,7 +119,7 @@ func attack_animation_finished():
 func fall_state():
 	animationState.travel("fall")
 	working = false
-	print("fall")
+
 	
 func fall_animation_finished():
 	state = MOVE
