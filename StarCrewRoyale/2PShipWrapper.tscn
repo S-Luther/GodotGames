@@ -193,7 +193,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0.0664511 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -358.849, -107.83 ) ]
+"values": [ Vector2( -358.849, -95.83 ) ]
 }
 
 [sub_resource type="Animation" id=6]
@@ -311,7 +311,6 @@ position = Vector2( -271, 1 )
 scale = Vector2( 0.99, 0.99 )
 z_index = -1
 texture = ExtResource( 7 )
-flip_v = true
 vframes = 4
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Engine/Visible2"]

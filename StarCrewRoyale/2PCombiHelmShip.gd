@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 
-export var ACCELERATION = 400
-export var MAX_SPEED = 900
+export var ACCELERATION = 600
+export var MAX_SPEED = 750
 export var ROLL_SPEED = 100
 export var FRICTION = 1
 
@@ -23,7 +23,7 @@ var velocity2 = Vector2.ZERO
 var roll_vector = Vector2.DOWN
 
 
-onready var nav = $Engine/NavTerminal/Minimap/Camera2D
+onready var nav = $Engine/KinematicBody2D/Minimap
 onready var player1 = $Engine/Player1
 onready var engine = $Engine
 onready var animationPlayer = $Engine/Visible/AnimationPlayer
@@ -77,12 +77,15 @@ func move_state(delta):
 				if rad2deg(input_vector.angle()) > rad2deg(engine.transform.get_rotation()):
 					engine.rotate(.07)
 					player1.rotate(-.07)
+					nav.rotate(-.07)
 				elif rad2deg(engine.transform.get_rotation()) > 170 && rad2deg(input_vector.angle()) < -80:
 					engine.rotate(.07)
 					player1.rotate(-.07)
+					nav.rotate(-.07)
 				else:
 					engine.rotate(-.07)
 					player1.rotate(.07)
+					nav.rotate(.07)
 			
 			roll_vector = input_vector
 			##print("Vector2" , input_vector, ",")
@@ -115,8 +118,7 @@ func move():
 	velocity2 = move_and_slide(velocity2)
 
 func crash():
-	player1.crash()
-	nav.crash()
+
 	workable = false
 	working = false
 	state = ATTACK
