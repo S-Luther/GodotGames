@@ -1,0 +1,2175 @@
+[gd_scene load_steps=94 format=2]
+
+[ext_resource path="res://2PShipWrapper.tscn" type="PackedScene" id=1]
+[ext_resource path="res://New Piskel.png" type="Texture" id=2]
+[ext_resource path="res://assets/Strip And GIF/space7_4-frames.png" type="Texture" id=3]
+[ext_resource path="res://assets/Strip And GIF/space6_4-frames.png" type="Texture" id=5]
+[ext_resource path="res://World.gd" type="Script" id=6]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=4]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "pulse"
+length = 0.46
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=16]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=17]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=18]
+resource_name = "pulse"
+length = 0.46
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=19]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=20]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=21]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=22]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=23]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=24]
+resource_name = "pulse"
+length = 0.46
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=25]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=26]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=27]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=28]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=29]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=30]
+resource_name = "pulse"
+length = 0.46
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.125, 0.25, 0.4 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=31]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=32]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=7]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=9]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=10]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=11]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=33]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=35]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=36]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=37]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=38]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=39]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=40]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=41]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=42]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=43]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=44]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=45]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=46]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=47]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=48]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=49]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=50]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=51]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=52]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=53]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=54]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=55]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=56]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=57]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=58]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=59]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=60]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=61]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=62]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=63]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=64]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=65]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=66]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=67]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=68]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=69]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=70]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=71]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=72]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=73]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=74]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=75]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=76]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=77]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=78]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=79]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=80]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=81]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=82]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=83]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=84]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=85]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=86]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=87]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=88]
+resource_name = "flikr"
+length = 0.25
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.05, 0.125, 0.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[node name="World" type="Node2D"]
+script = ExtResource( 6 )
+
+[node name="Node2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 852, 110 )
+
+[node name="LeftBounds" type="Area2D" parent="."]
+position = Vector2( 0, -241 )
+
+[node name="Sprite" type="Sprite" parent="LeftBounds"]
+position = Vector2( -3014, 29365 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 3 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LeftBounds/Sprite"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 3 )
+anims/flikr = SubResource( 4 )
+
+[node name="Sprite2" type="Sprite" parent="LeftBounds"]
+position = Vector2( -129, 29374.4 )
+rotation = -3.14159
+scale = Vector2( 2, 2.00116 )
+z_index = -1
+texture = ExtResource( 2 )
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 60000 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LeftBounds/Sprite2"]
+autoplay = "pulse"
+anims/RESET = SubResource( 1 )
+anims/pulse = SubResource( 2 )
+
+[node name="Sprite3" type="Sprite" parent="LeftBounds"]
+position = Vector2( -1094, 29315.5 )
+scale = Vector2( 30, 31.0295 )
+z_index = -1
+texture = ExtResource( 3 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="LeftBounds/Sprite3"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 5 )
+anims/flikr = SubResource( 6 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LeftBounds"]
+polygon = PoolVector2Array( -93, -263, -93, 59314, -271, 59397, -275, -333 )
+
+[node name="RightBounds" type="Area2D" parent="."]
+position = Vector2( 59124, 58781 )
+rotation = 3.14159
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="RightBounds"]
+position = Vector2( -3014, 29365 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 3 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RightBounds/Sprite"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 15 )
+anims/flikr = SubResource( 16 )
+
+[node name="Sprite2" type="Sprite" parent="RightBounds"]
+position = Vector2( -129, 29374.4 )
+rotation = -3.14159
+scale = Vector2( 2, 2.00116 )
+z_index = -1
+texture = ExtResource( 2 )
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 60000 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RightBounds/Sprite2"]
+autoplay = "pulse"
+anims/RESET = SubResource( 17 )
+anims/pulse = SubResource( 18 )
+
+[node name="Sprite3" type="Sprite" parent="RightBounds"]
+position = Vector2( -1094, 29336.9 )
+scale = Vector2( 30, 30.915 )
+z_index = -1
+texture = ExtResource( 3 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="RightBounds/Sprite3"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 19 )
+anims/flikr = SubResource( 20 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RightBounds"]
+polygon = PoolVector2Array( -90.1484, 59272, -271.148, 59386, -250, -421.004, -88, -297 )
+
+[node name="TopBounds" type="Area2D" parent="."]
+position = Vector2( 58975, -409 )
+rotation = 1.5708
+
+[node name="Sprite" type="Sprite" parent="TopBounds"]
+position = Vector2( -3014, 29365 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 3 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TopBounds/Sprite"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 21 )
+anims/flikr = SubResource( 22 )
+
+[node name="Sprite2" type="Sprite" parent="TopBounds"]
+position = Vector2( -129, 29374.4 )
+rotation = -3.14159
+scale = Vector2( 2, 2.00116 )
+z_index = -2
+texture = ExtResource( 2 )
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 60000 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TopBounds/Sprite2"]
+autoplay = "pulse"
+anims/RESET = SubResource( 23 )
+anims/pulse = SubResource( 24 )
+
+[node name="Sprite3" type="Sprite" parent="TopBounds"]
+position = Vector2( -1094, 29359 )
+scale = Vector2( 30, 31.0848 )
+z_index = -1
+texture = ExtResource( 3 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="TopBounds/Sprite3"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 25 )
+anims/flikr = SubResource( 26 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="TopBounds"]
+polygon = PoolVector2Array( -96.7861, 59072, -205.786, 59141, -279.001, -400.996, -90.0009, -238 )
+
+[node name="BottomBounds" type="Area2D" parent="."]
+position = Vector2( 75, 58988 )
+rotation = 4.71239
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="BottomBounds"]
+position = Vector2( -3014, 29365 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 3 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BottomBounds/Sprite"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 27 )
+anims/flikr = SubResource( 28 )
+
+[node name="Sprite2" type="Sprite" parent="BottomBounds"]
+position = Vector2( -129, 29374.4 )
+rotation = -3.14159
+scale = Vector2( 2, 2.00116 )
+z_index = -3
+texture = ExtResource( 2 )
+hframes = 2
+vframes = 2
+region_enabled = true
+region_rect = Rect2( 0, 0, 64, 60000 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BottomBounds/Sprite2"]
+autoplay = "pulse"
+anims/RESET = SubResource( 29 )
+anims/pulse = SubResource( 30 )
+
+[node name="Sprite3" type="Sprite" parent="BottomBounds"]
+position = Vector2( -1094, 29445.8 )
+scale = Vector2( 30, 30.7028 )
+z_index = -1
+texture = ExtResource( 3 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BottomBounds/Sprite3"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 31 )
+anims/flikr = SubResource( 32 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BottomBounds"]
+polygon = PoolVector2Array( -97.9414, 59129, -237.941, 59224, -249, -309, -88, -159, -78.9414, 59119 )
+
+[node name="PlayArea" type="Area2D" parent="."]
+position = Vector2( 0, -96 )
+z_index = -1
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite4" type="Sprite" parent="PlayArea"]
+position = Vector2( 847, 29426 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite4"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 7 )
+anims/flikr = SubResource( 8 )
+
+[node name="Sprite5" type="Sprite" parent="PlayArea"]
+position = Vector2( 2758, 29428 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite5"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 9 )
+anims/flikr = SubResource( 10 )
+
+[node name="Sprite6" type="Sprite" parent="PlayArea"]
+position = Vector2( 4676, 29428 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite6"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 11 )
+anims/flikr = SubResource( 12 )
+
+[node name="Sprite7" type="Sprite" parent="PlayArea"]
+position = Vector2( 6596, 29428 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite7"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 13 )
+anims/flikr = SubResource( 14 )
+
+[node name="Sprite8" type="Sprite" parent="PlayArea"]
+position = Vector2( 8512, 29476 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite8"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 33 )
+anims/flikr = SubResource( 34 )
+
+[node name="Sprite9" type="Sprite" parent="PlayArea"]
+position = Vector2( 10423, 29478 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite9"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 35 )
+anims/flikr = SubResource( 36 )
+
+[node name="Sprite10" type="Sprite" parent="PlayArea"]
+position = Vector2( 12341, 29478 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite10"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 37 )
+anims/flikr = SubResource( 38 )
+
+[node name="Sprite11" type="Sprite" parent="PlayArea"]
+position = Vector2( 14261, 29478 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite11"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 39 )
+anims/flikr = SubResource( 40 )
+
+[node name="Sprite12" type="Sprite" parent="PlayArea"]
+position = Vector2( 16182, 29475 )
+scale = Vector2( 30.1563, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite12"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 41 )
+anims/flikr = SubResource( 42 )
+
+[node name="Sprite13" type="Sprite" parent="PlayArea"]
+position = Vector2( 18098, 29477 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite13"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 43 )
+anims/flikr = SubResource( 44 )
+
+[node name="Sprite14" type="Sprite" parent="PlayArea"]
+position = Vector2( 20013.5, 29441 )
+scale = Vector2( 30.1094, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite14"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 45 )
+anims/flikr = SubResource( 46 )
+
+[node name="Sprite15" type="Sprite" parent="PlayArea"]
+position = Vector2( 21932, 29424 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite15"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 47 )
+anims/flikr = SubResource( 48 )
+
+[node name="Sprite16" type="Sprite" parent="PlayArea"]
+position = Vector2( 23848, 29472 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite16"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 49 )
+anims/flikr = SubResource( 50 )
+
+[node name="Sprite17" type="Sprite" parent="PlayArea"]
+position = Vector2( 25759, 29474 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite17"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 51 )
+anims/flikr = SubResource( 52 )
+
+[node name="Sprite18" type="Sprite" parent="PlayArea"]
+position = Vector2( 27677, 29474 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite18"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 53 )
+anims/flikr = SubResource( 54 )
+
+[node name="Sprite19" type="Sprite" parent="PlayArea"]
+position = Vector2( 29601, 29527 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite19"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 55 )
+anims/flikr = SubResource( 56 )
+
+[node name="Sprite20" type="Sprite" parent="PlayArea"]
+position = Vector2( 29556, 29474 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite20"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 57 )
+anims/flikr = SubResource( 58 )
+
+[node name="Sprite21" type="Sprite" parent="PlayArea"]
+position = Vector2( 31467, 29476 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite21"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 59 )
+anims/flikr = SubResource( 60 )
+
+[node name="Sprite22" type="Sprite" parent="PlayArea"]
+position = Vector2( 33385, 29476 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite22"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 61 )
+anims/flikr = SubResource( 62 )
+
+[node name="Sprite23" type="Sprite" parent="PlayArea"]
+position = Vector2( 35305, 29476 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite23"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 63 )
+anims/flikr = SubResource( 64 )
+
+[node name="Sprite24" type="Sprite" parent="PlayArea"]
+position = Vector2( 37221, 29524 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite24"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 65 )
+anims/flikr = SubResource( 66 )
+
+[node name="Sprite25" type="Sprite" parent="PlayArea"]
+position = Vector2( 39132, 29526 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite25"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 67 )
+anims/flikr = SubResource( 68 )
+
+[node name="Sprite26" type="Sprite" parent="PlayArea"]
+position = Vector2( 41050, 29526 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite26"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 69 )
+anims/flikr = SubResource( 70 )
+
+[node name="Sprite27" type="Sprite" parent="PlayArea"]
+position = Vector2( 42976.5, 29526 )
+scale = Vector2( 30.2031, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite27"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 71 )
+anims/flikr = SubResource( 72 )
+
+[node name="Sprite28" type="Sprite" parent="PlayArea"]
+position = Vector2( 44896, 29523 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite28"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 73 )
+anims/flikr = SubResource( 74 )
+
+[node name="Sprite29" type="Sprite" parent="PlayArea"]
+position = Vector2( 46807, 29525 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite29"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 75 )
+anims/flikr = SubResource( 76 )
+
+[node name="Sprite30" type="Sprite" parent="PlayArea"]
+position = Vector2( 48725, 29525 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite30"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 77 )
+anims/flikr = SubResource( 78 )
+
+[node name="Sprite31" type="Sprite" parent="PlayArea"]
+position = Vector2( 50645, 29525 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite31"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 79 )
+anims/flikr = SubResource( 80 )
+
+[node name="Sprite32" type="Sprite" parent="PlayArea"]
+position = Vector2( 52561, 29573 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite32"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 81 )
+anims/flikr = SubResource( 82 )
+
+[node name="Sprite33" type="Sprite" parent="PlayArea"]
+position = Vector2( 54472, 29575 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite33"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 83 )
+anims/flikr = SubResource( 84 )
+
+[node name="Sprite34" type="Sprite" parent="PlayArea"]
+position = Vector2( 56390, 29575 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite34"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 85 )
+anims/flikr = SubResource( 86 )
+
+[node name="Sprite35" type="Sprite" parent="PlayArea"]
+position = Vector2( 58310, 29575 )
+scale = Vector2( 30, 30 )
+z_index = -3
+texture = ExtResource( 5 )
+hframes = 4
+region_enabled = true
+region_rect = Rect2( 0, 0, 256, 2000 )
+region_filter_clip = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="PlayArea/Sprite35"]
+autoplay = "flikr"
+playback_speed = 0.1
+anims/RESET = SubResource( 87 )
+anims/flikr = SubResource( 88 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+autostart = true
+
+[connection signal="area_entered" from="LeftBounds" to="Node2D" method="_on_LeftBounds_area_entered"]
+[connection signal="area_entered" from="RightBounds" to="Node2D" method="_on_RightBounds_area_entered"]
+[connection signal="area_entered" from="TopBounds" to="Node2D" method="_on_TopBounds_area_entered"]
+[connection signal="area_entered" from="BottomBounds" to="Node2D" method="_on_BottomBounds_area_entered"]

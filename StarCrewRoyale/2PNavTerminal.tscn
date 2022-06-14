@@ -75,8 +75,9 @@ anims/RESET = SubResource( 4 )
 anims/off = SubResource( 5 )
 anims/on = SubResource( 6 )
 
-[node name="Camera2D" type="Camera2D" parent="Minimap/Minimap"]
-position = Vector2( -43.5785, 21.2438 )
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 1.00049, -2.99992 )
+scale = Vector2( 10.9687, 11.1562 )
 current = true
 zoom = Vector2( 0.5, 0.5 )
 smoothing_enabled = true

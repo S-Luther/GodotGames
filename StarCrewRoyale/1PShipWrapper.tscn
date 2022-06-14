@@ -49,6 +49,18 @@ tracks/2/keys = {
 "update": 0,
 "values": [ Vector2( 7, 5 ) ]
 }
+tracks/3/type = "value"
+tracks/3/path = NodePath(".:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -322.429, -6.00164 ) ]
+}
 
 [sub_resource type="Animation" id=3]
 length = 0.001
@@ -184,6 +196,16 @@ shape = SubResource( 1 )
 [node name="Player1" parent="Engine" instance=ExtResource( 3 )]
 position = Vector2( -5.96046e-08, 1 )
 rotation = 1.5708
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+autostart = true
+
+[node name="Hitbox" type="KinematicBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Hitbox"]
+polygon = PoolVector2Array( 45, 141, 94, 110, 95, -52, 53, -140, -46, -142, -98, -48, -95, 114, -48, 143, 38, 144, 46, 148, -58, 150, -103, 114, -105, -48, -48, -147, 58, -145, 101, -52, 100, 111, 52, 142 )
 
 [connection signal="area_entered" from="Engine/Helm" to="." method="_on_Helm_area_entered"]
 [connection signal="area_exited" from="Engine/Helm" to="." method="_on_Helm_area_exited"]

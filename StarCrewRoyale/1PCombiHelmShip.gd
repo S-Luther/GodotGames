@@ -21,11 +21,13 @@ var i = 0
 var state = ATTACK
 var velocity2 = Vector2.ZERO
 var roll_vector = Vector2.DOWN
+var init = false
 
-
-onready var nav = $Engine/NavTerminal/Minimap/Camera2D
+onready var nav = $Engine/NavTerminal/
+onready var minimap = $Engine/NavTerminal/Minimap/
 onready var player1 = $Engine/Player1
 onready var engine = $Engine
+onready var timer = $Timer
 onready var animationPlayer = $Engine/Visible/AnimationPlayer
 
 var workable = false
@@ -38,8 +40,10 @@ func _ready():
 
 
 func _physics_process(delta):
-	print(workable)
-	print(working)
+
+	if timer.is_stopped():
+		init = true
+	
 	if workable:
 		if !working && Input.is_action_just_pressed("ui_swing"):
 			working = true
@@ -77,12 +81,15 @@ func move_state(delta):
 				if rad2deg(input_vector.angle()) > rad2deg(engine.transform.get_rotation()):
 					engine.rotate(.07)
 					player1.rotate(-.07)
+					minimap.rotate(-.07)
 				elif rad2deg(engine.transform.get_rotation()) > 170 && rad2deg(input_vector.angle()) < -80:
 					engine.rotate(.07)
 					player1.rotate(-.07)
+					minimap.rotate(-.07)
 				else:
 					engine.rotate(-.07)
 					player1.rotate(.07)
+					minimap.rotate(.07)
 			
 			roll_vector = input_vector
 			##print("Vector2" , input_vector, ",")
@@ -131,31 +138,34 @@ func _on_Helm_area_exited(area):
 	print("turn off heml")
 	workable = false
 
-
 func _on_RightBounds_area_entered(area):
-	velocity2 = Vector2(-689.617432, 0)
-	move()
-	crash()
+	if init:
+		velocity2 = Vector2(-689.617432, 0)
+		move()
+		crash()
+		print(area)
 
 
 func _on_LeftBounds_area_entered(area):
-	#print(area)
-	velocity2 = Vector2(689.617432, 0)
-	move()
-	crash()
+	if init:
+		#print(area)
+		velocity2 = Vector2(689.617432, 0)
+		move()
+		crash()
+		print(area)
 
 
 func _on_TopBounds_area_entered(area):
-	velocity2 = Vector2(0, 689)
-	move()
-	crash()
+	if init:
+		velocity2 = Vector2(0, 689)
+		move()
+		crash()
+		print(area)
 
 
 func _on_BottomBounds_area_entered(area):
-	velocity2 = Vector2(0, -689)
-	move()
-	crash()
-
-
-func _on_Gravity_area_entered(area):
-	crash()
+	if init:
+		velocity2 = Vector2(0, -689)
+		move()
+		crash()
+		print(area)

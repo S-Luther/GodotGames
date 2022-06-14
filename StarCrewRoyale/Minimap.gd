@@ -2,8 +2,8 @@ extends KinematicBody2D
 
 var navWorkable = false
 var navWorking = false
-onready var animationPlayer = $Minimap/AnimationPlayer
-onready var camera = $Minimap/Camera2D
+onready var animationPlayer = $Minimap/Minimap/AnimationPlayer
+onready var camera = $Camera2D
 
 func _physics_process(delta):
 	if navWorkable:
