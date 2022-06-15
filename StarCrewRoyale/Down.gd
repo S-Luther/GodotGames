@@ -28,7 +28,6 @@ func _ready():
 
 
 func _physics_process(delta):
-
 	if workable:
 		if !working && Input.is_action_just_pressed("ui_swing"):
 			working = true
@@ -72,11 +71,12 @@ func crash():
 	workable = false
 	working = false
 	state=ATTACK
-
-func _on_GunDownTerm_area_exited(area):
-	workable = false
-
-
-func _on_GunDownTerm_area_entered(area):
-	workable = true
 	
+
+
+func _on_Gunner_area_entered(area):
+	workable = true
+
+
+func _on_Gunner_area_exited(area):
+	workable = false

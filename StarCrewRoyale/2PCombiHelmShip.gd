@@ -27,6 +27,7 @@ onready var nav = $Engine/NavTerm
 onready var player1 = $Engine/Player1
 onready var engine = $Engine
 onready var timer = $Timer
+onready var gun = $Engine/Down
 onready var animationPlayer = $Engine/Visible/AnimationPlayer
 onready var animationPlayer2 = $Engine/Visible2/AnimationPlayer
 var workable = false
@@ -39,7 +40,7 @@ func _ready():
 
 
 func _physics_process(delta):
-	
+	gun.getRotation(rad2deg(engine.transform.get_rotation()))
 	if timer.is_stopped():
 		init = true
 	
@@ -51,6 +52,7 @@ func _physics_process(delta):
 		elif working && Input.is_action_just_pressed("ui_swing"):
 			state = ATTACK
 			working = false
+			nav.crash()
 	match state:
 		MOVE:
 			move_state(delta)
@@ -76,7 +78,7 @@ func move_state(delta):
 				pass
 				##print(rad2deg(input_vector.angle()))
 			else:
-				##print(rad2deg(engine.transform.get_rotation()))
+				
 				if rad2deg(input_vector.angle()) > rad2deg(engine.transform.get_rotation()):
 					engine.rotate(.07)
 					player1.rotate(-.07)
@@ -95,7 +97,6 @@ func move_state(delta):
 			velocity2 = velocity2.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 			#state = ROLL
 		else:
-			print(velocity2)
 			animationPlayer.play("StopStart")
 			animationPlayer2.play("StopStart")
 			##print("Vector2" , input_vector, ",")

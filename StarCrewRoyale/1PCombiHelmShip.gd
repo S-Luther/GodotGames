@@ -52,6 +52,7 @@ func _physics_process(delta):
 		elif working && Input.is_action_just_pressed("ui_swing"):
 			state = ATTACK
 			working = false
+			nav.crash()
 	match state:
 		MOVE:
 			move_state(delta)
