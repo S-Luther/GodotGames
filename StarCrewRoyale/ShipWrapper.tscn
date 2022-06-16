@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=2]
+[gd_scene load_steps=33 format=2]
 
 [ext_resource path="res://Ship.gd" type="Script" id=1]
 [ext_resource path="res://Ship.tscn" type="PackedScene" id=2]
@@ -17,6 +17,8 @@
 [ext_resource path="res://Repairs.tscn" type="PackedScene" id=15]
 [ext_resource path="res://Player2.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/ship (2).png" type="Texture" id=17]
+[ext_resource path="res://Player4.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Player3.tscn" type="PackedScene" id=19]
 
 [sub_resource type="Animation" id=24]
 loop = true
@@ -658,7 +660,7 @@ anims/RESET = SubResource( 24 )
 anims/pulse = SubResource( 25 )
 
 [node name="Player1" parent="." instance=ExtResource( 8 )]
-position = Vector2( 145, 169 )
+position = Vector2( 148, 142 )
 z_index = 1
 
 [node name="Sprite" type="Sprite" parent="."]
@@ -703,7 +705,7 @@ tile_data = PoolIntArray( 10944645, 0, 0 )
 [node name="Gunners" parent="." instance=ExtResource( 12 )]
 
 [node name="SheildTerminal" parent="." instance=ExtResource( 5 )]
-position = Vector2( -12, 16 )
+position = Vector2( -2, 1 )
 
 [node name="Transporter" parent="." instance=ExtResource( 6 )]
 
@@ -769,8 +771,14 @@ polygon = PoolVector2Array( -224, 226, -280, 0, -225, -224, 2, -278, 225, -225, 
 [node name="Ship" parent="." instance=ExtResource( 2 )]
 z_index = 1
 
-[node name="Node2D" parent="." instance=ExtResource( 16 )]
-position = Vector2( 145, 173 )
+[node name="Player4" parent="." instance=ExtResource( 18 )]
+position = Vector2( 147, 173 )
+
+[node name="Player3" parent="." instance=ExtResource( 19 )]
+position = Vector2( 147, 166 )
+
+[node name="Player2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 149, 158 )
 
 [connection signal="area_entered" from="Helm" to="." method="_on_Helm_area_entered"]
 [connection signal="area_exited" from="Helm" to="." method="_on_Helm_area_exited"]

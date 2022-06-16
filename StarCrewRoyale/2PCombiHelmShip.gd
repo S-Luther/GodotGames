@@ -25,6 +25,7 @@ var init = false
 
 onready var nav = $Engine/NavTerm
 onready var player1 = $Engine/Player1
+onready var player2 = $Engine/Player2
 onready var engine = $Engine
 onready var timer = $Timer
 onready var gun = $Engine/Down
@@ -32,7 +33,7 @@ onready var animationPlayer = $Engine/Visible/AnimationPlayer
 onready var animationPlayer2 = $Engine/Visible2/AnimationPlayer
 var workable = false
 var working = false
-
+var prefix = ""
 
 func _ready():
 	randomize()
@@ -45,11 +46,11 @@ func _physics_process(delta):
 		init = true
 	
 	if workable:
-		if !working && Input.is_action_just_pressed("ui_swing"):
+		if !working && Input.is_action_just_pressed(prefix+"_swing"):
 			working = true
 			state = MOVE
 			
-		elif working && Input.is_action_just_pressed("ui_swing"):
+		elif working && Input.is_action_just_pressed(prefix+"_swing"):
 			state = ATTACK
 			working = false
 			nav.crash()
@@ -63,8 +64,8 @@ func _physics_process(delta):
 func move_state(delta):
 	if working:
 		var input_vector = Vector2.ZERO
-		input_vector.x = Input.get_action_strength("ui_left") - Input.get_action_strength("ui_right")
-		input_vector.y = Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down")
+		input_vector.x = Input.get_action_strength(prefix+"_left") - Input.get_action_strength(prefix+"_right")
+		input_vector.y = Input.get_action_strength(prefix+"_up") - Input.get_action_strength(prefix+"_down")
 
 		input_vector = input_vector.normalized()
 
@@ -82,14 +83,17 @@ func move_state(delta):
 				if rad2deg(input_vector.angle()) > rad2deg(engine.transform.get_rotation()):
 					engine.rotate(.07)
 					player1.rotate(-.07)
+					player2.rotate(-.07)
 					nav.rotate(-.07)
 				elif rad2deg(engine.transform.get_rotation()) > 170 && rad2deg(input_vector.angle()) < -80:
 					engine.rotate(.07)
 					player1.rotate(-.07)
+					player2.rotate(-.07)
 					nav.rotate(-.07)
 				else:
 					engine.rotate(-.07)
 					player1.rotate(.07)
+					player2.rotate(.07)
 					nav.rotate(.07)
 			
 			roll_vector = input_vector
@@ -132,6 +136,8 @@ func crash():
 func _on_Helm_area_entered(area):
 	workable = true
 	print("helm on")
+	if !working:
+		prefix = area.name
 
 
 func _on_Helm_area_exited(area):

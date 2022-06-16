@@ -22,6 +22,9 @@ onready var animationPlayer = $Shield/Sprite/ShieldPlayer
 var sheildWorkable = false
 var sheildWorking = false
 
+var prefix = ""
+
+
 
 func _ready():
 	randomize()
@@ -31,11 +34,11 @@ func _ready():
 func _physics_process(delta):
 
 	if sheildWorkable:
-		if !sheildWorking && Input.is_action_just_pressed("ui_swing"):
+		if !sheildWorking && Input.is_action_just_pressed(prefix+"_swing"):
 			sheildWorking = true
 			state = MOVE
 			
-		elif sheildWorking && Input.is_action_just_pressed("ui_swing"):
+		elif sheildWorking && Input.is_action_just_pressed(prefix+"_swing"):
 			state = ATTACK
 			sheildWorking = false
 	match state:
@@ -47,8 +50,8 @@ func _physics_process(delta):
 	
 func move_state():
 	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	input_vector.x = Input.get_action_strength(prefix+"_right") - Input.get_action_strength(prefix+"_left")
+	input_vector.y = Input.get_action_strength(prefix+"_down") - Input.get_action_strength(prefix+"_up")
 
 	input_vector = input_vector.normalized()
 
@@ -85,6 +88,8 @@ func crash():
 func _on_SheildTerminal_area_entered(area):
 	sheildWorkable = true
 	print("shield on")
+	if !sheildWorking:
+		prefix = area.name
 
 
 func _on_SheildTerminal_area_exited(area):

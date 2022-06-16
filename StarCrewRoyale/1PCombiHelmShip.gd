@@ -45,11 +45,11 @@ func _physics_process(delta):
 		init = true
 	
 	if workable:
-		if !working && Input.is_action_just_pressed("ui_swing"):
+		if !working && Input.is_action_just_pressed("p1_swing"):
 			working = true
 			state = MOVE
 			
-		elif working && Input.is_action_just_pressed("ui_swing"):
+		elif working && Input.is_action_just_pressed("p1_swing"):
 			state = ATTACK
 			working = false
 			nav.crash()
@@ -63,8 +63,8 @@ func _physics_process(delta):
 func move_state(delta):
 	if working:
 		var input_vector = Vector2.ZERO
-		input_vector.x = Input.get_action_strength("ui_left") - Input.get_action_strength("ui_right")
-		input_vector.y = Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down")
+		input_vector.x = Input.get_action_strength("p1_left") - Input.get_action_strength("p1_right")
+		input_vector.y = Input.get_action_strength("p1_up") - Input.get_action_strength("p1_down")
 
 		input_vector = input_vector.normalized()
 

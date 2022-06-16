@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://assets/2pship.png" type="Texture" id=1]
 [ext_resource path="res://2PNavTerminal.tscn" type="PackedScene" id=2]
@@ -9,6 +9,7 @@
 [ext_resource path="res://assets/pulse1.png" type="Texture" id=7]
 [ext_resource path="res://2pDown.gd" type="Script" id=8]
 [ext_resource path="res://assets/unnamed-4.png" type="Texture" id=9]
+[ext_resource path="res://Player2.tscn" type="PackedScene" id=10]
 
 [sub_resource type="Animation" id=2]
 resource_name = "Pulse"
@@ -334,12 +335,12 @@ rotation = 1.5708
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Engine/Helm"]
-position = Vector2( 0, -88 )
+position = Vector2( -1, -110 )
 rotation = 1.5708
 shape = SubResource( 1 )
 
 [node name="Player1" parent="Engine" instance=ExtResource( 3 )]
-position = Vector2( -7.62939e-06, 2 )
+position = Vector2( -88.0004, 101 )
 rotation = 1.5708
 
 [node name="NavTerm" parent="Engine" instance=ExtResource( 2 )]
@@ -378,6 +379,10 @@ __meta__ = {
 position = Vector2( 0, 9 )
 rotation = 1.5708
 texture = ExtResource( 9 )
+
+[node name="Player2" parent="Engine" instance=ExtResource( 10 )]
+position = Vector2( -108, 94.9996 )
+rotation = 1.5708
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 3.0

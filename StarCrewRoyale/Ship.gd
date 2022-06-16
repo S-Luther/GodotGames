@@ -25,6 +25,9 @@ var init = false
 onready var shield = $SheildTerminal
 onready var nav = $NavTerminal
 onready var player1 = $Player1
+onready var player2 = $Player2
+onready var player3 = $Player3
+onready var player4 = $Player4
 onready var gunners = $Gunners
 onready var engine = $Engine
 onready var timer = $Timer
@@ -119,6 +122,9 @@ func move():
 func crash():
 	if init:
 		player1.crash()
+		player2.crash()
+		player3.crash()
+		player4.crash()
 		gunners.crash()
 		shield.crash()
 		nav.crash()

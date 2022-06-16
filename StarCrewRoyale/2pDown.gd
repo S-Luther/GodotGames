@@ -14,6 +14,8 @@ var state = ATTACK
 var workable = false
 var working = false
 
+var prefix = ""
+
 var rota = 0
 
 onready var gun = $GunDown
@@ -28,11 +30,11 @@ func _ready():
 func _physics_process(delta):
 	print(rota)
 	if workable:
-		if !working && Input.is_action_just_pressed("ui_swing"):
+		if !working && Input.is_action_just_pressed(prefix+"_swing"):
 			working = true
 			state = MOVE
 			
-		elif working && Input.is_action_just_pressed("ui_swing"):
+		elif working && Input.is_action_just_pressed(prefix+"_swing"):
 			state = ATTACK
 			working = false
 	match state:
@@ -44,8 +46,8 @@ func _physics_process(delta):
 	
 func move_state(rot):
 	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	input_vector.x = Input.get_action_strength(prefix+"_right") - Input.get_action_strength(prefix+"_left")
+	input_vector.y = Input.get_action_strength(prefix+"_down") - Input.get_action_strength(prefix+"_up")
 
 	input_vector = input_vector.normalized()
 
@@ -80,6 +82,8 @@ func crash():
 
 func _on_Gunner_area_entered(area):
 	workable = true
+	if !working:
+		prefix = area.name
 
 
 func _on_Gunner_area_exited(area):

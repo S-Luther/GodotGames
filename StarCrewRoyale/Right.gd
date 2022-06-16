@@ -17,6 +17,8 @@ var state = ATTACK
 var workable = false
 var working = false
 
+var prefix = ""
+
 onready var gun = $GunRight
 
 
@@ -75,6 +77,10 @@ func crash():
 func _on_GunRightTerm_area_exited(area):
 	workable = false
 
+		
+
 
 func _on_GunRightTerm_area_entered(area):
 	workable = true
+	if !working:
+		prefix = area.name

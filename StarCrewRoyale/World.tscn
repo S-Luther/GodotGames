@@ -1414,7 +1414,7 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3 ]
 }
 
-[node name="World" type="Node2D"]
+[node name="World" type="YSort"]
 script = ExtResource( 6 )
 
 [node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
@@ -1589,7 +1589,7 @@ polygon = PoolVector2Array( -96.7861, 59072, -205.786, 59141, -279.001, -400.996
 
 [node name="BottomBounds" type="Area2D" parent="."]
 position = Vector2( 75, 58988 )
-rotation = 4.71239
+rotation = -1.5708
 __meta__ = {
 "_edit_group_": true
 }
