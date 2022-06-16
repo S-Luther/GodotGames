@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Base_font.tres" type="DynamicFont" id=1]
 [ext_resource path="res://assets/Strip And GIF/space6_4-frames.png" type="Texture" id=2]
 [ext_resource path="res://Multiplayer_configure.gd" type="Script" id=3]
+[ext_resource path="res://Test_Setup.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -36,20 +37,21 @@ tracks/0/keys = {
 "values": [ 0, 1, 2, 3, 4 ]
 }
 
-[node name="Network Setup" type="Control"]
+[node name="Test_Setup" type="Control"]
 anchor_right = 0.511
 anchor_bottom = 0.523
 margin_right = -0.640137
 margin_bottom = -0.680054
+script = ExtResource( 4 )
 
-[node name="Multiplayer_configure" type="Control" parent="."]
+[node name="Scene_configure" type="Control" parent="."]
 margin_left = 830.0
 margin_top = 473.0
 margin_right = 2450.0
 margin_bottom = 1553.0
 script = ExtResource( 3 )
 
-[node name="2Player" type="Button" parent="Multiplayer_configure"]
+[node name="2Player" type="Button" parent="Scene_configure"]
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -61,7 +63,7 @@ margin_bottom = 310.0
 custom_fonts/font = ExtResource( 1 )
 text = "Test 2 Player"
 
-[node name="1Player2" type="Button" parent="Multiplayer_configure"]
+[node name="1Player2" type="Button" parent="Scene_configure"]
 anchor_right = 9.146
 anchor_bottom = 1.0
 margin_left = 525.0
@@ -71,7 +73,7 @@ margin_bottom = -433.0
 custom_fonts/font = ExtResource( 1 )
 text = "Test 1 Player"
 
-[node name="3Player" type="Button" parent="Multiplayer_configure"]
+[node name="3Player" type="Button" parent="Scene_configure"]
 anchor_right = 9.146
 anchor_bottom = 1.0
 margin_left = 529.0
@@ -81,7 +83,7 @@ margin_bottom = -29.0
 custom_fonts/font = ExtResource( 1 )
 text = "Test 3 Or 4 Player"
 
-[node name="Sprite" type="Sprite" parent="Multiplayer_configure"]
+[node name="Sprite" type="Sprite" parent="Scene_configure"]
 position = Vector2( 792, 625 )
 rotation = 1.5708
 scale = Vector2( 34.5145, 51.6752 )
@@ -89,11 +91,424 @@ z_index = -1
 texture = ExtResource( 2 )
 hframes = 4
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Multiplayer_configure/Sprite"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Scene_configure/Sprite"]
 autoplay = "pulse"
 anims/RESET = SubResource( 1 )
 anims/pulse = SubResource( 2 )
 
-[connection signal="pressed" from="Multiplayer_configure/2Player" to="Multiplayer_configure" method="_on_2Player_pressed"]
-[connection signal="pressed" from="Multiplayer_configure/1Player2" to="Multiplayer_configure" method="_on_1Player2_pressed"]
-[connection signal="pressed" from="Multiplayer_configure/3Player" to="Multiplayer_configure" method="_on_3Player_pressed"]
+[node name="Player_1" type="Control" parent="."]
+margin_left = -331.0
+margin_top = -32.0
+margin_right = 1289.0
+margin_bottom = 1048.0
+
+[node name="Right" type="Button" parent="Player_1"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -295.0
+margin_top = -76.0
+margin_right = 141.0
+margin_bottom = 22.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Right"
+
+[node name="Down" type="Button" parent="Player_1"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 513.0
+margin_top = 335.0
+margin_right = -13865.5
+margin_bottom = -637.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Down"
+
+[node name="Up" type="Button" parent="Player_1"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 513.0
+margin_top = 219.0
+margin_right = -13872.5
+margin_bottom = -768.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Up"
+
+[node name="Left" type="Button" parent="Player_1"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 511.0
+margin_top = 584.0
+margin_right = -13860.5
+margin_bottom = -392.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Left"
+
+[node name="Primary" type="Button" parent="Player_1"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 509.0
+margin_top = 713.0
+margin_right = -13862.5
+margin_bottom = -263.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Primary"
+
+[node name="Seconday" type="Button" parent="Player_1"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 511.0
+margin_top = 842.0
+margin_right = -13860.5
+margin_bottom = -134.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Secodnary"
+
+[node name="Label" type="Label" parent="Player_1"]
+margin_left = 634.0
+margin_top = 103.0
+margin_right = 856.0
+margin_bottom = 153.0
+custom_fonts/font = ExtResource( 1 )
+text = "Player 1"
+
+[node name="Player_2" type="Control" parent="."]
+visible = false
+margin_left = 269.0
+margin_top = -37.0
+margin_right = 1889.0
+margin_bottom = 1043.0
+
+[node name="p2Right" type="Button" parent="Player_2"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -295.0
+margin_top = -76.0
+margin_right = 141.0
+margin_bottom = 22.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Right"
+
+[node name="p2Down" type="Button" parent="Player_2"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 513.0
+margin_top = 335.0
+margin_right = -13865.5
+margin_bottom = -637.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Down"
+
+[node name="p2Up" type="Button" parent="Player_2"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 513.0
+margin_top = 219.0
+margin_right = -13872.5
+margin_bottom = -768.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Up"
+
+[node name="p2Left" type="Button" parent="Player_2"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 511.0
+margin_top = 584.0
+margin_right = -13860.5
+margin_bottom = -392.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Left"
+
+[node name="p2Primary" type="Button" parent="Player_2"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 509.0
+margin_top = 713.0
+margin_right = -13862.5
+margin_bottom = -263.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Primary"
+
+[node name="p2Secondary" type="Button" parent="Player_2"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 511.0
+margin_top = 842.0
+margin_right = -13860.5
+margin_bottom = -134.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Secodnary"
+
+[node name="Label" type="Label" parent="Player_2"]
+margin_left = 634.0
+margin_top = 103.0
+margin_right = 856.0
+margin_bottom = 153.0
+custom_fonts/font = ExtResource( 1 )
+text = "Player 2"
+
+[node name="Player_3" type="Control" parent="."]
+visible = false
+margin_left = 1487.0
+margin_top = -44.0
+margin_right = 3107.0
+margin_bottom = 1036.0
+
+[node name="p3Right" type="Button" parent="Player_3"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -295.0
+margin_top = -76.0
+margin_right = 141.0
+margin_bottom = 22.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Right"
+
+[node name="p3Down" type="Button" parent="Player_3"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 513.0
+margin_top = 335.0
+margin_right = -13865.5
+margin_bottom = -637.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Down"
+
+[node name="p3Up" type="Button" parent="Player_3"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 513.0
+margin_top = 219.0
+margin_right = -13872.5
+margin_bottom = -768.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Up"
+
+[node name="p3Left" type="Button" parent="Player_3"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 511.0
+margin_top = 584.0
+margin_right = -13860.5
+margin_bottom = -392.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Left"
+
+[node name="p3Primary" type="Button" parent="Player_3"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 509.0
+margin_top = 713.0
+margin_right = -13862.5
+margin_bottom = -263.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Primary"
+
+[node name="p3Secondary" type="Button" parent="Player_3"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 511.0
+margin_top = 842.0
+margin_right = -13860.5
+margin_bottom = -134.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Secodnary"
+
+[node name="Label" type="Label" parent="Player_3"]
+margin_left = 634.0
+margin_top = 103.0
+margin_right = 856.0
+margin_bottom = 153.0
+custom_fonts/font = ExtResource( 1 )
+text = "Player 3"
+
+[node name="Player_4" type="Control" parent="."]
+visible = false
+margin_left = 2084.0
+margin_top = -38.0
+margin_right = 3704.0
+margin_bottom = 1042.0
+
+[node name="p4Right" type="Button" parent="Player_4"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -295.0
+margin_top = -76.0
+margin_right = 141.0
+margin_bottom = 22.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Right"
+
+[node name="p4Down" type="Button" parent="Player_4"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 513.0
+margin_top = 335.0
+margin_right = -13865.5
+margin_bottom = -637.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Down"
+
+[node name="p4Up" type="Button" parent="Player_4"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 513.0
+margin_top = 219.0
+margin_right = -13872.5
+margin_bottom = -768.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Up"
+
+[node name="p4Left" type="Button" parent="Player_4"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 511.0
+margin_top = 584.0
+margin_right = -13860.5
+margin_bottom = -392.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Left"
+
+[node name="p4Primary" type="Button" parent="Player_4"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 509.0
+margin_top = 713.0
+margin_right = -13862.5
+margin_bottom = -263.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Primary"
+
+[node name="p4Secondary" type="Button" parent="Player_4"]
+anchor_right = 9.146
+anchor_bottom = 1.0
+margin_left = 511.0
+margin_top = 842.0
+margin_right = -13860.5
+margin_bottom = -134.0
+hint_tooltip = "Change Input"
+custom_fonts/font = ExtResource( 1 )
+text = "Secodnary"
+
+[node name="Label" type="Label" parent="Player_4"]
+margin_left = 634.0
+margin_top = 103.0
+margin_right = 856.0
+margin_bottom = 153.0
+custom_fonts/font = ExtResource( 1 )
+text = "Player 4"
+
+[node name="Key_Code2" type="LineEdit" parent="."]
+anchor_right = 0.699
+anchor_bottom = 0.298
+margin_left = 1464.0
+margin_top = 52.0
+margin_right = 652.155
+margin_bottom = -182.442
+custom_fonts/font = ExtResource( 1 )
+align = 1
+editable = false
+placeholder_text = "Key_Code"
+
+[node name="Instructions" type="Label" parent="."]
+margin_left = 1337.0
+margin_top = 244.0
+margin_right = 1905.0
+margin_bottom = 687.0
+custom_fonts/font = ExtResource( 1 )
+text = "Set controls by
+ assigning keys 
+to player actions.
+
+ Press Key then
+ Hit Button
+ to assign current
+ Key Code to Action."
+align = 1
+
+[node name="Player2Add" type="Button" parent="."]
+margin_left = 808.0
+margin_top = 26.0
+margin_right = 1188.0
+margin_bottom = 171.0
+custom_fonts/font = ExtResource( 1 )
+text = "+ Player 2"
+
+[node name="Player3Add" type="Button" parent="."]
+margin_left = 2033.0
+margin_top = 28.0
+margin_right = 2413.0
+margin_bottom = 173.0
+custom_fonts/font = ExtResource( 1 )
+text = "+ Player 3"
+
+[node name="Player4Add" type="Button" parent="."]
+margin_left = 2626.0
+margin_top = 33.0
+margin_right = 3006.0
+margin_bottom = 178.0
+custom_fonts/font = ExtResource( 1 )
+text = "+ Player 4"
+
+[connection signal="pressed" from="Scene_configure/2Player" to="." method="_on_2Player_pressed"]
+[connection signal="pressed" from="Scene_configure/2Player" to="Scene_configure" method="_on_2Player_pressed"]
+[connection signal="pressed" from="Scene_configure/1Player2" to="." method="_on_1Player2_pressed"]
+[connection signal="pressed" from="Scene_configure/1Player2" to="Scene_configure" method="_on_1Player2_pressed"]
+[connection signal="pressed" from="Scene_configure/3Player" to="." method="_on_3Player_pressed"]
+[connection signal="pressed" from="Scene_configure/3Player" to="Scene_configure" method="_on_3Player_pressed"]
+[connection signal="pressed" from="Player_1/Right" to="." method="_on_Right_pressed"]
+[connection signal="pressed" from="Player_1/Down" to="." method="_on_Down_pressed"]
+[connection signal="pressed" from="Player_1/Up" to="." method="_on_Up_pressed"]
+[connection signal="pressed" from="Player_1/Left" to="." method="_on_Left_pressed"]
+[connection signal="pressed" from="Player_1/Primary" to="." method="_on_Primary_pressed"]
+[connection signal="pressed" from="Player_1/Seconday" to="." method="_on_Seconday_pressed"]
+[connection signal="pressed" from="Player_2/p2Right" to="." method="_on_p2Right_pressed"]
+[connection signal="pressed" from="Player_2/p2Down" to="." method="_on_p2Down_pressed"]
+[connection signal="pressed" from="Player_2/p2Up" to="." method="_on_p2Up_pressed"]
+[connection signal="pressed" from="Player_2/p2Left" to="." method="_on_p2Left_pressed"]
+[connection signal="pressed" from="Player_2/p2Primary" to="." method="_on_p2Primary_pressed"]
+[connection signal="pressed" from="Player_2/p2Secondary" to="." method="_on_p2Secondary_pressed"]
+[connection signal="pressed" from="Player_3/p3Right" to="." method="_on_p3Right_pressed"]
+[connection signal="pressed" from="Player_3/p3Down" to="." method="_on_p3Down_pressed"]
+[connection signal="pressed" from="Player_3/p3Up" to="." method="_on_p3Up_pressed"]
+[connection signal="pressed" from="Player_3/p3Left" to="." method="_on_p3Left_pressed"]
+[connection signal="pressed" from="Player_3/p3Primary" to="." method="_on_p3Primary_pressed"]
+[connection signal="pressed" from="Player_3/p3Secondary" to="." method="_on_p3Secondary_pressed"]
+[connection signal="pressed" from="Player_4/p4Right" to="." method="_on_p4Right_pressed"]
+[connection signal="pressed" from="Player_4/p4Down" to="." method="_on_p4Down_pressed"]
+[connection signal="pressed" from="Player_4/p4Up" to="." method="_on_p4Up_pressed"]
+[connection signal="pressed" from="Player_4/p4Left" to="." method="_on_p4Left_pressed"]
+[connection signal="pressed" from="Player_4/p4Primary" to="." method="_on_p4Primary_pressed"]
+[connection signal="pressed" from="Player_4/p4Secondary" to="." method="_on_p4Secondary_pressed"]
+[connection signal="pressed" from="Player2Add" to="." method="_on_Player2Add_pressed"]
+[connection signal="pressed" from="Player3Add" to="." method="_on_Player3Add_pressed"]
+[connection signal="pressed" from="Player4Add" to="." method="_on_Player4Add_pressed"]

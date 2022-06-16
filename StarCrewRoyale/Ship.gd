@@ -13,7 +13,7 @@ enum {
 	ATTACK,
 	HIT
 }
-
+var unlocked = true
 var hearts = 4
 
 var i = 0
@@ -32,7 +32,7 @@ onready var animationPlayer = $Engine/Visible/AnimationPlayer
 
 var workable = false
 var working = false
-
+var prefix = ""
 
 func _ready():
 	randomize()
@@ -44,16 +44,18 @@ func _physics_process(delta):
 	if timer.is_stopped():
 		init = true
 	if workable:
-		if !working && Input.is_action_just_pressed("ui_swing"):
+		if !working && Input.is_action_just_pressed(prefix+"_swing"):
 			working = true
 			state = MOVE
+			unlocked = false
 			
-		elif working && Input.is_action_just_pressed("ui_swing"):
+		elif working && Input.is_action_just_pressed(prefix+"_swing"):
 			state = ATTACK
 			working = false
 			gunners.crash()
 			shield.crash()
 			nav.crash()
+			unlocked = true
 	match state:
 		MOVE:
 			move_state(delta)
@@ -64,8 +66,8 @@ func _physics_process(delta):
 func move_state(delta):
 	if working:
 		var input_vector = Vector2.ZERO
-		input_vector.x = Input.get_action_strength("ui_left") - Input.get_action_strength("ui_right")
-		input_vector.y = Input.get_action_strength("ui_up") - Input.get_action_strength("ui_down")
+		input_vector.x = Input.get_action_strength(prefix+"_left") - Input.get_action_strength(prefix+"_right")
+		input_vector.y = Input.get_action_strength(prefix+"_up") - Input.get_action_strength(prefix+"_down")
 
 		input_vector = input_vector.normalized()
 
@@ -128,6 +130,9 @@ func crash():
 func _on_Helm_area_entered(area):
 	workable = true
 	print("helm on")
+	print(area.name)
+	if unlocked:
+		prefix = area.name
 
 
 func _on_Helm_area_exited(area):

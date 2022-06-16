@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Ship.gd" type="Script" id=1]
 [ext_resource path="res://Ship.tscn" type="PackedScene" id=2]
@@ -15,6 +15,7 @@
 [ext_resource path="res://PropoTerminal.tscn" type="PackedScene" id=13]
 [ext_resource path="res://NavTerminal.tscn" type="PackedScene" id=14]
 [ext_resource path="res://Repairs.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Player2.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/ship (2).png" type="Texture" id=17]
 
 [sub_resource type="Animation" id=24]
@@ -767,6 +768,9 @@ polygon = PoolVector2Array( -224, 226, -280, 0, -225, -224, 2, -278, 225, -225, 
 
 [node name="Ship" parent="." instance=ExtResource( 2 )]
 z_index = 1
+
+[node name="Node2D" parent="." instance=ExtResource( 16 )]
+position = Vector2( 145, 173 )
 
 [connection signal="area_entered" from="Helm" to="." method="_on_Helm_area_entered"]
 [connection signal="area_exited" from="Helm" to="." method="_on_Helm_area_exited"]

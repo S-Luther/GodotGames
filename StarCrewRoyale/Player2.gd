@@ -54,19 +54,19 @@ func move_state(delta):
 	var input_vector = Vector2.ZERO
 	if !working:
 		if !outfit:
-			input_vector.x = Input.get_action_strength("p1_right") - Input.get_action_strength("p1_left")
+			input_vector.x = Input.get_action_strength("p2_right") - Input.get_action_strength("p2_left")
 		else:
-			if Input.is_action_just_pressed("p1_right"):
+			if Input.is_action_just_pressed("p2_right"):
 				i = i + 1
 				if i == 6:
 					i = 0
 				animationPlayer.play(colors[i])
-			if Input.is_action_just_pressed("p1_left"):
+			if Input.is_action_just_pressed("p2_left"):
 				i = i - 1
 				if i == -1:
 					i = 5
 				animationPlayer.play(colors[i])
-		input_vector.y = Input.get_action_strength("p1_down") - Input.get_action_strength("p1_up")
+		input_vector.y = Input.get_action_strength("p2_down") - Input.get_action_strength("p2_up")
 		input_vector = input_vector.normalized()
 
 	
@@ -90,7 +90,7 @@ func move_state(delta):
 	
 	move()
 	
-	if Input.is_action_just_pressed("p1_swing"):
+	if Input.is_action_just_pressed("p2_swing"):
 		state = ATTACK
 		if !working && workable:
 			working = true
@@ -107,7 +107,7 @@ func attack_state():
 	velocity = Vector2.ZERO
 	if workable:
 		animationState.travel("Work")
-		if Input.is_action_just_pressed("p1_swing") && working:
+		if Input.is_action_just_pressed("p2_swing") && working:
 			working = false
 			state = MOVE
 	else:
@@ -125,7 +125,7 @@ func fall_animation_finished():
 	state = MOVE
 
 
-func _on_Area2D_area_entered(area):
+func _on_p2_area_entered(area):
 	if area.name == "Transporter":
 		outfit = true
 	station = area.name
@@ -133,7 +133,7 @@ func _on_Area2D_area_entered(area):
 	workable = true
 
 
-func _on_Player1_area_exited(area):
+func _on_p2_area_exited(area):
 	if area.name == "Transporter":
 		outfit = false
 		
