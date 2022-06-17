@@ -7,7 +7,7 @@ onready var animationPlayer = $Hull/AnimationPlayer
 onready var animationPlayer2 = $Hull2/AnimationPlayer
 var prefix = ""
 
-func _physics_process(delta):
+func _process(delta):
 	animationPlayer.play(colors[i])
 	animationPlayer2.play(colors[i])
 	if workable:

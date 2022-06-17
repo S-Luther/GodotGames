@@ -28,7 +28,7 @@ func _ready():
 
 
 
-func _physics_process(delta):
+func _process(delta):
 
 	if workable:
 		if !working && Input.is_action_just_pressed(prefix+"_swing"):

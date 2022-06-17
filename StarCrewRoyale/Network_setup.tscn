@@ -7,18 +7,6 @@
 
 [sub_resource type="Animation" id=1]
 length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
 
 [sub_resource type="Animation" id=2]
 resource_name = "pulse"
@@ -31,10 +19,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1, 1.5, 2 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 1,
-"values": [ 0, 1, 2, 3, 4 ]
+"values": [ 0, 1, 2, 3 ]
 }
 
 [node name="Test_Setup" type="Control"]
@@ -51,18 +39,6 @@ margin_right = 2450.0
 margin_bottom = 1553.0
 script = ExtResource( 3 )
 
-[node name="2Player" type="Button" parent="Scene_configure"]
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = -284.0
-margin_top = 138.0
-margin_right = 299.0
-margin_bottom = 310.0
-custom_fonts/font = ExtResource( 1 )
-text = "Test 2 Player"
-
 [node name="1Player2" type="Button" parent="Scene_configure"]
 anchor_right = 9.146
 anchor_bottom = 1.0
@@ -77,11 +53,11 @@ text = "Test 1 Player"
 anchor_right = 9.146
 anchor_bottom = 1.0
 margin_left = 529.0
-margin_top = 880.0
+margin_top = 680.0
 margin_right = -13709.5
-margin_bottom = -29.0
+margin_bottom = -229.0
 custom_fonts/font = ExtResource( 1 )
-text = "Test 3 Or 4 Player"
+text = "Test 2 to 4 Players"
 
 [node name="Sprite" type="Sprite" parent="Scene_configure"]
 position = Vector2( 792, 625 )
@@ -90,6 +66,7 @@ scale = Vector2( 34.5145, 51.6752 )
 z_index = -1
 texture = ExtResource( 2 )
 hframes = 4
+frame = 1
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Scene_configure/Sprite"]
 autoplay = "pulse"
@@ -479,8 +456,6 @@ margin_bottom = 178.0
 custom_fonts/font = ExtResource( 1 )
 text = "+ Player 4"
 
-[connection signal="pressed" from="Scene_configure/2Player" to="." method="_on_2Player_pressed"]
-[connection signal="pressed" from="Scene_configure/2Player" to="Scene_configure" method="_on_2Player_pressed"]
 [connection signal="pressed" from="Scene_configure/1Player2" to="." method="_on_1Player2_pressed"]
 [connection signal="pressed" from="Scene_configure/1Player2" to="Scene_configure" method="_on_1Player2_pressed"]
 [connection signal="pressed" from="Scene_configure/3Player" to="." method="_on_3Player_pressed"]

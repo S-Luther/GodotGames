@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 
-export var ACCELERATION = 400
-export var MAX_SPEED = 600
+export var ACCELERATION = 100
+export var MAX_SPEED = 200
 export var ROLL_SPEED = 100
 export var FRICTION = 1
 
@@ -38,12 +38,15 @@ var working = false
 var prefix = ""
 
 func _ready():
-	randomize()
+	if !InputMap.has_action("p3_right"):
+		player3.queue_free()
+	if !InputMap.has_action("p4_right"):
+		player4.queue_free()
 
 
 
 
-func _physics_process(delta):
+func _process(delta):
 	if timer.is_stopped():
 		init = true
 	if workable:
@@ -123,8 +126,10 @@ func crash():
 	if init:
 		player1.crash()
 		player2.crash()
-		player3.crash()
-		player4.crash()
+		if InputMap.has_action("p3_right"):
+			player3.crash()
+		if InputMap.has_action("p4_right"):
+			player4.crash()
 		gunners.crash()
 		shield.crash()
 		nav.crash()
@@ -148,7 +153,7 @@ func _on_Helm_area_exited(area):
 
 func _on_RightBounds_area_entered(area):
 	if init:
-		velocity2 = Vector2(-689.617432, 0)
+		velocity2 = Vector2(-68, 0)
 		move()
 		crash()
 		print(area)
@@ -157,7 +162,7 @@ func _on_RightBounds_area_entered(area):
 func _on_LeftBounds_area_entered(area):
 	if init:
 		#print(area)
-		velocity2 = Vector2(689.617432, 0)
+		velocity2 = Vector2(60, 0)
 		move()
 		crash()
 		print(area)
@@ -165,7 +170,7 @@ func _on_LeftBounds_area_entered(area):
 
 func _on_TopBounds_area_entered(area):
 	if init:
-		velocity2 = Vector2(0, 689)
+		velocity2 = Vector2(0, 68)
 		move()
 		crash()
 		print(area)
@@ -173,7 +178,7 @@ func _on_TopBounds_area_entered(area):
 
 func _on_BottomBounds_area_entered(area):
 	if init:
-		velocity2 = Vector2(0, -689)
+		velocity2 = Vector2(0, -68)
 		move()
 		crash()
 		print(area)

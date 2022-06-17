@@ -31,7 +31,7 @@ func _ready():
 
 
 
-func _physics_process(delta):
+func _process(delta):
 
 	if sheildWorkable:
 		if !sheildWorking && Input.is_action_just_pressed(prefix+"_swing"):

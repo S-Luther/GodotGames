@@ -6,7 +6,7 @@ onready var animationPlayer = $Minimap/Minimap/AnimationPlayer
 onready var camera = $Camera2D
 var prefix = ""
 
-func _physics_process(delta):
+func _process(delta):
 	if navWorkable:
 		if navWorking:
 			if Input.is_action_just_pressed(prefix+"_swing"):

@@ -22,19 +22,20 @@ var prefix = ""
 onready var gun = $GunRight
 
 
+
 func _ready():
 	randomize()
 
 
 
-func _physics_process(delta):
+func _process(delta):
 
 	if workable:
-		if !working && Input.is_action_just_pressed("ui_swing"):
+		if !working && Input.is_action_just_pressed(prefix+"_swing"):
 			working = true
 			state = MOVE
 			
-		elif working && Input.is_action_just_pressed("ui_swing"):
+		elif working && Input.is_action_just_pressed(prefix+"_swing"):
 			state = ATTACK
 			working = false
 	match state:
@@ -46,8 +47,8 @@ func _physics_process(delta):
 	
 func move_state():
 	var input_vector = Vector2.ZERO
-	input_vector.x = Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left")
-	input_vector.y = Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
+	input_vector.x = Input.get_action_strength(prefix+"_right") - Input.get_action_strength(prefix+"_left")
+	input_vector.y = Input.get_action_strength(prefix+"_down") - Input.get_action_strength(prefix+"_up")
 
 	input_vector = input_vector.normalized()
 

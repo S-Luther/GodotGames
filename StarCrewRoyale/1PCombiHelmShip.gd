@@ -1,8 +1,9 @@
 extends KinematicBody2D
 
 
-export var ACCELERATION = 400
-export var MAX_SPEED = 900
+export var ACCELERATION = 300
+export var MAX_SPEED = 450
+
 export var ROLL_SPEED = 100
 export var FRICTION = 1
 
@@ -39,7 +40,7 @@ func _ready():
 
 
 
-func _physics_process(delta):
+func _process(delta):
 
 	if timer.is_stopped():
 		init = true

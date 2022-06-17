@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=2]
+[gd_scene load_steps=28 format=2]
 
 [ext_resource path="res://Ship.gd" type="Script" id=1]
 [ext_resource path="res://Ship.tscn" type="PackedScene" id=2]
@@ -8,7 +8,6 @@
 [ext_resource path="res://Transporter.tscn" type="PackedScene" id=6]
 [ext_resource path="res://assets/unnamed-6.png" type="Texture" id=7]
 [ext_resource path="res://Player1.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/waveform1.png" type="Texture" id=9]
 [ext_resource path="res://assets/CosmicLilac_Tiles.png" type="Texture" id=10]
 [ext_resource path="res://Helm.gd" type="Script" id=11]
 [ext_resource path="res://Gunners.tscn" type="PackedScene" id=12]
@@ -49,71 +48,6 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
 "values": [ Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ) ]
-}
-
-[sub_resource type="Animation" id=29]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=30]
-resource_name = "pulse"
-length = 0.38
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3 ]
-}
-
-[sub_resource type="Animation" id=31]
-length = 0.38
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3 ]
-}
-
-[sub_resource type="Animation" id=32]
-resource_name = "pulse"
-length = 0.38
-loop = true
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3 ),
-"transitions": PoolRealArray( 1, 1, 1, 1 ),
-"update": 1,
-"values": [ 0, 1, 2, 3 ]
 }
 
 [sub_resource type="TileSet" id=33]
@@ -549,7 +483,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( -391, 5.99994 ) ]
+"values": [ Vector2( -398, -6.00178 ) ]
 }
 
 [sub_resource type="Animation" id=36]
@@ -660,33 +594,8 @@ anims/RESET = SubResource( 24 )
 anims/pulse = SubResource( 25 )
 
 [node name="Player1" parent="." instance=ExtResource( 8 )]
-position = Vector2( 148, 142 )
+position = Vector2( 148, 163 )
 z_index = 1
-
-[node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 177, 178 )
-scale = Vector2( 0.5, 0.5 )
-z_index = 2
-texture = ExtResource( 9 )
-vframes = 4
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite"]
-autoplay = "pulse"
-anims/RESET = SubResource( 29 )
-anims/pulse = SubResource( 30 )
-
-[node name="Sprite2" type="Sprite" parent="."]
-position = Vector2( 123, 178 )
-scale = Vector2( 0.5, 0.5 )
-z_index = 2
-texture = ExtResource( 9 )
-flip_h = true
-vframes = 4
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2"]
-autoplay = "RESET"
-anims/RESET = SubResource( 31 )
-anims/pulse = SubResource( 32 )
 
 [node name="TileMap" type="TileMap" parent="."]
 modulate = Color( 1, 1, 1, 0.909804 )
@@ -772,10 +681,10 @@ polygon = PoolVector2Array( -224, 226, -280, 0, -225, -224, 2, -278, 225, -225, 
 z_index = 1
 
 [node name="Player4" parent="." instance=ExtResource( 18 )]
-position = Vector2( 147, 173 )
+position = Vector2( 148, 174 )
 
 [node name="Player3" parent="." instance=ExtResource( 19 )]
-position = Vector2( 147, 166 )
+position = Vector2( 149, 169 )
 
 [node name="Player2" parent="." instance=ExtResource( 16 )]
 position = Vector2( 149, 158 )

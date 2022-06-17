@@ -18,7 +18,7 @@ func _ready():
 	BottomB.position.y = BottomB.position.y - .5
 	
 	
-func _physics_process(delta):
+func _process(delta):
 	RightB.position.x = RightB.position.x - .55
 	LeftB.position.x = LeftB.position.x + .55
 	TopB.position.y = TopB.position.y + .55
