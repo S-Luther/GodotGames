@@ -398,7 +398,6 @@ graph_offset = Vector2( 0, 14.3037 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=14]
 
 [sub_resource type="CapsuleShape2D" id=22]
-radius = 6.0
 height = 0.0
 
 [sub_resource type="CapsuleShape2D" id=29]
@@ -440,6 +439,7 @@ parameters/Run/blend_position = Vector2( -0.501408, -0.0751445 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 11 )
+z_index = 2
 shape = SubResource( 22 )
 one_way_collision_margin = 0.0
 

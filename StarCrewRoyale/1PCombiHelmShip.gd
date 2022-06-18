@@ -1,8 +1,8 @@
 extends KinematicBody2D
 
 
-export var ACCELERATION = 300
-export var MAX_SPEED = 450
+export var ACCELERATION = 400
+export var MAX_SPEED = 850
 
 export var ROLL_SPEED = 100
 export var FRICTION = 1
@@ -83,6 +83,9 @@ func move_state(delta):
 				if rad2deg(input_vector.angle()) > rad2deg(engine.transform.get_rotation()):
 					engine.rotate(.07)
 					player1.rotate(-.07)
+					if player1.position.x > 55:
+						player1.position = player1.position + Vector2(-1,-0)
+
 					minimap.rotate(-.07)
 				elif rad2deg(engine.transform.get_rotation()) > 170 && rad2deg(input_vector.angle()) < -80:
 					engine.rotate(.07)
@@ -90,6 +93,8 @@ func move_state(delta):
 					minimap.rotate(-.07)
 				else:
 					engine.rotate(-.07)
+					if player1.position.x < 65:
+						player1.position = player1.position + Vector2(1,-0)
 					player1.rotate(.07)
 					minimap.rotate(.07)
 			
@@ -98,7 +103,7 @@ func move_state(delta):
 			velocity2 = velocity2.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 			#state = ROLL
 		else:
-			print(velocity2)
+
 			animationPlayer.play("StopStart")
 
 			##print("Vector2" , input_vector, ",")

@@ -157,7 +157,7 @@ start_node = "Pulse"
 [sub_resource type="AnimationNodeStateMachinePlayback" id=8]
 
 [sub_resource type="RectangleShape2D" id=10]
-extents = Vector2( 56, 10 )
+extents = Vector2( 66.5, 10 )
 
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 7.99982
@@ -196,7 +196,7 @@ polygon = PoolVector2Array( 252, -233, 308, -335, 349, -331, 402, -204, 418, 0, 
 disabled = true
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2( -115, 171 )
+position = Vector2( -125.5, 171 )
 shape = SubResource( 10 )
 one_way_collision = true
 
