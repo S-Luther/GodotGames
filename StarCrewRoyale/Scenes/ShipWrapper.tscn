@@ -1,23 +1,23 @@
 [gd_scene load_steps=28 format=2]
 
-[ext_resource path="res://Ship.gd" type="Script" id=1]
-[ext_resource path="res://Ship.tscn" type="PackedScene" id=2]
-[ext_resource path="res://assets/ship.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Helm.gd" type="Script" id=1]
+[ext_resource path="res://Scenes/Ship.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scenes/NavTerminal.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/pulse1.png" type="Texture" id=4]
-[ext_resource path="res://SheildTerminal.tscn" type="PackedScene" id=5]
-[ext_resource path="res://Transporter.tscn" type="PackedScene" id=6]
-[ext_resource path="res://assets/unnamed-6.png" type="Texture" id=7]
-[ext_resource path="res://Player1.tscn" type="PackedScene" id=8]
-[ext_resource path="res://assets/CosmicLilac_Tiles.png" type="Texture" id=10]
-[ext_resource path="res://Helm.gd" type="Script" id=11]
-[ext_resource path="res://Gunners.tscn" type="PackedScene" id=12]
-[ext_resource path="res://PropoTerminal.tscn" type="PackedScene" id=13]
-[ext_resource path="res://NavTerminal.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Repairs.tscn" type="PackedScene" id=15]
-[ext_resource path="res://Player2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Scenes/Players/Player1.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Scenes/Players/Player2.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Scripts/Ship.gd" type="Script" id=7]
+[ext_resource path="res://Scenes/Players/Player3.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Scenes/SheildTerminal.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/unnamed-6.png" type="Texture" id=10]
+[ext_resource path="res://Scenes/Transporter.tscn" type="PackedScene" id=11]
+[ext_resource path="res://assets/ship.png" type="Texture" id=12]
+[ext_resource path="res://assets/CosmicLilac_Tiles.png" type="Texture" id=13]
+[ext_resource path="res://Scenes/PropoTerminal.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Scenes/Gunners.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Scenes/Repairs.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/ship (2).png" type="Texture" id=17]
-[ext_resource path="res://Player4.tscn" type="PackedScene" id=18]
-[ext_resource path="res://Player3.tscn" type="PackedScene" id=19]
+[ext_resource path="res://Scenes/Players/Player4.tscn" type="PackedScene" id=18]
 
 [sub_resource type="Animation" id=24]
 loop = true
@@ -52,7 +52,7 @@ tracks/0/keys = {
 
 [sub_resource type="TileSet" id=33]
 1/name = "ship.png 1"
-1/texture = ExtResource( 3 )
+1/texture = ExtResource( 12 )
 1/tex_offset = Vector2( 0, 0 )
 1/modulate = Color( 1, 1, 1, 1 )
 1/region = Rect2( 276, 276, 24, 23 )
@@ -66,7 +66,7 @@ tracks/0/keys = {
 1/shapes = [  ]
 1/z_index = 0
 2/name = "ship.png 2"
-2/texture = ExtResource( 3 )
+2/texture = ExtResource( 12 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 250, 301, 75, 24 )
@@ -80,7 +80,7 @@ tracks/0/keys = {
 2/shapes = [  ]
 2/z_index = 0
 3/name = "ship.png 3"
-3/texture = ExtResource( 3 )
+3/texture = ExtResource( 12 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
 3/region = Rect2( 426, 175, 49, 25 )
@@ -94,7 +94,7 @@ tracks/0/keys = {
 3/shapes = [  ]
 3/z_index = 0
 4/name = "ship.png 4"
-4/texture = ExtResource( 3 )
+4/texture = ExtResource( 12 )
 4/tex_offset = Vector2( 0, 0 )
 4/modulate = Color( 1, 1, 1, 1 )
 4/region = Rect2( 374, 425, 26, 49 )
@@ -108,7 +108,7 @@ tracks/0/keys = {
 4/shapes = [  ]
 4/z_index = 0
 5/name = "ship.png 5"
-5/texture = ExtResource( 3 )
+5/texture = ExtResource( 12 )
 5/tex_offset = Vector2( 0, 0 )
 5/modulate = Color( 1, 1, 1, 1 )
 5/region = Rect2( 450, 424, 24, 51 )
@@ -122,7 +122,7 @@ tracks/0/keys = {
 5/shapes = [  ]
 5/z_index = 0
 6/name = "ship.png 6"
-6/texture = ExtResource( 3 )
+6/texture = ExtResource( 12 )
 6/tex_offset = Vector2( 0, 0 )
 6/modulate = Color( 1, 1, 1, 1 )
 6/region = Rect2( 400, 425, 14, 7 )
@@ -136,7 +136,7 @@ tracks/0/keys = {
 6/shapes = [  ]
 6/z_index = 0
 7/name = "ship.png 7"
-7/texture = ExtResource( 3 )
+7/texture = ExtResource( 12 )
 7/tex_offset = Vector2( 0, 0 )
 7/modulate = Color( 1, 1, 1, 1 )
 7/region = Rect2( 400, 432, 12, 4 )
@@ -150,7 +150,7 @@ tracks/0/keys = {
 7/shapes = [  ]
 7/z_index = 0
 8/name = "ship.png 8"
-8/texture = ExtResource( 3 )
+8/texture = ExtResource( 12 )
 8/tex_offset = Vector2( 0, 0 )
 8/modulate = Color( 1, 1, 1, 1 )
 8/region = Rect2( 400, 436, 10, 2 )
@@ -164,7 +164,7 @@ tracks/0/keys = {
 8/shapes = [  ]
 8/z_index = 0
 9/name = "ship.png 9"
-9/texture = ExtResource( 3 )
+9/texture = ExtResource( 12 )
 9/tex_offset = Vector2( 0, 0 )
 9/modulate = Color( 1, 1, 1, 1 )
 9/region = Rect2( 400, 438, 8, 1 )
@@ -178,7 +178,7 @@ tracks/0/keys = {
 9/shapes = [  ]
 9/z_index = 0
 10/name = "ship.png 10"
-10/texture = ExtResource( 3 )
+10/texture = ExtResource( 12 )
 10/tex_offset = Vector2( 0, 0 )
 10/modulate = Color( 1, 1, 1, 1 )
 10/region = Rect2( 400, 439, 6, 1 )
@@ -192,7 +192,7 @@ tracks/0/keys = {
 10/shapes = [  ]
 10/z_index = 0
 11/name = "ship.png 11"
-11/texture = ExtResource( 3 )
+11/texture = ExtResource( 12 )
 11/tex_offset = Vector2( 0, 0 )
 11/modulate = Color( 1, 1, 1, 1 )
 11/region = Rect2( 392, 423, 21, 2 )
@@ -206,7 +206,7 @@ tracks/0/keys = {
 11/shapes = [  ]
 11/z_index = 0
 12/name = "ship.png 12"
-12/texture = ExtResource( 3 )
+12/texture = ExtResource( 12 )
 12/tex_offset = Vector2( 0, 0 )
 12/modulate = Color( 1, 1, 1, 1 )
 12/region = Rect2( 393, 421, 19, 2 )
@@ -220,7 +220,7 @@ tracks/0/keys = {
 12/shapes = [  ]
 12/z_index = 0
 13/name = "ship.png 13"
-13/texture = ExtResource( 3 )
+13/texture = ExtResource( 12 )
 13/tex_offset = Vector2( 0, 0 )
 13/modulate = Color( 1, 1, 1, 1 )
 13/region = Rect2( 394, 419, 16, 2 )
@@ -234,7 +234,7 @@ tracks/0/keys = {
 13/shapes = [  ]
 13/z_index = 0
 14/name = "ship.png 14"
-14/texture = ExtResource( 3 )
+14/texture = ExtResource( 12 )
 14/tex_offset = Vector2( 0, 0 )
 14/modulate = Color( 1, 1, 1, 1 )
 14/region = Rect2( 399, 417, 7, 2 )
@@ -248,7 +248,7 @@ tracks/0/keys = {
 14/shapes = [  ]
 14/z_index = 0
 15/name = "ship.png 15"
-15/texture = ExtResource( 3 )
+15/texture = ExtResource( 12 )
 15/tex_offset = Vector2( 0, 0 )
 15/modulate = Color( 1, 1, 1, 1 )
 15/region = Rect2( 435, 422, 5, 2 )
@@ -262,7 +262,7 @@ tracks/0/keys = {
 15/shapes = [  ]
 15/z_index = 0
 16/name = "ship.png 16"
-16/texture = ExtResource( 3 )
+16/texture = ExtResource( 12 )
 16/tex_offset = Vector2( 0, 0 )
 16/modulate = Color( 1, 1, 1, 1 )
 16/region = Rect2( 434, 424, 22, 8 )
@@ -276,7 +276,7 @@ tracks/0/keys = {
 16/shapes = [  ]
 16/z_index = 0
 17/name = "ship.png 17"
-17/texture = ExtResource( 3 )
+17/texture = ExtResource( 12 )
 17/tex_offset = Vector2( 0, 0 )
 17/modulate = Color( 1, 1, 1, 1 )
 17/region = Rect2( 435, 432, 5, 2 )
@@ -290,7 +290,7 @@ tracks/0/keys = {
 17/shapes = [  ]
 17/z_index = 0
 18/name = "ship.png 18"
-18/texture = ExtResource( 3 )
+18/texture = ExtResource( 12 )
 18/tex_offset = Vector2( 0, 0 )
 18/modulate = Color( 1, 1, 1, 1 )
 18/region = Rect2( 440, 417, 9, 22 )
@@ -304,7 +304,7 @@ tracks/0/keys = {
 18/shapes = [  ]
 18/z_index = 0
 19/name = "ship.png 19"
-19/texture = ExtResource( 3 )
+19/texture = ExtResource( 12 )
 19/tex_offset = Vector2( 0, 0 )
 19/modulate = Color( 1, 1, 1, 1 )
 19/region = Rect2( 438, 417, 2, 5 )
@@ -318,7 +318,7 @@ tracks/0/keys = {
 19/shapes = [  ]
 19/z_index = 0
 20/name = "ship.png 20"
-20/texture = ExtResource( 3 )
+20/texture = ExtResource( 12 )
 20/tex_offset = Vector2( 0, 0 )
 20/modulate = Color( 1, 1, 1, 1 )
 20/region = Rect2( 438, 434, 1, 3 )
@@ -332,7 +332,7 @@ tracks/0/keys = {
 20/shapes = [  ]
 20/z_index = 0
 21/name = "ship.png 21"
-21/texture = ExtResource( 3 )
+21/texture = ExtResource( 12 )
 21/tex_offset = Vector2( 0, 0 )
 21/modulate = Color( 1, 1, 1, 1 )
 21/region = Rect2( 83, 425, 82, 52 )
@@ -346,7 +346,7 @@ tracks/0/keys = {
 21/shapes = [  ]
 21/z_index = 0
 22/name = "ship.png 22"
-22/texture = ExtResource( 3 )
+22/texture = ExtResource( 12 )
 22/tex_offset = Vector2( 0, 0 )
 22/modulate = Color( 1, 1, 1, 1 )
 22/region = Rect2( 165, 427, 6, 47 )
@@ -360,7 +360,7 @@ tracks/0/keys = {
 22/shapes = [  ]
 22/z_index = 0
 23/name = "ship.png 23"
-23/texture = ExtResource( 3 )
+23/texture = ExtResource( 12 )
 23/tex_offset = Vector2( 0, 0 )
 23/modulate = Color( 1, 1, 1, 1 )
 23/region = Rect2( 77, 427, 6, 46 )
@@ -374,7 +374,7 @@ tracks/0/keys = {
 23/shapes = [  ]
 23/z_index = 0
 24/name = "ship.png 24"
-24/texture = ExtResource( 3 )
+24/texture = ExtResource( 12 )
 24/tex_offset = Vector2( 0, 0 )
 24/modulate = Color( 1, 1, 1, 1 )
 24/region = Rect2( 104, 175, 68, 25 )
@@ -388,7 +388,7 @@ tracks/0/keys = {
 24/shapes = [  ]
 24/z_index = 0
 25/name = "ship.png 25"
-25/texture = ExtResource( 3 )
+25/texture = ExtResource( 12 )
 25/tex_offset = Vector2( 0, 0 )
 25/modulate = Color( 1, 1, 1, 1 )
 25/region = Rect2( 275, 175, 49, 25 )
@@ -402,7 +402,7 @@ tracks/0/keys = {
 25/shapes = [  ]
 25/z_index = 0
 26/name = "ship.png 26"
-26/texture = ExtResource( 3 )
+26/texture = ExtResource( 12 )
 26/tex_offset = Vector2( 0, 0 )
 26/modulate = Color( 1, 1, 1, 1 )
 26/region = Rect2( 303, 170, 4, 7 )
@@ -418,7 +418,7 @@ tracks/0/keys = {
 
 [sub_resource type="TileSet" id=34]
 0/name = "CosmicLilac_Tiles.png 0"
-0/texture = ExtResource( 10 )
+0/texture = ExtResource( 13 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 160, 0, 32, 32 )
@@ -575,7 +575,7 @@ radius = 19.0
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 collision/safe_margin = 0.001
-script = ExtResource( 1 )
+script = ExtResource( 7 )
 
 [node name="Base" type="Sprite" parent="."]
 position = Vector2( -2, 0 )
@@ -586,7 +586,7 @@ texture = ExtResource( 17 )
 modulate = Color( 1, 0.999162, 0.999162, 1 )
 position = Vector2( -124, 3 )
 scale = Vector2( 13, 13 )
-texture = ExtResource( 7 )
+texture = ExtResource( 10 )
 offset = Vector2( 9.61539, -0.307692 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Lights"]
@@ -594,7 +594,7 @@ autoplay = "RESET"
 anims/RESET = SubResource( 24 )
 anims/pulse = SubResource( 25 )
 
-[node name="Player1" parent="." instance=ExtResource( 8 )]
+[node name="Player1" parent="." instance=ExtResource( 5 )]
 position = Vector2( 148, 163 )
 z_index = 1
 
@@ -613,18 +613,18 @@ cell_size = Vector2( 1, 1 )
 format = 1
 tile_data = PoolIntArray( 10944645, 0, 0 )
 
-[node name="Gunners" parent="." instance=ExtResource( 12 )]
+[node name="Gunners" parent="." instance=ExtResource( 15 )]
 
-[node name="SheildTerminal" parent="." instance=ExtResource( 5 )]
+[node name="SheildTerminal" parent="." instance=ExtResource( 9 )]
 position = Vector2( -2, 1 )
 
-[node name="Transporter" parent="." instance=ExtResource( 6 )]
+[node name="Transporter" parent="." instance=ExtResource( 11 )]
 
-[node name="PropoTerminal" parent="." instance=ExtResource( 13 )]
+[node name="PropoTerminal" parent="." instance=ExtResource( 14 )]
 
-[node name="NavTerminal" parent="." instance=ExtResource( 14 )]
+[node name="NavTerminal" parent="." instance=ExtResource( 3 )]
 
-[node name="Repairs" parent="." instance=ExtResource( 15 )]
+[node name="Repairs" parent="." instance=ExtResource( 16 )]
 position = Vector2( -3, -1 )
 
 [node name="Engine" type="Area2D" parent="."]
@@ -648,7 +648,7 @@ anims/RESET = SubResource( 36 )
 anims/StopStart = SubResource( 37 )
 
 [node name="Helm" type="Area2D" parent="."]
-script = ExtResource( 11 )
+script = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Helm"]
 position = Vector2( 12, 36 )
@@ -674,10 +674,9 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="."]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="KinematicBody2D"]
-polygon = PoolVector2Array( -224, 226, -280, 0, -225, -224, 2, -278, 225, -225, 278, 3, 225, 225, 0, 275, -219, 227, -229, 232, 2, 280, 229, 230, 283, 0, 228, -229, 1, -283, -230, -231, -287, 0, -231, 231 )
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -224, 226, -280, 0, -225, -224, 2, -278, 225, -225, 265, -5, 225, 225, 0, 275, -219, 227, -236, 246, -3, 293, 243, 238, 283, 0, 237, -238, 0, -292, -239, -241, -300, 1, -239, 239 )
+one_way_collision = true
 
 [node name="Ship" parent="." instance=ExtResource( 2 )]
 z_index = 1
@@ -686,11 +685,11 @@ z_index = 1
 position = Vector2( 148, 174 )
 z_index = 1
 
-[node name="Player3" parent="." instance=ExtResource( 19 )]
+[node name="Player3" parent="." instance=ExtResource( 8 )]
 position = Vector2( 149, 169 )
 z_index = 1
 
-[node name="Player2" parent="." instance=ExtResource( 16 )]
+[node name="Player2" parent="." instance=ExtResource( 6 )]
 position = Vector2( 148, 166 )
 z_index = 1
 

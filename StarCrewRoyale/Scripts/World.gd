@@ -10,6 +10,8 @@ onready var TopB = $TopBounds
 onready var BottomB = $BottomBounds
 onready var timer = $Timer
 
+const Planet = preload('res://Scenes/Planet.tscn')
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	RightB.position.x = RightB.position.x - .5
@@ -17,6 +19,16 @@ func _ready():
 	TopB.position.y = TopB.position.y + .5
 	BottomB.position.y = BottomB.position.y - .5
 	
+	for i in 400:
+		var planet = Planet.instance()
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+
+		planet.position = Vector2(rng.randi_range(3000, 56000), rng.randi_range(3000, 56000))
+		planet.z_index = 0
+		var temp = rng.randi_range(5, 25) * .1
+		planet.scale = Vector2(temp,temp)
+		self.add_child(planet)
 	
 func _process(delta):
 	RightB.position.x = RightB.position.x - .55

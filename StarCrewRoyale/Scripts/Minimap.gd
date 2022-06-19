@@ -12,11 +12,11 @@ func _process(delta):
 			if Input.is_action_just_pressed(prefix+"_swing"):
 				navWorking = false
 				animationPlayer.play("off")
-			if Input.is_action_just_pressed(prefix+"_down") && camera.zoom.x > .4 && camera.zoom.y > .4:
+			if Input.is_action_just_pressed(prefix+"_down") && camera.zoom.x > .04 && camera.zoom.y > .4:
 				print(camera.zoom.x)
 				print(camera.zoom.y)
 				camera.zoom = Vector2(camera.zoom.x - .1, camera.zoom.y - .1)
-			if Input.is_action_just_pressed(prefix+"_up")  && camera.zoom.x < 1.5 && camera.zoom.y < 1.5:
+			if Input.is_action_just_pressed(prefix+"_up")  && camera.zoom.x < 10.5 && camera.zoom.y < 1.5:
 				print(camera.zoom.x)
 				print(camera.zoom.y)
 				camera.zoom = Vector2(camera.zoom.x + .1, camera.zoom.y + .1)

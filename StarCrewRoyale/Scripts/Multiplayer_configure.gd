@@ -7,9 +7,9 @@ extends Control
 onready var OnePB = $"1Player2"
 onready var ThreePB = $"3Player"
 onready var Background = $Sprite
-var TwoPlayerWorld = preload("res://2pWorld.tscn").instance()
-var OnePlayerWorld = preload("res://1pWorld.tscn").instance()
-var ThreePlayerWorld = preload("res://World.tscn").instance()
+var TwoPlayerWorld = preload("res://Scenes/2pWorld.tscn").instance()
+var OnePlayerWorld = preload("res://Scenes/1pWorld.tscn").instance()
+var ThreePlayerWorld = preload("res://Scenes/World.tscn").instance()
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.

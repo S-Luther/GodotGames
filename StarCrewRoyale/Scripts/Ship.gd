@@ -37,12 +37,23 @@ var workable = false
 var working = false
 var prefix = ""
 
+static func lerp_angle(a, b, t):
+	if abs(a-b) >= PI:
+		if a > b:
+			a = normalize_angle(a) - 2.0 * PI
+		else:
+			b = normalize_angle(b) - 2.0 * PI
+	return lerp(a, b, t)
+
+
+static func normalize_angle(x):
+	return fposmod(x + PI, 2.0*PI) - PI
+
 func _ready():
 	if !InputMap.has_action("p3_right"):
 		player3.queue_free()
 	if !InputMap.has_action("p4_right"):
 		player4.queue_free()
-
 
 
 
@@ -67,7 +78,8 @@ func _process(delta):
 			move_state(delta)
 		ATTACK:
 			attack_state(delta)
-		
+
+
 	
 func move_state(delta):
 	if working:
@@ -82,17 +94,30 @@ func move_state(delta):
 			#print(velocity2)
 			##print(rad2deg(input_vector.angle()))
 			animationPlayer.play("Pulse")
-			if rad2deg(engine.transform.get_rotation()) >= rad2deg(input_vector.angle()) - 4 && rad2deg(engine.transform.get_rotation()) <= rad2deg(input_vector.angle())+ 4:
-				pass
+			
+			var target_angle = input_vector.angle()
+			
+			var smooth_angle
+			var lerp_speed = 5.0
+			smooth_angle = lerp_angle(engine.transform.get_rotation(), target_angle, delta*lerp_speed)
+
+			
+			engine.rotation = smooth_angle
+			
+			#if rad2deg(engine.transform.get_rotation()) >= rad2deg(input_vector.angle()) - 4 && rad2deg(engine.transform.get_rotation()) <= rad2deg(input_vector.angle())+ 4:
+				#pass
 				##print(rad2deg(input_vector.angle()))
-			else:
+			#else:
+				
+				#lerp_angle(engine.rotation_degrees.y, atan2(1, -1), rad2deg(input_vector.angle()))
 				##print(rad2deg(engine.transform.get_rotation()))
-				if rad2deg(input_vector.angle()) > rad2deg(engine.transform.get_rotation()):
-					engine.rotate(.07)
-				elif rad2deg(engine.transform.get_rotation()) > 170 && rad2deg(input_vector.angle()) < -80:
-					engine.rotate(.07)
-				else:
-					engine.rotate(-.07)
+				#if rad2deg(input_vector.angle()) > rad2deg(engine.transform.get_rotation()):
+				#	engine.rotate(.07)
+
+				#elif rad2deg(engine.transform.get_rotation()) > 170 && rad2deg(input_vector.angle()) < -80:
+				#	engine.rotate(.07)
+				#else:
+				#	engine.rotate(-.07)
 			
 			roll_vector = input_vector
 			##print("Vector2" , input_vector, ",")

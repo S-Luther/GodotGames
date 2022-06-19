@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://assets/Base_font.tres" type="DynamicFont" id=1]
-[ext_resource path="res://assets/Strip And GIF/space6_4-frames.png" type="Texture" id=2]
-[ext_resource path="res://Multiplayer_configure.gd" type="Script" id=3]
-[ext_resource path="res://Test_Setup.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/Test_Setup.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Multiplayer_configure.gd" type="Script" id=3]
+[ext_resource path="res://assets/Strip And GIF/space6_4-frames.png" type="Texture" id=4]
 
 [sub_resource type="Animation" id=1]
 length = 0.001
@@ -30,7 +30,7 @@ anchor_right = 0.511
 anchor_bottom = 0.523
 margin_right = -0.640137
 margin_bottom = -0.680054
-script = ExtResource( 4 )
+script = ExtResource( 2 )
 
 [node name="Scene_configure" type="Control" parent="."]
 margin_left = 830.0
@@ -64,7 +64,7 @@ position = Vector2( 792, 625 )
 rotation = 1.5708
 scale = Vector2( 34.5145, 51.6752 )
 z_index = -1
-texture = ExtResource( 2 )
+texture = ExtResource( 4 )
 hframes = 4
 frame = 1
 

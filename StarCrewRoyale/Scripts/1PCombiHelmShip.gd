@@ -28,6 +28,7 @@ onready var nav = $Engine/NavTerminal/
 onready var minimap = $Engine/NavTerminal/Minimap/
 onready var player1 = $Engine/Player1
 onready var engine = $Engine
+onready var hitbox = $Hitbox
 onready var timer = $Timer
 onready var animationPlayer = $Engine/Visible/AnimationPlayer
 
@@ -60,9 +61,24 @@ func _process(delta):
 		ATTACK:
 			attack_state(delta)
 		
-	
+
+static func lerp_angle(a, b, t):
+	if abs(a-b) >= PI:
+		if a > b:
+			a = normalize_angle(a) - 2.0 * PI
+		else:
+			b = normalize_angle(b) - 2.0 * PI
+	return lerp(a, b, t)
+
+
+static func normalize_angle(x):
+	return fposmod(x + PI, 2.0*PI) - PI
+
 func move_state(delta):
 	if working:
+		if player1.position.x < 40:
+			working = false
+			workable = false
 		var input_vector = Vector2.ZERO
 		input_vector.x = Input.get_action_strength("p1_left") - Input.get_action_strength("p1_right")
 		input_vector.y = Input.get_action_strength("p1_up") - Input.get_action_strength("p1_down")
@@ -74,29 +90,21 @@ func move_state(delta):
 			#print(velocity2)
 			##print(rad2deg(input_vector.angle()))
 			animationPlayer.play("Pulse")
+			var target_angle = input_vector.angle()
+			
+			var smooth_angle
+			var lerp_speed = 5.0
+			smooth_angle = lerp_angle(engine.transform.get_rotation(), target_angle, delta*lerp_speed)
 
-			if rad2deg(engine.transform.get_rotation()) >= rad2deg(input_vector.angle()) - 4 && rad2deg(engine.transform.get_rotation()) <= rad2deg(input_vector.angle())+ 4:
-				pass
-				##print(rad2deg(input_vector.angle()))
-			else:
-				##print(rad2deg(engine.transform.get_rotation()))
-				if rad2deg(input_vector.angle()) > rad2deg(engine.transform.get_rotation()):
-					engine.rotate(.07)
-					player1.rotate(-.07)
-					if player1.position.x > 55:
-						player1.position = player1.position + Vector2(-1,-0)
-
-					minimap.rotate(-.07)
-				elif rad2deg(engine.transform.get_rotation()) > 170 && rad2deg(input_vector.angle()) < -80:
-					engine.rotate(.07)
-					player1.rotate(-.07)
-					minimap.rotate(-.07)
-				else:
-					engine.rotate(-.07)
-					if player1.position.x < 65:
-						player1.position = player1.position + Vector2(1,-0)
-					player1.rotate(.07)
-					minimap.rotate(.07)
+			engine.rotation = smooth_angle
+			
+			player1.rotation = -smooth_angle
+			minimap.rotation = -smooth_angle + -PI/2
+			
+			if player1.position.x > 55:
+				player1.position = player1.position + Vector2(-1,-0)
+			if player1.position.x < 65:
+				player1.position = player1.position + Vector2(1,-0)
 			
 			roll_vector = input_vector
 			##print("Vector2" , input_vector, ",")
