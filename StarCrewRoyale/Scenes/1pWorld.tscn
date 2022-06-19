@@ -2169,8 +2169,3 @@ anims/flikr = SubResource( 88 )
 wait_time = 10.0
 one_shot = true
 autostart = true
-
-[connection signal="area_entered" from="LeftBounds" to="Node2D" method="_on_LeftBounds_area_entered"]
-[connection signal="area_entered" from="RightBounds" to="Node2D" method="_on_RightBounds_area_entered"]
-[connection signal="area_entered" from="TopBounds" to="Node2D" method="_on_TopBounds_area_entered"]
-[connection signal="area_entered" from="BottomBounds" to="Node2D" method="_on_BottomBounds_area_entered"]

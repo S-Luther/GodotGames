@@ -30,7 +30,7 @@ func _ready():
 		var temp = rng.randi_range(5, 25) * .1
 		planet.scale = Vector2(temp,temp)
 		self.add_child(planet)
-	for i in 400:
+	for i in 100:
 		var asteroid = Asteroid1.instance()
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
