@@ -71,13 +71,13 @@ func move_state(delta):
 
 		
 		if input_vector != Vector2.ZERO:
-			#print(velocity2)
-			##print(rad2deg(input_vector.angle()))
+			##print(velocity2)
+			###print(rad2deg(input_vector.angle()))
 			animationPlayer.play("Pulse")
 			animationPlayer2.play("Pulse")
 			if rad2deg(engine.transform.get_rotation()) >= rad2deg(input_vector.angle()) - 4 && rad2deg(engine.transform.get_rotation()) <= rad2deg(input_vector.angle())+ 4:
 				pass
-				##print(rad2deg(input_vector.angle()))
+				###print(rad2deg(input_vector.angle()))
 			else:
 				
 				if rad2deg(input_vector.angle()) > rad2deg(engine.transform.get_rotation()):
@@ -97,13 +97,13 @@ func move_state(delta):
 					nav.rotate(.07)
 			
 			roll_vector = input_vector
-			##print("Vector2" , input_vector, ",")
+			###print("Vector2" , input_vector, ",")
 			velocity2 = velocity2.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 			#state = ROLL
 		else:
 			animationPlayer.play("StopStart")
 			animationPlayer2.play("StopStart")
-			##print("Vector2" , input_vector, ",")
+			###print("Vector2" , input_vector, ",")
 			
 
 			velocity2 = velocity2.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -122,7 +122,7 @@ func attack_state(delta):
 	move()
 
 func move():
-	#print(velocity2)
+	##print(velocity2)
 	velocity2 = move_and_slide(velocity2)
 
 func crash():
@@ -131,17 +131,17 @@ func crash():
 	workable = false
 	working = false
 	state = ATTACK
-	print("crash")
+	#print("crash")
 
 func _on_Helm_area_entered(area):
 	workable = true
-	print("helm on")
+	#print("helm on")
 	if !working:
 		prefix = area.name
 
 
 func _on_Helm_area_exited(area):
-	print("turn off heml")
+	#print("turn off heml")
 	workable = false
 
 
@@ -150,16 +150,16 @@ func _on_RightBounds_area_entered(area):
 		velocity2 = Vector2(-689.617432, 0)
 		move()
 		crash()
-		print(area)
+		#print(area)
 
 
 func _on_LeftBounds_area_entered(area):
 	if init:
-		#print(area)
+		##print(area)
 		velocity2 = Vector2(689.617432, 0)
 		move()
 		crash()
-		print(area)
+		#print(area)
 
 
 func _on_TopBounds_area_entered(area):
@@ -167,7 +167,7 @@ func _on_TopBounds_area_entered(area):
 		velocity2 = Vector2(0, 689)
 		move()
 		crash()
-		print(area)
+		#print(area)
 
 
 func _on_BottomBounds_area_entered(area):
@@ -175,5 +175,5 @@ func _on_BottomBounds_area_entered(area):
 		velocity2 = Vector2(0, -689)
 		move()
 		crash()
-		print(area)
+		#print(area)
 

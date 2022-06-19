@@ -55,7 +55,7 @@ func move_state():
 	elif rad2deg(gun.transform.get_rotation()) >= rad2deg(input_vector.angle()) - 4 && rad2deg(gun.transform.get_rotation()) <= rad2deg(input_vector.angle())+ 4:
 		pass
 	else:
-		##print(rad2deg(engine.transform.get_rotation()))
+		###print(rad2deg(engine.transform.get_rotation()))
 		if rad2deg(input_vector.angle()) > rad2deg(gun.transform.get_rotation()):
 			gun.rotate(.07)
 		elif rad2deg(gun.transform.get_rotation()) > 170 && rad2deg(input_vector.angle()) < -80:

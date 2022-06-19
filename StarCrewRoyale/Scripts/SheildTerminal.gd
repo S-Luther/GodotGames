@@ -56,7 +56,7 @@ func move_state():
 	input_vector = input_vector.normalized()
 
 
-	##print(rad2deg(input_vector.angle()))
+	###print(rad2deg(input_vector.angle()))
 	if input_vector == Vector2.ZERO:
 		pass
 	elif input_vector.x != 0 && input_vector.x != -1 && input_vector.x != 1:
@@ -65,10 +65,10 @@ func move_state():
 	elif rad2deg(sheild.transform.get_rotation()) >= rad2deg(input_vector.angle()) - 2 && rad2deg(sheild.transform.get_rotation()) <= rad2deg(input_vector.angle())+ 2:
 
 		animationPlayer.play("Pulse")
-		##print(rad2deg(input_vector.angle()))
+		###print(rad2deg(input_vector.angle()))
 	else:
 		animationPlayer.play("Stop")
-		##print(rad2deg(engine.transform.get_rotation()))
+		###print(rad2deg(engine.transform.get_rotation()))
 		if rad2deg(input_vector.angle()) > rad2deg(sheild.transform.get_rotation()):
 			sheild.rotate(.07)
 		elif rad2deg(sheild.transform.get_rotation()) > 170 && rad2deg(input_vector.angle()) < -80:
@@ -87,11 +87,11 @@ func crash():
 
 func _on_SheildTerminal_area_entered(area):
 	sheildWorkable = true
-	print("shield on")
+	#print("shield on")
 	if !sheildWorking:
 		prefix = area.name
 
 
 func _on_SheildTerminal_area_exited(area):
-	print("turn off shield")
+	#print("turn off shield")
 	sheildWorkable = false

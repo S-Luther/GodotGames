@@ -72,7 +72,7 @@ func move_state(delta):
 	
 	if input_vector != Vector2.ZERO:
 		roll_vector = input_vector
-		##print("Vector2" , input_vector, ",")
+		###print("Vector2" , input_vector, ",")
 
 		animationTree.set("parameters/Idle/blend_position", input_vector)
 		animationTree.set("parameters/Run/blend_position", input_vector)
@@ -82,7 +82,7 @@ func move_state(delta):
 		velocity = velocity.move_toward(input_vector * MAX_SPEED, ACCELERATION * delta)
 		#state = ROLL
 	else:
-		##print("Vector2" , input_vector, ",")
+		###print("Vector2" , input_vector, ",")
 		
 		animationState.travel("Idle")
 		velocity = velocity.move_toward(Vector2.ZERO, FRICTION * delta)
@@ -103,7 +103,7 @@ func move():
 	velocity = move_and_slide(velocity)
 	
 func attack_state():
-	##print("swing")
+	###print("swing")
 	velocity = Vector2.ZERO
 	if workable:
 		animationState.travel("Work")
@@ -129,7 +129,7 @@ func _on_p2_area_entered(area):
 	if area.name == "Transporter":
 		outfit = true
 	station = area.name
-	#print(area.name)
+	##print(area.name)
 	workable = true
 
 

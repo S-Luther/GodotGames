@@ -13,12 +13,12 @@ func _process(delta):
 				navWorking = false
 				animationPlayer.play("off")
 			if Input.is_action_just_pressed(prefix+"_down") && camera.zoom.x > .04 && camera.zoom.y > .4:
-				print(camera.zoom.x)
-				print(camera.zoom.y)
+				#print(camera.zoom.x)
+				#print(camera.zoom.y)
 				camera.zoom = Vector2(camera.zoom.x - .1, camera.zoom.y - .1)
 			if Input.is_action_just_pressed(prefix+"_up")  && camera.zoom.x < 10.5 && camera.zoom.y < 1.5:
-				print(camera.zoom.x)
-				print(camera.zoom.y)
+				#print(camera.zoom.x)
+				#print(camera.zoom.y)
 				camera.zoom = Vector2(camera.zoom.x + .1, camera.zoom.y + .1)
 		elif Input.is_action_just_pressed(prefix+"_swing"):
 			navWorking = true
@@ -33,11 +33,11 @@ func crash():
 
 func _on_NavTerm_area_entered(area):
 	navWorkable = true
-	print("nav on")
+	#print("nav on")
 	if !navWorking:
 		prefix = area.name
 
 
 func _on_NavTerm_area_exited(area):
-	print("turn off nav")
+	#print("turn off nav")
 	navWorkable = false

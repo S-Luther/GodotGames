@@ -41,7 +41,7 @@ func _unhandled_key_input(event):
 		Key_Display.text = String(event.scancode)
 func _unhandled_input(event):
 	if event.is_pressed() && setup:
-		print(event.get_instance_id())
+		#print(event.get_instance_id())
 		current_ev = event
 		Key_Display.text = String(event.get_instance_id())
 

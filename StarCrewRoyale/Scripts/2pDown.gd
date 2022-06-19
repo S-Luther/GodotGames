@@ -28,7 +28,7 @@ func _ready():
 	randomize()
 
 func _physics_process(delta):
-	print(rota)
+	#print(rota)
 	if workable:
 		if !working && Input.is_action_just_pressed(prefix+"_swing"):
 			working = true
@@ -55,7 +55,7 @@ func move_state(rot):
 	var angle = rad2deg(input_vector.angle())
 	if rot != 0:
 		angle = angle + rot - 180
-		print(angle)
+		#print(angle)
 		if angle > 360:
 			angle = angle - 360
 	if input_vector == Vector2.ZERO:
@@ -63,7 +63,7 @@ func move_state(rot):
 	elif rad2deg(gun.transform.get_rotation()) >= angle - 4 && rad2deg(gun.transform.get_rotation()) <= angle + 4:
 		pass
 	else:
-		##print(rad2deg(engine.transform.get_rotation()))
+		###print(rad2deg(engine.transform.get_rotation()))
 		if angle > rad2deg(gun.transform.get_rotation()):
 			gun.rotate(.02)
 		else:

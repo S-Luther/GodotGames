@@ -145,11 +145,11 @@ func _FindTarget():
 	var targ = get_node(target)
 
 	if ! targ:
-		printerr("ERROR SmoothingNode : Target " + target + " not found")
+		#printerr("ERROR SmoothingNode : Target " + target + " not found")
 		return
 
 	if not targ is Spatial:
-		printerr("ERROR SmoothingNode : Target " + target + " is not spatial")
+		#printerr("ERROR SmoothingNode : Target " + target + " is not spatial")
 		target = ""
 		return
 
@@ -161,7 +161,7 @@ func _FindTarget():
 	# if so, disallow
 	if _IsTargetParent(self):
 		var msg = _m_Target.get_name() + " assigned to " + self.get_name() + "]"
-		printerr("ERROR SmoothingNode : Target should not be a parent or grandparent [", msg)
+		#printerr("ERROR SmoothingNode : Target should not be a parent or grandparent [", msg)
 
 		# error message
 		#OS.alert("Target cannot be a parent or grandparent in the scene tree.", "SmoothingNode")

@@ -176,11 +176,11 @@ func _FindTarget():
 	var targ = get_node(target)
 
 	if ! targ:
-		printerr("ERROR SmoothingNode2D : Target " + target + " not found")
+		#printerr("ERROR SmoothingNode2D : Target " + target + " not found")
 		return
 
 	if not targ is Node2D:
-		printerr("ERROR SmoothingNode2D : Target " + target + " is not Node2D")
+		#printerr("ERROR SmoothingNode2D : Target " + target + " is not Node2D")
 		target = ""
 		return
 
@@ -197,7 +197,7 @@ func _FindTarget():
 
 #	if _IsTargetParent(self):
 #		var msg = _m_Target.get_name() + " assigned to " + self.get_name() + "]"
-#		printerr("ERROR SmoothingNode2D : Target should not be a parent or grandparent [", msg)
+#		#printerr("ERROR SmoothingNode2D : Target should not be a parent or grandparent [", msg)
 #
 #		# error message
 #		_m_Target = null
