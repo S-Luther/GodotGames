@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://Scripts/Helm.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Ship.tscn" type="PackedScene" id=2]
@@ -18,6 +18,7 @@
 [ext_resource path="res://Scenes/Repairs.tscn" type="PackedScene" id=16]
 [ext_resource path="res://assets/ship (2).png" type="Texture" id=17]
 [ext_resource path="res://Scenes/Players/Player4.tscn" type="PackedScene" id=18]
+[ext_resource path="res://assets/HitboxIndicator.png" type="Texture" id=19]
 
 [sub_resource type="Animation" id=24]
 loop = true
@@ -573,6 +574,49 @@ height = 52.0
 [sub_resource type="CircleShape2D" id=39]
 radius = 19.0
 
+[sub_resource type="Animation" id=40]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.501961 ) ]
+}
+
+[sub_resource type="Animation" id=41]
+resource_name = "pulse"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0.501961 ), Color( 1, 1, 1, 0 ) ]
+}
+
 [node name="KinematicBody2D" type="KinematicBody2D"]
 collision/safe_margin = 0.001
 script = ExtResource( 7 )
@@ -674,10 +718,6 @@ wait_time = 3.0
 one_shot = true
 autostart = true
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PoolVector2Array( -224, 226, -280, 0, -225, -224, 2, -278, 225, -225, 265, -5, 225, 225, 0, 275, -219, 227, -236, 246, -3, 293, 243, 238, 283, 0, 237, -238, 0, -292, -239, -241, -300, 1, -239, 239 )
-one_way_collision = true
-
 [node name="Ship" parent="." instance=ExtResource( 2 )]
 z_index = 1
 
@@ -693,5 +733,32 @@ z_index = 1
 position = Vector2( 148, 166 )
 z_index = 1
 
+[node name="HitBoxIndicator" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0.501961 )
+position = Vector2( 0, -7.50001 )
+scale = Vector2( 2.09375, 2.11562 )
+texture = ExtResource( 19 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="HitBoxIndicator"]
+autoplay = "pulse"
+playback_speed = 0.5
+anims/RESET = SubResource( 40 )
+anims/pulse = SubResource( 41 )
+
+[node name="Hitbox" type="CollisionPolygon2D" parent="."]
+position = Vector2( -3.55185, -0.500057 )
+scale = Vector2( 1.89637, 1.87322 )
+build_mode = 1
+polygon = PoolVector2Array( 0, -173, 45, -167, 85, -150, 123, -121, 149, -87, 168, -44, 172, -1, 167, 46, 149, 88, 124, 122, 87, 149, 45, 167, 1, 173, -47, 166, -88, 150, -125, 121, -150, 87, -168, 44, -173, -1, -167, -45, -150, -88, -123, -122, -89, -148, -48, -166, -1, -173, -1, -176, -49, -168, -90, -149, -124, -123, -152, -90, -171, -45, -176, -2, -171, 45, -152, 89, -128, 122, -90, 153, -49, 169, 1, 176, 46, 170, 88, 152, 126, 124, 151, 89, 170, 45, 175, -2, 171, -45, 151, -89, 124, -124, 87, -153, 45, -170, 0, -176 )
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Hitbox" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2( -3.55185, -0.500057 )
+scale = Vector2( 1.89637, 1.87322 )
+build_mode = 1
+polygon = PoolVector2Array( 0, -173, 45, -167, 85, -150, 123, -121, 149, -87, 168, -44, 172, -1, 167, 46, 149, 88, 124, 122, 87, 149, 45, 167, 1, 173, -47, 166, -88, 150, -125, 121, -150, 87, -168, 44, -173, -1, -167, -45, -150, -88, -123, -122, -89, -148, -48, -166, -1, -173, -1, -176, -49, -168, -90, -149, -124, -123, -152, -90, -171, -45, -176, -2, -171, 45, -152, 89, -128, 122, -90, 153, -49, 169, 1, 176, 46, 170, 88, 152, 126, 124, 151, 89, 170, 45, 175, -2, 171, -45, 151, -89, 124, -124, 87, -153, 45, -170, 0, -176 )
+
 [connection signal="area_entered" from="Helm" to="." method="_on_Helm_area_entered"]
 [connection signal="area_exited" from="Helm" to="." method="_on_Helm_area_exited"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]

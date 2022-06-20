@@ -82,7 +82,7 @@ func _process(delta):
 
 	
 func move_state(delta):
-	if working:
+	if working && workable:
 		var input_vector = Vector2.ZERO
 		input_vector.x = Input.get_action_strength(prefix+"_left") - Input.get_action_strength(prefix+"_right")
 		input_vector.y = Input.get_action_strength(prefix+"_up") - Input.get_action_strength(prefix+"_down")
@@ -176,37 +176,29 @@ func _on_Helm_area_exited(area):
 	workable = false
 
 
-func _on_RightBounds_area_entered(area):
-	if init:
-		velocity2 = Vector2(-68, 0)
-		move()
-		crash()
-		#print(area)
-
-
-func _on_LeftBounds_area_entered(area):
-	if init:
-		##print(area)
-		velocity2 = Vector2(60, 0)
-		move()
-		crash()
-		#print(area)
-
-
-func _on_TopBounds_area_entered(area):
-	if init:
-		velocity2 = Vector2(0, 68)
-		move()
-		crash()
-		#print(area)
-
-
-func _on_BottomBounds_area_entered(area):
-	if init:
-		velocity2 = Vector2(0, -68)
-		move()
-		crash()
-		#print(area)
-
-
+func _on_Area2D_area_entered(area):
+	if area.name == "LeftBounds":
+		if init:
+			##print(area)
+			velocity2 = Vector2(68, 0)
+			move()
+			crash()
+	elif area.name == "RightBounds":
+		if init:
+			##print(area)
+			velocity2 = Vector2(-68, 0)
+			move()
+			crash()
+	elif area.name == "TopBounds":
+		if init:
+			##print(area)
+			velocity2 = Vector2(0,68)
+			move()
+			crash()
+	elif area.name == "BottomBounds":
+		if init:
+			##print(area)
+			velocity2 = Vector2(0,-68)
+			move()
+			crash()
 

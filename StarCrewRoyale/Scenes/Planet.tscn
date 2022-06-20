@@ -35,7 +35,7 @@ tracks/0/keys = {
 }
 
 [sub_resource type="CircleShape2D" id=3]
-radius = 21.8021
+radius = 24.2019
 
 [node name="Planet" type="KinematicBody2D"]
 z_index = 6

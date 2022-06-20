@@ -12,6 +12,9 @@ onready var timer = $Timer
 
 const Planet = preload('res://Scenes/Planet.tscn')
 const Asteroid1 = preload('res://Scenes/Asteroid1.tscn')
+const Asteroid2 = preload('res://Scenes/Asteroid2.tscn')
+const Asteroid3 = preload('res://Scenes/Asteroid3.tscn')
+const Asteroid4 = preload('res://Scenes/Asteroid4.tscn')
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,7 +23,7 @@ func _ready():
 	TopB.position.y = TopB.position.y + .5
 	BottomB.position.y = BottomB.position.y - .5
 	
-	for i in 400:
+	for i in 100:
 		var planet = Planet.instance()
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
@@ -30,8 +33,38 @@ func _ready():
 		var temp = rng.randi_range(5, 25) * .1
 		planet.scale = Vector2(temp,temp)
 		self.add_child(planet)
-	for i in 100:
+	for i in 150:
 		var asteroid = Asteroid1.instance()
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+
+		asteroid.position = Vector2(rng.randi_range(3000, 56000), rng.randi_range(3000, 56000))
+		asteroid.z_index = 0
+		var temp = rng.randi_range(25, 50) * .1
+		asteroid.scale = Vector2(temp,temp)
+		self.add_child(asteroid)
+	for i in 150:
+		var asteroid = Asteroid2.instance()
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+
+		asteroid.position = Vector2(rng.randi_range(3000, 56000), rng.randi_range(3000, 56000))
+		asteroid.z_index = 0
+		var temp = rng.randi_range(25, 50) * .1
+		asteroid.scale = Vector2(temp,temp)
+		self.add_child(asteroid)
+	for i in 150:
+		var asteroid = Asteroid3.instance()
+		var rng = RandomNumberGenerator.new()
+		rng.randomize()
+
+		asteroid.position = Vector2(rng.randi_range(3000, 56000), rng.randi_range(3000, 56000))
+		asteroid.z_index = 0
+		var temp = rng.randi_range(25, 50) * .1
+		asteroid.scale = Vector2(temp,temp)
+		self.add_child(asteroid)
+	for i in 150:
+		var asteroid = Asteroid4.instance()
 		var rng = RandomNumberGenerator.new()
 		rng.randomize()
 

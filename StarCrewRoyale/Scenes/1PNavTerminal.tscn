@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Scripts/Minimap.gd" type="Script" id=1]
 [ext_resource path="res://assets/New Piskel.png" type="Texture" id=2]
+[ext_resource path="res://Scenes/Players/PlayerUI/HealthUI.tscn" type="PackedScene" id=3]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 12.0
@@ -72,6 +73,12 @@ current = true
 zoom = Vector2( 0.5, 0.5 )
 smoothing_enabled = true
 smoothing_speed = 10.0
+
+[node name="HealthUI" parent="Camera2D" instance=ExtResource( 3 )]
+margin_left = -72.2966
+margin_top = -45.8041
+margin_right = -12.2966
+margin_bottom = -34.8041
 
 [node name="Minimap" type="Area2D" parent="."]
 z_index = 1
