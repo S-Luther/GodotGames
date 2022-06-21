@@ -178,6 +178,7 @@ func _on_Helm_area_exited(area):
 
 
 func _on_Area2D_area_entered(area):
+	print(area.name)
 	if area.name == "LeftBounds":
 		if init:
 			##print(area)
