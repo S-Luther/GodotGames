@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Helm.gd" type="Script" id=1]
 [ext_resource path="res://Scenes/Ship.tscn" type="PackedScene" id=2]
-[ext_resource path="res://Scenes/NavTerminal.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scenes/NavTerm.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/pulse1.png" type="Texture" id=4]
 [ext_resource path="res://Scenes/Players/Player1.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Scenes/Players/Player2.tscn" type="PackedScene" id=6]
@@ -664,9 +664,9 @@ position = Vector2( -2, 1 )
 
 [node name="Transporter" parent="." instance=ExtResource( 11 )]
 
-[node name="PropoTerminal" parent="." instance=ExtResource( 14 )]
-
 [node name="NavTerminal" parent="." instance=ExtResource( 3 )]
+
+[node name="PropoTerminal" parent="." instance=ExtResource( 14 )]
 
 [node name="Repairs" parent="." instance=ExtResource( 16 )]
 position = Vector2( -3, -1 )

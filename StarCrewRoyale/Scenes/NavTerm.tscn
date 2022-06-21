@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://Scripts/Minimap.gd" type="Script" id=1]
 [ext_resource path="res://assets/frame.png" type="Texture" id=2]
@@ -10,7 +10,16 @@
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 12.0
-height = 26.0
+height = 72.0
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 31.5, 7.5 )
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 20, 10 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 19.5, 10 )
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
 z_index = 1
@@ -19,8 +28,7 @@ script = ExtResource( 1 )
 [node name="NavTerm" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NavTerm"]
-position = Vector2( -1, 85 )
-rotation = 1.5708
+position = Vector2( 172, -118 )
 shape = SubResource( 1 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -76,6 +84,23 @@ texture = ExtResource( 6 )
 position = Vector2( 596, -169 )
 scale = Vector2( 10.8594, 2.9375 )
 texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 183.5, -123.5 )
+rotation = -1.5708
+shape = SubResource( 2 )
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 172, -163 )
+rotation = 3.14159
+shape = SubResource( 3 )
+one_way_collision = true
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( 171.5, -87 )
+shape = SubResource( 4 )
+one_way_collision = true
 
 [connection signal="area_entered" from="NavTerm" to="." method="_on_NavTerm_area_entered"]
 [connection signal="area_exited" from="NavTerm" to="." method="_on_NavTerm_area_exited"]

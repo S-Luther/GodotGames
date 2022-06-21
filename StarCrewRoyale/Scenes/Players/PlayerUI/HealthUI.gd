@@ -19,7 +19,7 @@ func set_max_hearts(value):
 
 func _ready():
 	self.max_hearts = 4
-	self.hearts = 3
+	self.hearts = 4
 	# warning-ignore:return_value_discarded
 	
 	# warning-ignore:return_value_discarded

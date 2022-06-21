@@ -7,6 +7,7 @@
 [node name="HealthUI" type="Control"]
 margin_right = 60.0
 margin_bottom = 11.0
+rect_scale = Vector2( 5, 5 )
 script = ExtResource( 3 )
 
 [node name="HeartUIEmpty" type="TextureRect" parent="."]

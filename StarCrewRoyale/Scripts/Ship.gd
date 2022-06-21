@@ -79,7 +79,8 @@ func _process(delta):
 		ATTACK:
 			attack_state(delta)
 
-
+func radar(player,asteroids,planets,LeftBD,RightBD,TopBD,BottomBD):
+	nav.radar(player,asteroids,planets,LeftBD,RightBD,TopBD,BottomBD)
 	
 func move_state(delta):
 	if working && workable:

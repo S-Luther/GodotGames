@@ -25,7 +25,7 @@ var roll_vector = Vector2.DOWN
 var init = false
 
 onready var nav = $Engine/NavTerminal/
-onready var minimap = $Engine/NavTerminal/Minimap/
+onready var minimap = $Engine/NavTerminal/UI/
 onready var player1 = $Engine/Player1
 onready var engine = $Engine
 onready var hitbox = $Hitbox
@@ -43,6 +43,8 @@ func _ready():
 
 func _process(delta):
 
+	if player1.position.x >100 || player1.position.x<-100 || player1.position.y >100 || player1.position.y<-100 :
+		player1.position = Vector2.ZERO
 	if timer.is_stopped():
 		init = true
 	
@@ -74,8 +76,11 @@ static func lerp_angle(a, b, t):
 static func normalize_angle(x):
 	return fposmod(x + PI, 2.0*PI) - PI
 
+func radar(player,asteroids,planets,LeftBD,RightBD,TopBD,BottomBD):
+	nav.radar(player,asteroids,planets,LeftBD,RightBD,TopBD,BottomBD)
+
 func move_state(delta):
-	if working:
+	if working && workable:
 		if player1.position.x < 40:
 			working = false
 			workable = false
@@ -157,6 +162,8 @@ func _on_Helm_area_exited(area):
 
 func _on_Engine_area_entered(area):
 	print(area.name)
+	print(area.get_angle_to(velocity2))
+	print(area.get_position_in_parent())
 	if area.name == "LeftBounds":
 		if init:
 			##print(area)
