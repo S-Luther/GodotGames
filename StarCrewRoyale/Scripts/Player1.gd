@@ -68,7 +68,8 @@ func move_state(delta):
 				animationPlayer.play(colors[i])
 		input_vector.y = Input.get_action_strength("p1_down") - Input.get_action_strength("p1_up")
 		input_vector = input_vector.normalized()
-
+	else:
+		working = false
 	
 	if input_vector != Vector2.ZERO:
 		roll_vector = input_vector

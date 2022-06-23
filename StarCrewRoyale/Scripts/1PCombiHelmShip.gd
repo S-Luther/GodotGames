@@ -28,7 +28,6 @@ onready var nav = $Engine/NavTerminal/
 onready var minimap = $Engine/NavTerminal/UI/
 onready var player1 = $Engine/Player1
 onready var engine = $Engine
-onready var hitbox = $Hitbox
 onready var timer = $Timer
 onready var animationPlayer = $Engine/Visible/AnimationPlayer
 
@@ -128,6 +127,7 @@ func move_state(delta):
 		move()
 	else: 
 		state = ATTACK
+		working = false
 	
 
 func attack_state(delta):
@@ -161,9 +161,6 @@ func _on_Helm_area_exited(area):
 
 
 func _on_Engine_area_entered(area):
-	print(area.name)
-	print(area.get_angle_to(velocity2))
-	print(area.get_position_in_parent())
 	if area.name == "LeftBounds":
 		if init:
 			##print(area)
