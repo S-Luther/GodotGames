@@ -17,7 +17,27 @@ const AsteroidMarker = preload('res://Scenes/AsteroidMarker.tscn')
 
 var prefix = ""
 
+var sep = 0;
+
+
 func _process(delta):
+	
+	sep = sep + 1
+	if sep%4 == 0 && navWorking && navWorkable:
+		var player = get_owner()
+		var asteroids = []
+		var planets = []
+		var LeftBD = player.get_position().x - get_tree().get_nodes_in_group("LeftB")[0].get_position().x
+		var RightBD = player.get_position().x - get_tree().get_nodes_in_group("RightB")[0].get_position().x
+		var TopBD = player.get_position().y - get_tree().get_nodes_in_group("TopB")[0].get_position().y
+		var BottomBD = player.get_position().y - get_tree().get_nodes_in_group("BottomB")[0].get_position().y
+		for object in get_tree().get_nodes_in_group("asteroids"):
+			if(player.get_position().distance_to(object.get_position())<5000):
+				asteroids.append(object.get_position())
+		for object in get_tree().get_nodes_in_group("planets"):
+			if(player.get_position().distance_to(object.get_position())<5000):
+				planets.append(object.get_position())
+		self.radar(player.get_position(),asteroids,planets,abs(LeftBD),abs(RightBD),abs(TopBD),abs(BottomBD))	
 	if navWorkable:
 		if navWorking:
 			minimap.visible = true

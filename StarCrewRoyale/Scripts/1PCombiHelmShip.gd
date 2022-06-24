@@ -37,6 +37,7 @@ var working = false
 
 func _ready():
 	randomize()
+	self.add_to_group("Player")
 
 
 
@@ -75,8 +76,6 @@ static func lerp_angle(a, b, t):
 static func normalize_angle(x):
 	return fposmod(x + PI, 2.0*PI) - PI
 
-func radar(player,asteroids,planets,LeftBD,RightBD,TopBD,BottomBD):
-	nav.radar(player,asteroids,planets,LeftBD,RightBD,TopBD,BottomBD)
 
 func move_state(delta):
 	if working && workable:
