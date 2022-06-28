@@ -66,7 +66,7 @@ func _ready():
 
 		asteroid.position = Vector2(rng.randi_range(LeftB.get_position().x + 3000, RightB.get_position().x - 3000), rng.randi_range(TopB.get_position().y + 3000, BottomB.get_position().y - 3000))
 		asteroid.z_index = 0
-		var temp = rng.randi_range(5, 50) * .1
+		var temp = rng.randi_range(35, 50) * .1
 		asteroid.scale = Vector2(temp,temp)
 		asteroid.rotate(rng.randi_range(0, 360))
 		self.add_child(asteroid)
@@ -78,7 +78,7 @@ func _ready():
 
 		asteroid.position = Vector2(rng.randi_range(LeftB.get_position().x + 3000, RightB.get_position().x - 3000), rng.randi_range(TopB.get_position().y + 3000, BottomB.get_position().y - 3000))
 		asteroid.z_index = 0
-		var temp = rng.randi_range(5, 50) * .1
+		var temp = rng.randi_range(35, 50) * .1
 		asteroid.scale = Vector2(temp,temp)
 		asteroid.rotate(rng.randi_range(0, 360))
 		self.add_child(asteroid)
@@ -90,7 +90,7 @@ func _ready():
 
 		asteroid.position = Vector2(rng.randi_range(LeftB.get_position().x + 3000, RightB.get_position().x - 3000), rng.randi_range(TopB.get_position().y + 3000, BottomB.get_position().y - 3000))
 		asteroid.z_index = 0
-		var temp = rng.randi_range(5, 50) * .1
+		var temp = rng.randi_range(35, 50) * .1
 		asteroid.scale = Vector2(temp,temp)
 		asteroid.rotate(rng.randi_range(0, 360))
 		self.add_child(asteroid)
@@ -102,7 +102,7 @@ func _ready():
 
 		asteroid.position = Vector2(rng.randi_range(LeftB.get_position().x + 3000, RightB.get_position().x - 3000), rng.randi_range(TopB.get_position().y + 3000, BottomB.get_position().y - 3000))
 		asteroid.z_index = 0
-		var temp = rng.randi_range(5, 50) * .1
+		var temp = rng.randi_range(35, 50) * .1
 		asteroid.scale = Vector2(temp,temp)
 		asteroid.rotate(rng.randi_range(0, 360))
 		self.add_child(asteroid)
