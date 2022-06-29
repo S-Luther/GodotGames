@@ -47,27 +47,27 @@ playback_speed = 0.01
 anims/RESET = SubResource( 1 )
 anims/Spin = SubResource( 2 )
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+[node name="Asteroid" type="CollisionPolygon2D" parent="."]
 position = Vector2( 1, -1 )
 scale = Vector2( 0.04, 0.04 )
 polygon = PoolVector2Array( -167, -172, -111, -219, -46, -242, -3, -244, 45, -242, 122, -211, 169, -166, 157, -152, 104, -203, 20, -220, -49, -220, -103, -193, -151, -155 )
 one_way_collision = true
 
-[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="."]
+[node name="Asteroid2" type="CollisionPolygon2D" parent="."]
 position = Vector2( 1, 1 )
 rotation = 3.14159
 scale = Vector2( 0.04, 0.04 )
 polygon = PoolVector2Array( -167, -172, -111, -219, -46, -242, 45, -242, 122, -211, 169, -166, 157, -152, 104, -203, 38, -224, -49, -220, -103, -193, -151, -155 )
 one_way_collision = true
 
-[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="."]
+[node name="Asteroid3" type="CollisionPolygon2D" parent="."]
 position = Vector2( 1.19209e-07, 0 )
 rotation = -1.5708
 scale = Vector2( 0.04, 0.04 )
 polygon = PoolVector2Array( -174.736, -163.159, -111, -219, -46, -242, 45, -242, 122, -211, 182.106, -157.894, 166.316, -143.157, 104, -203, 38, -224, -2.10525, -224.211, -49, -220, -103, -193, -165.263, -150.527 )
 one_way_collision = true
 
-[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="."]
+[node name="Asteroid4" type="CollisionPolygon2D" parent="."]
 position = Vector2( 2, 1 )
 rotation = 1.5708
 scale = Vector2( 0.04, 0.04 )

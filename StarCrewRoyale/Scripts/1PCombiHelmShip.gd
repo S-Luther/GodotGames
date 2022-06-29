@@ -33,7 +33,7 @@ onready var animationPlayer = $Engine/Visible/AnimationPlayer
 
 var workable = false
 var working = false
-
+var prevelocity = Vector2()
 
 func _ready():
 	randomize()
@@ -138,7 +138,23 @@ func attack_state(delta):
 
 func move():
 	##print(velocity2)
-	velocity2 = move_and_slide(velocity2)
+
+	var collision = move_and_collide(velocity2/50)
+	if collision:
+		if collision.collider_velocity == Vector2.ZERO:
+			if "Asteroid" in collision.collider_shape.name:
+				velocity2 = -prevelocity
+			else:
+				velocity2 = prevelocity
+		else:	
+
+			if "Asteroid" in collision.collider_shape.name:
+				velocity2 = -prevelocity
+			else:
+				velocity2 = collision.collider_velocity
+
+
+	prevelocity = -velocity2
 
 func crash():
 	player1.crash()

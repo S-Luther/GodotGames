@@ -16,5 +16,9 @@ func _process(delta):
 			velocity = prevelocity
 		else:	
 			velocity = collision.collider_velocity
+			print(collision.collider_rid)
+			print(collision.collider_metadata)
+			print(collision.collider_shape)
+
 	prevelocity = -velocity
 		
