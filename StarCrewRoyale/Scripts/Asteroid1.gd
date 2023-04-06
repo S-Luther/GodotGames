@@ -13,7 +13,8 @@ func _process(delta):
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		if collision.collider_velocity == Vector2.ZERO:
-			velocity = prevelocity
+			
+			velocity = prevelocity*collision.get_angle()
 		else:	
 			velocity = collision.collider_velocity
 			print(collision.collider_rid)

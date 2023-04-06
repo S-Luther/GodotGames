@@ -28,6 +28,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [ 0.0 ]
 }
+tracks/2/type = "value"
+tracks/2/path = NodePath("..:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 90 ) ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "spin"
@@ -47,6 +59,7 @@ tracks/0/keys = {
 }
 
 [node name="KinematicBody2D" type="KinematicBody2D"]
+position = Vector2( 0, 90 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 1, 0 )
