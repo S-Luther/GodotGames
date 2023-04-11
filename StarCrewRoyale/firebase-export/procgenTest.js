@@ -22,6 +22,8 @@ var character = {
 var graph = [];
 
 
+
+
 var nomad;
 
 var place = {
@@ -5274,13 +5276,77 @@ var baseServices = [
 var communityServices = [
                     "📽",
                     "⛏️",
-                    "🗲",
+                    "P ",
                     "⚙️ ",  
                     "🔧",
                     "👚",
                     "™ ",
                     "🗺",
                 ]
+
+var skills = [
+                "Solderer",
+                "Machiner",
+                "Lifter",
+                "Creator",
+                "Miner",
+                "Visionary",
+                "Taste Maker",
+                "Designer",
+                "Electrician",
+                "Engineer",
+                "Programmer",
+                "Hacker",
+                "Analyser",
+                "Data Miner",
+                "Charter",
+                "Pilot",
+                "Cartographer",
+                "Guide",
+                "Comedian",
+                "Conversationalist",
+                "Brewer",
+                "Clothier",
+                "Chemist",
+                "Cook",
+                "Furnace Operator",
+                "Crafter",
+                "Persuader",
+                "Negotiator",
+                "Judge of intent",
+                "Appraiser",
+                "Organizer",
+                "Record keeper",
+                "Liar",
+                "Intimidator",
+                "Flatterer",
+                "Consoler",
+                "Pacifier",
+                "Tracker",
+                "Student",
+                "Observer",
+                "Wordsmith",
+                "Writer",
+                "Poet",
+                "Speaker",
+                "Leader",
+                "Teacher",
+                "Fighter",
+                "Tactician",
+                "Musician",
+                "Dancer",
+                "Singer",
+                "Logician",
+                "Mathematician",
+                "Optics engineer",
+                "Schemer",
+                "Gunner",
+                "Shield Engineer",
+                "Mechanic",
+                "Stylist",
+                "Armorer",
+                "Weapons Specialist"
+             ]
 
 enneagramCombos = [
                     [1,4,7],
@@ -5355,16 +5421,59 @@ var endings = [
     "Outpost",
     "Tower",
     "Castle",
+    "Prefect",
+    "Vista",
+    "Star",
+    "Belt",
+    "Nebula",
 ]
 
+var extensions = [
+    "ville",
+    "ton",
+    "shire",
+    "ford",
+    "port",
+    "peak"
+]
 
+var factions = [
+    "Republic",
+    "Coalition",
+    "Band",
+    "Empire",
+    "Traders Guild",
+    "Guild",
+    "Union",
+    "Nation",
+    "States",
+    "State",
+    "Rebels",
+    "Emperium"
+]
 
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
 function pickRandom(list) {
   return list[Math.floor(Math.random() * list.length)];
 }
 
 function addRandomCharacter(place){
     characters.push(character);
+    var temp = [];
+    skills.map(()=>{
+        temp.push(false);
+
+    })
+    for(var i =0; i<2; i++){
+        temp[Math.floor(Math.random() * temp.length)] = true;
+    }
     characters[characters.length -1] = {
         ...character,  
         name: pickRandom(names),
@@ -5380,14 +5489,15 @@ function addRandomCharacter(place){
         travels: [place],
         boredom: 50,
         happiness: 50,
+        skills: temp,
     }
 
     return characters[characters.length -1];
 }
 
 function getServices(){
-    var cs = Math.floor(Math.random() * 5)
-    var bs = Math.floor(Math.random() * baseServices.length)
+    var cs = Math.floor(Math.random() * 5) + 1
+    var bs = Math.floor(Math.random() * baseServices.length) + 1
     var returnedServices = [];
 
     for(var i = 0; i<bs; i++){
@@ -5401,11 +5511,12 @@ function getServices(){
 }
 
 var pid = 0;
+var color=0;
 
 function addRandomPlace(){
     var s = getServices();
     places.push(place)
-    var name = (Math.random()<.75) ? pickRandom(names) + "'s " + pickRandom(endings) : pickRandom(names)+"ton"
+    var name = (Math.random()<.5) ? pickRandom(names) + "'s " + pickRandom(endings) : pickRandom(names)+pickRandom(extensions)
 
     console.log(name);
     if(s[1]===1000)
@@ -5424,6 +5535,8 @@ function addRandomPlace(){
         value: s[1],
         neighbors: [],
         map: temp,
+        faction: (Math.random()<.5) ? pickRandom(names) + "'s " + pickRandom(factions) : "The " + pickRandom(factions)+" of "+pickRandom(names),
+        color: color++,
         // popular: [],
         // unpopular: [],
     }
@@ -5537,7 +5650,7 @@ var stop = false;
 
 
 function genStep(){
-    places[currentplace].residents.forEach(c => {
+    places[currentplace].residents.map(c => {
         interact(c, pickRandom(places[currentplace].residents));
         if(c.happiness<0||c.boredom>1000){
             // console.log(c);
@@ -5578,7 +5691,7 @@ function findPlaceByName(placeName){
 }
 
 function cleanStep(residents){
-    residents.forEach(c => {
+    residents.map(c => {
         if(!stop){
             interact(c, pickRandom(residents));
             if(c.happiness<30||c.boredom>100){
@@ -5597,8 +5710,8 @@ function cleanStep(residents){
 
 function cleanSim(steps){
     stop = false;
-    places.forEach(p=>{
-        if(Math.random()<.22){
+    places.map(p=>{
+        if(Math.random()<.1){
             var neighbor = pickRandom(places);
             if(p != neighbor && !p.neighbors.includes(neighbor)){
                 p.neighbors.push(neighbor.name);
@@ -5629,7 +5742,7 @@ function cleanSim(steps){
     })
 }
 
-genSim(8000)
+genSim(50000)
 cleanSim(2000)
 
 var adjacencyGraph = [];
@@ -5643,40 +5756,184 @@ for(var i = 0; i<graph.length; i++){
     adjacencyGraph.push(temp)
 }
 
+var totalPop = 0;
 
-places.forEach(e=>{
-    console.log(">>>>>>>>>>>"+e.name+" "+e.residents.length)
+places.map(e=>{
+    // console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+e.name+" "+e.residents.length+" "+e.faction)
 
-    e.residents.forEach(g=>{
+    e.residents.map(g=>{
+        totalPop++
         if(g.travels.length>3){
-            console.log(g.name+" "+g.travels.length)
+            // var temp = [];
+            // for(var i = 0 ; i< skills.length; i++){
+            //     if(g.skills[i]){
+            //         temp.push(skills[i]);
+            //     }
+            // }
+            // console.log(g.name+" "+g.travels.length + " " + temp)
         }
     })
-    e.neighbors.forEach(n=>{
+    e.neighbors.map(n=>{
         adjacencyGraph[e.id][graph.indexOf(n)] = 1
         adjacencyGraph[graph.indexOf(n)][e.id] = 1
 
     })
 })
 
+var graphCSV = "";
+
+graph.map(e=>{
+    graphCSV = graphCSV + e+",";
+})
+
+graphCSV = graphCSV + "\n";
+
+
 for(var i = 0; i<graph.length; i++){
+    graphCSV = graphCSV +graph[i]+","
+
     for(var j = 0; j<graph.length; j++){
-        process.stdout.write(adjacencyGraph[i][j] + ", ");
+        // process.stdout.write(adjacencyGraph[i][j] + ", ");
+        graphCSV = graphCSV+ adjacencyGraph[i][j] 
+        if(j < (graph.length -1))
+            graphCSV = graphCSV+","
     }
-    process.stdout.write("\b\n");
+    graphCSV = graphCSV +"\n"
+    // process.stdout.write("\b\n");
 }
+
+
+fs.writeFile("./graph.csv", graphCSV, "utf-8", (err)=>{});
+
 
 // console.table(adjacencyGraph)
 
+
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+clash();
+places.map(e=>{
+    console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"+e.name+" "+e.residents.length+" "+e.faction+" "+e.color)
+})
+function countUnique(iterable) {
+    return new Set(iterable).size;
+}
+
+var labelsOut={
+    colors: [],
+    labels: []
+}
+
+
+places.map(e=>{
+    labelsOut.colors.push(e.color)
+    labelsOut.labels.push(e.name)
+
+})
+console.log("Total Pop: " + totalPop+" Factions:"+ countUnique(labelsOut.colors)+" Worlds: "+labelsOut.labels.length)
+
+fs.writeFile("./labels.json", JSON.stringify(labelsOut, null, 4 ), "utf-8", (err)=>{});
 
 
 fs.writeFile("./test.json", JSON.stringify(places, null, 4 ), "utf-8", (err)=>{});
 
 
 
-
-
 function generateMap(rooms,services){
+    // rooms += 2;
     var myGrid = [...Array(Math.floor(rooms*2))].map(e => Array(Math.floor(rooms*2)));
 
     var roomCoords = [];
@@ -5722,7 +5979,35 @@ function generateMap(rooms,services){
         process.stdout.write("\n");
 
     }
+
     return myGrid;
+}
+
+function clash(){
+    places.map(e=>{
+        var attack = pickRandom(e.neighbors);
+        var index = -1;
+        var filteredObj = places.find(function(item, i){
+            if(item.name === attack){
+              index = i;
+              return i;
+            }
+        });    
+        if(!(places[index] === e.faction)){
+            var attackerMight = Math.floor(e.value * e.residents.length * Math.random());
+            var defenderMight = Math.floor(places[index].value * places[index].residents.length * Math.random());
+
+            if(attackerMight > defenderMight){
+                places[index].faction = e.faction;
+                places[index].color = e.color;
+
+                // console.log(e.faction + " attacked "+places[index].faction+"'s base at "+places[index].name+" and won.")
+            }
+            else{
+                // console.log(e.faction + " attacked "+places[index].faction+"'s base at "+places[index].name+" and lost.")
+            }
+        }
+    })
 }
 
 
@@ -5742,4 +6027,4 @@ function generateMap(rooms,services){
 // }
 
 
-// const ans = await askQuestion("Are you sure you want to deploy to PRODUCTION? ");
+// const ans = askQuestion("Are you sure you want to deploy to PRODUCTION? ");
